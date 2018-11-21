@@ -1,0 +1,6 @@
+[user]
+	name = Richard
+	email = richytong@gmail.com
+[credential]
+	helper = store
+
