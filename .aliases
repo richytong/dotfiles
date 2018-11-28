@@ -21,9 +21,11 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo 
 # Recursively delete `.DS_Store` files
 alias rmdsstore="find . -type f -name '*.DS_Store' -ls -delete"
 
+# Delete all node_modules
+alias rmrfnodemodules="find ~/dev -name "node_modules" -type d | xargs rm -rf"
+
 # Show active network interfaces
 alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
 
 # Local IP Address
 alias localip="ipconfig getifaddr en0"
-
