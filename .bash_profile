@@ -2,7 +2,7 @@
 export PATH="$HOME/bin:$PATH";
 
 # Manual sourcing
-for file in ~/.{aliases,gorc,loadnvm,pyenvrc}; do
+for file in ~/.{aliases,gorc,loadnvm,pyenvrc,dandyrc}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
