@@ -29,3 +29,6 @@ alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'
 
 # Local IP Address
 alias localip="ipconfig getifaddr en0"
+
+# List globally installed npm packages
+alias npmlsg="npm list -g --depth=0"
