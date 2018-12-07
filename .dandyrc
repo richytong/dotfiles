@@ -1,2 +1,2 @@
-export DANDY_PATH='~/dev/dandy'
+export DANDY_PATH='$HOME/dev/dandy'
 
