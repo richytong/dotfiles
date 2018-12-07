@@ -1,3 +1,4 @@
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
+export NODE_PATH=$HOME/.nvm/versions/node/$(node -v)/lib/node_modules
