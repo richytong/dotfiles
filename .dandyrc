@@ -1,3 +1,4 @@
+export DANDY_ENV="richard_local"
 export DANDY_PATH="$HOME/dev/dandy"
 
 alias dandytestcov="nyc --cwd=$DANDY_PATH --exclude=dandy-test dandytest"
