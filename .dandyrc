@@ -2,3 +2,23 @@ export DANDY_PATH="$HOME/dev/dandy"
 
 alias dandytestcov="nyc --cwd=$DANDY_PATH --exclude=dandy-test dandytest"
 alias cdandy="cd $DANDY_PATH"
+
+function arimusln {
+	ARIMUS_PATH=$HOME/dev/arimuscorp
+	ARIMUS_NODE_MODULES_PATH=$DANDY_PATH/dandy-app/node_modules/\@arimuscorp
+	if [ ! -d "$ARIMUS_PATH" ]; then
+		printf "$ARIMUS_PATH not found, creating"
+		mkdir $ARIMUS_PATH
+		cd $ARIMUS_PATH
+		git init
+		git remote add origin git@github.com:richytong/arimuscorp
+		git pull origin master
+		cd -
+	fi
+	printf "copying into $ARIMUS_PATH \n$(ls $ARIMUS_NODE_MODULES_PATH)"
+	rm -rf $ARIMUS_PATH/*
+	cp -r $ARIMUS_NODE_MODULES_PATH/* $ARIMUS_PATH
+	cd $ARIMUS_PATH
+	printf "\n\n$(git diff .)\n\n$(git status)\n"
+	cd - > /dev/null
+}
