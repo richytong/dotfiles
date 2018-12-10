@@ -3,7 +3,7 @@ export DANDY_PATH="$HOME/dev/dandy"
 alias dandytestcov="nyc --cwd=$DANDY_PATH --exclude=dandy-test dandytest"
 alias cdandy="cd $DANDY_PATH"
 
-function arimusln {
+function arimuscp {
 	ARIMUS_PATH=$HOME/dev/arimuscorp
 	ARIMUS_NODE_MODULES_PATH=$DANDY_PATH/dandy-app/node_modules/\@arimuscorp
 	if [ ! -d "$ARIMUS_PATH" ]; then
