@@ -10,6 +10,10 @@ fi
 # Always use color output for `ls`
 alias ls="command ls ${colorflag}"
 
+# Quick cd
+alias cdev="cd $HOME/dev"
+alias cdot="cd $HOME/dev/dotfiles"
+
 # Print each PATH entry on a separate line
 alias ppath='echo -e ${PATH//:/\\n}'
 
