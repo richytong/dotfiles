@@ -23,3 +23,26 @@ function arimuscp {
 	printf "\n\n$(git diff .)\n\n$(git status)\n"
 	cd - > /dev/null
 }
+
+function dandygitsyncmaster {
+	CUR_PATH=$(pwd)
+	for i in $(ls $DANDY_PATH); do
+		printf "syncing master for $i\n"
+		cd $DANDY_PATH/$i
+		git checkout master > /dev/null
+		git pull origin master
+		printf "\n"
+	done
+	cd $CUR_PATH
+}
+
+function dandygitstatus {
+	CUR_PATH=$(pwd)
+	for i in $(ls $DANDY_PATH); do
+		printf "git status for $i\n"
+		cd $DANDY_PATH/$i
+		git status
+		printf "\n"
+	done
+	cd $CUR_PATH	
+}
