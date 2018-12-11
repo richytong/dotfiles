@@ -1,5 +1,6 @@
 export DANDY_ENV="richard_local"
 export DANDY_PATH="$HOME/dev/dandy"
+export DANDY_CONFIG_PATH="$DANDY_PATH/config-files"
 
 alias dandytestcov="nyc --cwd=$DANDY_PATH --exclude=dandy-test dandytest"
 alias cdandy="cd $DANDY_PATH"
