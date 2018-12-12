@@ -36,3 +36,6 @@ alias localip="ipconfig getifaddr en0"
 
 # List globally installed npm packages
 alias npmlsg="npm list -g --depth=0"
+
+# Open file or url in chrome
+alias chrome="open -a 'Google Chrome'"
