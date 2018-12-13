@@ -25,6 +25,8 @@ function arimuscp {
 	cd - > /dev/null
 }
 
+alias sublimearimus="sublime ./node_modules/\@arimuscorp"
+
 function dandygitsyncmaster {
 	CUR_PATH=$(pwd)
 	for i in $(ls $DANDY_PATH); do
