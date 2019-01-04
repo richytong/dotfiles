@@ -4,7 +4,7 @@ export DANDY_CONFIG_PATH="$DANDY_PATH/dandy-config-files/lib"
 
 alias dandytestcov="nyc --cwd=$DANDY_PATH --exclude=dandy-test dandytest"
 alias cdandy="cd $DANDY_PATH"
-alias dandysshdev="ssh ubuntu@ec2-34-203-252-200.compute-1.amazonaws.com"
+alias sshdandydev="ssh ubuntu@ec2-34-203-252-200.compute-1.amazonaws.com"
 
 function arimuscp {
 	ARIMUS_PATH=$HOME/dev/arimuscorp
