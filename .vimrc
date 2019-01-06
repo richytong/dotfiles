@@ -1,6 +1,12 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" Colorscheme
+colorscheme darkblue
+
+" Ruler
+set ruler
+
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
 
@@ -18,4 +24,13 @@ set hidden
 
 " Enable mouse support
 set mouse=a
+
+" Auto closing brackets
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
 
