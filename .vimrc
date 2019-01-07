@@ -2,10 +2,17 @@
 set nocompatible
 
 " Colorscheme
-colorscheme darkblue
+syntax enable
+colorscheme monokai
 
 " Ruler
 set ruler
+
+" Tabs are spaces
+set expandtab
+
+" Wildmode (tab autocompletion for files/dirs)
+set wildmode=list:longest
 
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
