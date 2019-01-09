@@ -7,46 +7,48 @@ alias cdandy="cd $DANDY_PATH"
 alias sshdandydev="ssh ubuntu@ec2-34-203-252-200.compute-1.amazonaws.com"
 
 function arimuscp {
-	ARIMUS_PATH=$HOME/dev/arimuscorp
-	ARIMUS_NODE_MODULES_PATH=$DANDY_PATH/dandy-app/node_modules/\@arimuscorp
-	if [ ! -d "$ARIMUS_PATH" ]; then
-		printf "$ARIMUS_PATH not found, creating"
-		mkdir $ARIMUS_PATH
-		cd $ARIMUS_PATH
-		git init
-		git remote add origin git@github.com:richytong/arimuscorp
-		git pull origin master
-		cd -
-	fi
-	printf "copying into $ARIMUS_PATH \n$(ls $ARIMUS_NODE_MODULES_PATH)"
-	rm -rf $ARIMUS_PATH/*
-	cp -r $ARIMUS_NODE_MODULES_PATH/* $ARIMUS_PATH
-	cd $ARIMUS_PATH
-	printf "\n\n$(git diff .)\n\n$(git status)\n"
-	cd - > /dev/null
+    ARIMUS_PATH=$HOME/dev/arimuscorp
+    ARIMUS_NODE_MODULES_PATH=$DANDY_PATH/dandy-app/node_modules/\@arimuscorp
+    if [ ! -d "$ARIMUS_PATH" ]; then
+        printf "$ARIMUS_PATH not found, creating"
+        mkdir $ARIMUS_PATH
+        cd $ARIMUS_PATH
+        git init
+        git remote add origin git@github.com:richytong/arimuscorp
+        git pull origin master
+        cd -
+    fi
+    printf "copying into $ARIMUS_PATH \n$(ls $ARIMUS_NODE_MODULES_PATH)"
+    rm -rf $ARIMUS_PATH/*
+    cp -r $ARIMUS_NODE_MODULES_PATH/* $ARIMUS_PATH
+    cd $ARIMUS_PATH
+    printf "\n\n$(git diff .)\n\n$(git status)\n"
+    cd - > /dev/null
 }
 
 alias sublimearimus="sublime ./node_modules/\@arimuscorp"
 
 function dandygitsyncmaster {
-	CUR_PATH=$(pwd)
-	for i in $(ls $DANDY_PATH); do
-		printf "syncing master for $i\n"
-		cd $DANDY_PATH/$i
-		git checkout master > /dev/null
-		git pull origin master
-		printf "\n"
-	done
-	cd $CUR_PATH
+    CUR_PATH=$(pwd)
+    for i in $(ls $DANDY_PATH); do
+        printf "syncing master for $i\n"
+        cd $DANDY_PATH/$i
+        git checkout master > /dev/null
+        git pull origin master
+        printf "\n"
+    done
+    cd $CUR_PATH
 }
 
 function dandygitstatus {
-	CUR_PATH=$(pwd)
-	for i in $(ls $DANDY_PATH); do
-		printf "git status for $i\n"
-		cd $DANDY_PATH/$i
-		git status
-		printf "\n"
-	done
-	cd $CUR_PATH	
+    CUR_PATH=$(pwd)
+    for i in $(ls $DANDY_PATH); do
+        printf '\e[1;34m%-6s\e[m\n' "$i"
+        cd $DANDY_PATH/$i
+        if [ "$(git rev-parse master)" != "$(git rev-parse origin/master)" ]; then
+            printf "NEEDS PUSH\n"
+        fi
+        git status --short
+    done
+    cd $CUR_PATH    
 }
