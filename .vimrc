@@ -20,6 +20,9 @@ set incsearch
 " Use case if caps used
 set smartcase
 
+" Search highlighting
+set hlsearch
+
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
 
