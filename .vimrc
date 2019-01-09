@@ -14,6 +14,12 @@ set expandtab
 " Wildmode (tab autocompletion for files/dirs)
 set wildmode=list:longest
 
+" Show match as search proceeds
+set incsearch
+
+" Use case if caps used
+set smartcase
+
 " Make backspace behave in a sane manner.
 set backspace=indent,eol,start
 
