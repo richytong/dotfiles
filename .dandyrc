@@ -48,7 +48,7 @@ function dandygitstatus {
         if [ "$(git rev-parse master)" != "$(git rev-parse origin/master)" ]; then
             printf "NEEDS PUSH\n"
         fi
-        git status --short
+        git status -bs
     done
     cd $CUR_PATH    
 }
