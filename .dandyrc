@@ -2,9 +2,9 @@ export DANDY_ENV="richard_local"
 export DANDY_PATH="$HOME/dev/dandy"
 export DANDY_CONFIG_PATH="$DANDY_PATH/dandy-config-files/lib"
 
-alias dandytestcov="nyc --cwd=$DANDY_PATH --exclude=dandy-test dandytest"
-alias cdandy="cd $DANDY_PATH"
-alias sshdandydev="ssh ubuntu@ec2-34-203-252-200.compute-1.amazonaws.com"
+alias ddytestcov="nyc --cwd=$DANDY_PATH --exclude=dandy-test dandytest"
+alias cddy="cd $DANDY_PATH"
+alias sshddydev="ssh ubuntu@ec2-34-203-252-200.compute-1.amazonaws.com"
 
 function arimuscp {
     ARIMUS_PATH=$HOME/dev/arimuscorp
@@ -28,7 +28,7 @@ function arimuscp {
 
 alias sublimearimus="sublime ./node_modules/\@arimuscorp"
 
-function dandygitsyncmaster {
+function ddygitpull {
     CUR_PATH=$(pwd)
     for i in $(ls $DANDY_PATH); do
         printf "syncing master for $i\n"
@@ -40,7 +40,7 @@ function dandygitsyncmaster {
     cd $CUR_PATH
 }
 
-function dandygitstatus {
+function ddygits {
     CUR_PATH=$(pwd)
     for i in $(ls $DANDY_PATH); do
         printf '\e[1;34m%-6s\e[m\n' "$i"
