@@ -15,3 +15,8 @@ shopt -s histappend;
 
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
+
+# Source .bashrc if exist
+if [ -f $HOME/.bashrc ]; then
+    . $HOME/.bashrc
+fi

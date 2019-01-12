@@ -45,9 +45,6 @@ function ddygits {
     for i in $(ls $DANDY_PATH); do
         printf '\e[1;34m%-6s\e[m\n' "$i"
         cd $DANDY_PATH/$i
-        if [ "$(git rev-parse master)" != "$(git rev-parse origin/master)" ]; then
-            printf "NEEDS PUSH\n"
-        fi
         git status -bs
     done
     cd $CUR_PATH    
