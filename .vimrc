@@ -190,10 +190,10 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-" Opens a new window with the current buffer's path
-" Super useful when editing files in the same directory
-map <leader>n :new <c-r>=expand("%:p:h")<cr>/
-map <leader>v :vnew <c-r>=expand("%:p:h")<cr>/
+" Opens a new window with entry path
+map <leader>n :new 
+map <leader>v :vnew 
+
 
 " Specify the behavior when switching between buffers
 try
