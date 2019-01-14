@@ -218,13 +218,20 @@ set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Auto closing brackets
-inoremap "" ""<left>
-inoremap '' ''<left>
+inoremap " ""<left>
+inoremap ", "",<left><left>
+inoremap ' ''<left>
+inoremap ', '',<left><left>
 inoremap ( ()<left>
+inoremap (, (),<left><left>
 inoremap [ []<left>
+inoremap [, [],<left><left>
 inoremap [<CR> [<CR>]<ESC>O
+inoremap [<CR>, [<CR>],<ESC>O
 inoremap { {}<left>
+inoremap {, {},<left><left>
 inoremap {<CR> {<CR>}<ESC>O
+inoremap {<CR>, {<CR>},<ESC>O
 
 " Delete trailing white space on save, useful for some filetypes ;)
 fun! CleanExtraSpaces()
