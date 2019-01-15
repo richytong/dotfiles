@@ -182,7 +182,7 @@ set wrap "Wrap lines
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Disable highlight when <leader><cr> is pressed
-map <silent> <leader><cr> :noh<cr>
+map <silent> <leader><ESC> :noh<cr>
 
 " Smart way to move between windows
 map <C-j> <C-W>j
@@ -224,14 +224,22 @@ inoremap ' ''<left>
 inoremap ', '',<left><left>
 inoremap ( ()<left>
 inoremap (, (),<left><left>
+inoremap (<CR> (<CR>)<ESC>O
+inoremap (<CR>, (<CR>),<ESC>O
 inoremap [ []<left>
 inoremap [, [],<left><left>
 inoremap [<CR> [<CR>]<ESC>O
 inoremap [<CR>, [<CR>],<ESC>O
 inoremap { {}<left>
+inoremap {<Space> {  }<left><left>
+inoremap {<Space>, {  },<left><left><left>
 inoremap {, {},<left><left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {<CR>, {<CR>},<ESC>O
+
+" new line mappings
+nnoremap oo o<ESC>O
+nnoremap OO O<ESC>O
 
 " Delete trailing white space on save, useful for some filetypes ;)
 fun! CleanExtraSpaces()
