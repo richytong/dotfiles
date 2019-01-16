@@ -2,9 +2,7 @@ export DANDY_ENV="richard_local"
 export DANDY_PATH="$HOME/dev/dandy"
 export DANDY_CONFIG_PATH="$DANDY_PATH/dandy-config-files/lib"
 
-alias ddytestcov="nyc --cwd=$DANDY_PATH --exclude=dandy-test dandytest"
 alias cddy="cd $DANDY_PATH"
-alias sshddydev="ssh ubuntu@ec2-34-203-252-200.compute-1.amazonaws.com"
 
 function arimuscp {
     ARIMUS_PATH=$HOME/dev/arimuscorp
@@ -28,7 +26,11 @@ function arimuscp {
 
 alias sublimearimus="sublime ./node_modules/\@arimuscorp"
 
-function ddygitpull {
+function ddy__ssh__dev {
+    ssh ubuntu@ec2-34-203-252-200.compute-1.amazonaws.com
+}
+
+function ddy__git__pull {
     CUR_PATH=$(pwd)
     for i in $(ls $DANDY_PATH); do
         printf "syncing master for $i\n"
@@ -40,7 +42,7 @@ function ddygitpull {
     cd $CUR_PATH
 }
 
-function ddygits {
+function ddy__git__s {
     CUR_PATH=$(pwd)
     for i in $(ls $DANDY_PATH); do
         printf '\e[1;34m%-6s\e[m\n' "$i"
@@ -48,4 +50,36 @@ function ddygits {
         git status -bs
     done
     cd $CUR_PATH    
+}
+
+function ddy__es__up {
+    docker run -p 9200:9200 -d docker.elastic.co/elasticsearch/elasticsearch:6.5.4
+}
+
+function ddy__es__down {
+    docker ps | grep docker.elastic.co/elasticsearch/elasticsearch:6.5.4 | awk '{print $1}' | xargs docker rm -f
+}
+
+function ddy__es__createindex {
+    curl -X PUT localhost:9200/party
+}
+
+function ddy__testcov {
+    nyc --cwd=$DANDY_PATH --exclude=dandy-test dandytest
+}
+
+function ddy {
+    local modname=$1;
+    local cmdname=$2;
+    shift
+    if test -z "$cmdname"; then
+        if type "ddy__${modname}" >/dev/null 2>&1; then
+            "ddy__${modname}" "$@"
+        fi
+    else
+        shift
+        if type "ddy__${modname}__${cmdname}" >/dev/null 2>&1; then
+            "ddy__${modname}__${cmdname}" "$@"
+        fi
+    fi
 }
