@@ -61,7 +61,21 @@ function ddy__es__down {
 }
 
 function ddy__es__createindex {
-    curl -X PUT localhost:9200/party
+    curl -X PUT localhost:9200/party  \
+    -H 'Content-Type: application/json' \
+    -d @- <<HEREDOC
+{
+    "mappings": {
+        "party": {
+            "properties": {
+                "location": {
+                    "type": "geo_point"
+                }
+            }
+        }
+    }
+}
+HEREDOC
 }
 
 function ddy__testcov {
