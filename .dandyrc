@@ -80,9 +80,21 @@ function ddy__es__createindex {
                 "time_frame": {
                     "type": "date_range",
                     "format": "epoch_millis"
-                },
+                }
             }
         }
+    }
+}
+HEREDOC
+}
+
+function ddy__es__getall {
+    curl -X GET localhost:9200/party/_search \
+    -H 'Content-Type: application/json' \
+    -d @- <<HEREDOC
+{
+    "query": {
+        "match_all": {}
     }
 }
 HEREDOC
