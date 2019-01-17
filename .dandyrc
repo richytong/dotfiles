@@ -68,9 +68,19 @@ function ddy__es__createindex {
     "mappings": {
         "party": {
             "properties": {
+                "groups": {
+                    "type": "nested"
+                },
+                "age_range": {
+                    "type": "integer_range"
+                },
                 "location": {
                     "type": "geo_point"
-                }
+                },
+                "time_frame": {
+                    "type": "date_range",
+                    "format": "epoch_millis"
+                },
             }
         }
     }
