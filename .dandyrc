@@ -72,8 +72,7 @@ function ddy__es__createindex {
                     "type": "nested",
                     "properties": {
                         "_id": {
-                            "type": "text",
-                            "boost": 2
+                            "type": "keyword"
                         }
                     }
                 },
