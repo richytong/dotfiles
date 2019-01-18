@@ -53,7 +53,7 @@ function ddy__git__s {
 }
 
 function ddy__es__up {
-    docker run -p 9200:9200 -d docker.elastic.co/elasticsearch/elasticsearch:6.5.4
+    docker run -p 9200:9200 -d -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.5.4
 }
 
 function ddy__es__down {
@@ -69,7 +69,13 @@ function ddy__es__createindex {
         "party": {
             "properties": {
                 "groups": {
-                    "type": "nested"
+                    "type": "nested",
+                    "properties": {
+                        "_id": {
+                            "type": "text",
+                            "boost": 2
+                        }
+                    }
                 },
                 "age_range": {
                     "type": "integer_range"
