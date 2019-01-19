@@ -191,6 +191,9 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" Split vnew windows to right
+set splitright
+
 " Opens a new window with entry path
 map <leader>n :new 
 map <leader>v :vnew 
