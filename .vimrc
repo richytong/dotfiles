@@ -253,6 +253,10 @@ inoremap {<CR>, {<CR>},<ESC>O
 nnoremap oo o<ESC>O
 nnoremap OO O<ESC>O
 
+" jump to next non whitespace line from current cursor
+nnoremap <C-k> :call search('\%' . virtcol('.') . 'v\S', 'bW')<CR>
+nnoremap <C-j> :call search('\%' . virtcol('.') . 'v\S', 'W')<CR>
+
 " Delete trailing white space on save, useful for some filetypes ;)
 fun! CleanExtraSpaces()
     let save_cursor = getpos(".")
