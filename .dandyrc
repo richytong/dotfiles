@@ -57,7 +57,7 @@ function ddy__es__up {
 }
 
 function ddy__es__down {
-    docker ps | grep docker.elastic.co/elasticsearch/elasticsearch:6.5.4 | awk '{print $1}' | xargs docker rm -f
+    docker ps -a | grep docker.elastic.co/elasticsearch/elasticsearch:6.5.4 | awk '{print $1}' | xargs docker rm -f
 }
 
 function ddy__es__createindex {
