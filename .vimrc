@@ -217,9 +217,9 @@ set laststatus=2
 
 " Format the status line
 set statusline=
-set statusline+=\ Line\ %l,\ Col\ %c
 set statusline+=\ %f
 set statusline+=\ %m
+set statusline+=\ Line\ %l,\ Col\ %c
 
 " Turn off tabline
 set showtabline=0
