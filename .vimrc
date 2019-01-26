@@ -235,14 +235,17 @@ inoremap ', '',<left><left>
 inoremap ` ``<left>
 inoremap `, ``,<left><left>
 inoremap ( ()<left>
+inoremap () ()
 inoremap (, (),<left><left>
 inoremap (<CR> (<CR>)<ESC>O
 inoremap (<CR>, (<CR>),<ESC>O
 inoremap [ []<left>
+inoremap [] []
 inoremap [, [],<left><left>
 inoremap [<CR> [<CR>]<ESC>O
 inoremap [<CR>, [<CR>],<ESC>O
 inoremap { {}<left>
+inoremap {} {}
 inoremap {<Space> {  }<left><left>
 inoremap {<Space>, {  },<left><left><left>
 inoremap {, {},<left><left>
