@@ -252,6 +252,9 @@ inoremap {, {},<left><left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {<CR>, {<CR>},<ESC>O
 
+" Jumping in insert mode
+inoremap <C-e> <C-o>$
+
 " new line mappings
 nnoremap oo o<ESC>O
 nnoremap OO O<ESC>O
