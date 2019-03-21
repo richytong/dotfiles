@@ -52,6 +52,14 @@ function ddy__git__s {
     cd $CUR_PATH    
 }
 
+function ddy__mongo__up {
+    docker run -p 27017:27017 -d mongo:4.0.6-xenial
+}
+
+function ddy__mongo__down {
+    docker ps -a | grep mongo:4.0.6-xenial | awk '{print $1}' | xargs docker rm -f
+}
+
 function ddy__redis__up {
     docker run -p 6379:6379 -d redis:5.0.3
 }
