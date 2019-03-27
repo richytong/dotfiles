@@ -52,6 +52,23 @@ function ddy__git__s {
     cd $CUR_PATH    
 }
 
+function ddy__npm__publish {
+    CUR_PATH=$(pwd)
+    for i in $(ls $DANDY_PATH); do
+        printf "publishing $i\n"
+        cd $DANDY_PATH/$i
+        if ! git diff-files --quiet; then
+            printf "working tree not clean, skipping"
+            continue
+        fi
+        npm version patch
+        npm publish &>/dev/null &
+        git push &>/dev/null &
+    done
+    printf "setup jobs done"
+    cd $CUR_PATH
+}
+
 function ddy__mongo__up {
     docker run -p 27017:27017 -d mongo:4.0.6-xenial
 }
