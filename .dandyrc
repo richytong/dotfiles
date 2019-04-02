@@ -6,6 +6,13 @@ export DANDY_CONFIG_PATH="$DANDY_PATH/dandy-config-files/lib"
 
 alias cddy="cd $DANDY_PATH"
 
+containsElement () {
+  local e match="$1"
+  shift
+  for e; do [[ "$e" == "$match" ]] && return 0; done
+  return 1
+}
+
 function arimuscp {
     ARIMUS_PATH=$HOME/dev/arimuscorp
     ARIMUS_NODE_MODULES_PATH=$DANDY_PATH/dandy-app/node_modules/\@arimuscorp
@@ -54,20 +61,45 @@ function ddy__git__s {
     cd $CUR_PATH    
 }
 
+PUBLISH_IGNORE=(
+    "arimustmp"
+    "dandy-app"
+    "dandy-config-files"
+    "developer-setup-guide"
+)
+
+function ddy__npm__needs-publish {
+    CUR_PATH=$(pwd)
+    for i in $(ls $DANDY_PATH); do
+        cd $DANDY_PATH/$i
+        if containsElement "$i" "${PUBLISH_IGNORE[@]}"; then
+            continue
+        fi
+        if ! git describe --exact-match HEAD >/dev/null 2>&1; then
+            echo "$i"
+        fi
+    done
+    cd $CUR_PATH
+}
+
 function ddy__npm__publish {
     CUR_PATH=$(pwd)
     for i in $(ls $DANDY_PATH); do
-        printf "publishing $i\n"
         cd $DANDY_PATH/$i
         if ! git diff-files --quiet; then
-            printf "working tree not clean, skipping"
             continue
         fi
+        if git describe --exact-match HEAD >/dev/null 2>&1; then
+            continue
+        fi
+        if containsElement "$i" "${PUBLISH_IGNORE[@]}"; then
+            continue
+        fi
+        echo -e "publishing $i\n"
         npm version patch
         npm publish &>/dev/null &
         git push &>/dev/null &
     done
-    printf "setup jobs done"
     cd $CUR_PATH
 }
 
