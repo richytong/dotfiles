@@ -64,6 +64,7 @@ function ddy__git__s {
 PUBLISH_IGNORE=(
     "arimustmp"
     "dandy-app"
+    "dandy-admin"
     "dandy-config-files"
     "developer-setup-guide"
 )
