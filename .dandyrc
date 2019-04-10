@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 export DANDY_ENV="richard_local"
+export DANDY_DEBUG=1
 export DANDY_PATH="$HOME/dev/dandy"
 export DANDY_CONFIG_PATH="$DANDY_PATH/dandy-config-files/lib"
 
@@ -67,6 +68,7 @@ PUBLISH_IGNORE=(
     "dandy-admin"
     "dandy-config-files"
     "developer-setup-guide"
+    "dandylogs"
 )
 
 function ddy__npm__needs-publish {
