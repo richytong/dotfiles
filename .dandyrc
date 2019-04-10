@@ -69,6 +69,7 @@ PUBLISH_IGNORE=(
     "dandy-config-files"
     "developer-setup-guide"
     "dandylogs"
+    "dandytest"
 )
 
 function ddy__npm__needs-publish {
