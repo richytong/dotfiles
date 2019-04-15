@@ -43,6 +43,9 @@ nmap <leader>q :q<cr>
 " Tab completion for file related tasks
 set path+=**
 
+" Relative line numbers to cursor
+set relativenumber
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
