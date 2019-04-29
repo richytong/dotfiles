@@ -259,7 +259,7 @@ inoremap {, {},<left><left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {<CR>, {<CR>},<ESC>O
 
-" Moving lines and selections
+" Moving lines and selections (mac)
 nnoremap ∆ :m .+1<CR>==
 nnoremap ˚ :m .-2<CR>==
 inoremap ∆ <Esc>:m .+1<CR>==gi
@@ -267,16 +267,20 @@ inoremap ˚ <Esc>:m .-2<CR>==gi
 vnoremap ∆ :m '>+1<CR>gv=gv
 vnoremap ˚ :m '<-2<CR>gv=gv
 
+" Moving lines and selections (arch)
+nnoremap <RAlt-j> :m .+1<CR>==
+nnoremap <RAlt-k> :m .-2<CR>==
+inoremap <RAlt-j> <Esc>:m .+1<CR>==gi
+inoremap <RAlt-k> <Esc>:m .-2<CR>==gi
+vnoremap <RAlt-j> :m '>+1<CR>gv=gv
+vnoremap <RAlt-k> :m '<-2<CR>gv=gv
+
 " Jumping in insert mode
 inoremap <C-e> <C-o>$
 
 " new line mappings
 nnoremap oo o<ESC>O
 nnoremap OO O<ESC>O
-
-" jump to next non whitespace line from current cursor
-nnoremap <C-k> :call search('\%' . virtcol('.') . 'v\S', 'bW')<CR>
-nnoremap <C-j> :call search('\%' . virtcol('.') . 'v\S', 'W')<CR>
 
 " Delete trailing white space on save, useful for some filetypes ;)
 fun! CleanExtraSpaces()

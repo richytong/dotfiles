@@ -49,3 +49,7 @@ URxvt*color15:         #DDDDDD
 URxvt*foreground:      #FFFFFF
 URxvt*background:      #000000
 URxvt*cursorColor:     #FFFFFF
+
+! URxvt special keys
+URxvt.keysym.Mod3-j:   \033<RAlt-j>
+URxvt.keysym.Mod3-k:   \033<RAlt-k>
