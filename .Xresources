@@ -30,7 +30,7 @@ URxvt.boldFont:        xft:DejaVu Sans Mono:bold:size=8:antialias=true
 ! normal
 URxvt*color0:          #000000
 URxvt*color1:          #B40000
-URxvt*color2:          #FFFFFF
+URxvt*color2:          #00AA00
 URxvt*color3:          #AAAA00
 URxvt*color4:          #5555AA
 URxvt*color5:          #CC00CC
