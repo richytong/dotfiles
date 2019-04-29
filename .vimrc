@@ -136,7 +136,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme monokai
+    colorscheme beeg
 catch
 endtry
 
