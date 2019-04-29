@@ -1,9 +1,14 @@
 #!/bin/sh
 
+# Cursor
 xset r rate 200 60
-xrdb ~/.Xresources
+
+# Wallpaper
+feh --bg-scale ~/media/orth.png
+
 xmodmap ~/.Xmodmap
 xmodmap -e "remove Mod1 = Alt_R" -e "add Mod3 = Alt_R"
+xrdb ~/.Xresources
 
 # Make meta key work with urxvt
 read -r -d '' PyURxvtMeta8 <<-'EOF'
@@ -20,4 +25,5 @@ EOF
 
 xrdb -merge <(python3 <<<"$PyURxvtMeta8")
 
-exec i3
+# wm
+exec i3-gaps
