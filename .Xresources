@@ -1,0 +1,51 @@
+! du | xdu
+xdu*foreground:       gray
+xdu*background:       black
+xdu*window.width:     1024
+xdu*window.height:    768
+xdu.ncol:             4
+xdu.font:             -*-helvetica-bold-r-normal--18-*
+xdu.showsize:         False
+xdu.order:            size
+xdu*help*foreground:  green
+xdu*help*background:  red4
+xdu*help*font:        -*-helvetica-bold-r-normal--18-*
+
+! xpdf
+xpdf.initalZoom:      width
+xpdf.reverseVideo:    true
+xpdf.toolTipEnable:   false
+
+! URxvt
+URxvt*autoWrap:        true
+URxvt*faceName:        xft:DejaVu Sans Mono:size=15:antialias=true
+URxvt*metaSendsEscape: true
+URxvt*scrollBar:       false
+
+! URxvt fonts
+URxvt.font:            xft:DejaVu Sans Mono:size=8:antialias=true
+URxvt.boldFont:        xft:DejaVu Sans Mono:bold:size=8:antialias=true
+
+! URxvt colors
+! normal
+URxvt*color0:          #000000
+URxvt*color1:          #B40000
+URxvt*color2:          #FFFFFF
+URxvt*color3:          #AAAA00
+URxvt*color4:          #5555AA
+URxvt*color5:          #CC00CC
+URxvt*color6:          #00AAAA
+URxvt*color7:          #AAAAAA
+! bright (bold)
+URxvt*color8:          #555555
+URxvt*color9:          #FFF000
+URxvt*color10:         #00DD00
+URxvt*color11:         #FFFF00
+URxvt*color12:         #6464FF
+URxvt*color13:         #FF00FF
+URxvt*color14:         #00EEEE
+URxvt*color15:         #DDDDDD
+! misc
+URxvt*foreground:      #FFFFFF
+URxvt*background:      #000000
+URxvt*cursorColor:     #FFFFFF
