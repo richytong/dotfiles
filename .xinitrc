@@ -3,6 +3,9 @@
 # Cursor
 xset r rate 200 60
 
+# Hide cursor
+unclutter
+
 # Wallpaper
 feh --bg-scale ~/media/orth.png
 
