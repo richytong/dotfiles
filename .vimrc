@@ -282,6 +282,10 @@ inoremap <C-e> <C-o>$
 nnoremap oo o<ESC>O
 nnoremap OO O<ESC>O
 
+" Copy n paste (requires gvim)
+vnoremap <C-c> "*y :let @+=@*<CR>
+map <C-p> "+p
+
 " Delete trailing white space on save, useful for some filetypes ;)
 fun! CleanExtraSpaces()
     let save_cursor = getpos(".")
