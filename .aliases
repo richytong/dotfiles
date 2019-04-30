@@ -8,7 +8,7 @@ else # macOS `ls`
 fi
 
 # Always use color output for `ls`
-alias ls="command ls ${colorflag}"
+alias ls="command ls -a ${colorflag}"
 
 # Quick cd
 alias cdev="cd $HOME/dev"
