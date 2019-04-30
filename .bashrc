@@ -1,7 +1,6 @@
 #!/bin/sh
 
-# ENV
-export XDG_CONFIG_HOME="$HOME"
+# Various vars used by other programs
 export EDITOR="vim"
 export TERMINAL="urxvt"
 export BROWSER="firefox"
