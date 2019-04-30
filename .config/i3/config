@@ -10,7 +10,7 @@ smart_borders on
 # #---Basic Definitions---# #
 set $mod Mod1
 set $term --no-startup-id $TERMINAL
-# set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
+set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
 
 # #---Status Bar---# #
 bar {
