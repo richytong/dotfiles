@@ -6,10 +6,13 @@ xset r rate 200 60
 # Wallpaper
 feh --bg-scale ~/media/orth.png
 
+# Clipboard
+autocutsel -selection PRIMARY -fork
+
+# X stuff
 xmodmap ~/.Xmodmap
 xmodmap -e "remove Mod1 = Alt_R" -e "add Mod3 = Alt_R"
 xrdb ~/.Xresources
-
 # Make meta key work with urxvt
 read -r -d '' PyURxvtMeta8 <<-'EOF'
 	#!/usr/bin/env python3

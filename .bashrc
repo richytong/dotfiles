@@ -1,7 +1,14 @@
 #!/bin/sh
 
-# XDG
-export XDG_CONFIG_HOME=$HOME
+# ENV
+export XDG_CONFIG_HOME="$HOME"
+export EDITOR="vim"
+export TERMINAL="urxvt"
+export BROWSER="firefox"
+export READER="zathura"
+
+# Adds `~/.scripts` and all subdirectories to $PATH
+export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 
 # Manual sourcing
 for file in ~/.{aliases,gorc,nvmrc,pyenvrc,dandyrc,sshagentrc}; do
