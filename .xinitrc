@@ -10,7 +10,7 @@ xset r rate 200 60
 unclutter --fork
 
 # Wallpaper
-feh --bg-scale ~/media/orth.png
+feh --bg-scale ~/.media/orth.png
 
 # Remappings
 xmodmap ~/.Xmodmap
