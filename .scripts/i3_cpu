@@ -1,0 +1,5 @@
+#!/bin/sh
+# CPU use %
+
+cpu=$(mpstat | awk '/all/ {print $4}')
+echo "💻 $cpu%"

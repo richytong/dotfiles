@@ -1,8 +1,5 @@
 #!/bin/sh
-# i3 block for memory usage
+# Memory usage
 
-case $BLOCK_BUTTON in
-    1) notify-send ""
-esac
-
-free -h | awk '/Mem:/ {print $3 "/" $2}'
+mem=$(free -h | awk '/Mem:/ {print $3 "/" $2}')
+echo "🐏 $mem"

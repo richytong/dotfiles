@@ -2,7 +2,39 @@ command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=pango
 
+[my_ip]
+command=i3_my_ip
+interval=once
+
+# [pacpackages]
+# command=i3_pacpackages
+# interval=once
+# signal=8
+
 [memory]
 command=i3_mem
 interval=1
-label=MEM
+
+[cpu]
+command=i3_cpu
+interval=1
+
+[cpu_temp]
+command=i3_cpu_temp
+interval=5
+
+[disk]
+command=i3_disk /
+interval=60
+
+[battery]
+command=i3_battery BAT0
+interval=1
+
+[internet]
+command=i3_internet
+interval=5
+
+[clock]
+command=i3_clock
+interval=30

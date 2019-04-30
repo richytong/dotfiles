@@ -1,0 +1,4 @@
+#!/bin/sh
+
+addr="$(curl ifconfig.me 2>/dev/null)" || exit
+grep "flag: " ~/.data/emoji | grep "$(geoiplookup $addr | sed 's/.*, //')" | sed "s/flag: //;s/;.*//"
