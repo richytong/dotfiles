@@ -22,8 +22,8 @@ bar {
 }
 
 # #---Menus---# #
-# Launcher
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+grave exec --no-startup-id dmenu_emoji
 
 # #---Screen Recording---# #
 bindsym Print exec --no-startup-id maim pic-full-"$(date +%s%3N).png"

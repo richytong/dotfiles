@@ -1,3 +1,28 @@
+! colors
+*color0:              #000000
+*color1:              #B40000
+*color2:              #00AA00
+*color3:              #AAAA00
+*color4:              #5555AA
+*color5:              #CC00CC
+*color6:              #00AAAA
+*color7:              #AAAAAA
+*color8:              #555555
+*color9:              #FFF000
+*color10:             #00DD00
+*color11:             #FFFF00
+*color12:             #6464FF
+*color13:             #FF00FF
+*color14:             #00EEEE
+*color15:             #DDDDDD
+*foreground:          #FFFFFF
+*background:          #000000
+*cursorColor:         #FFFFFF
+
+! transparency
+*transparent:         true
+*shading:             10
+
 ! du | xdu
 xdu*foreground:       gray
 xdu*background:       black
@@ -23,31 +48,7 @@ URxvt*scrollBar:       false
 URxvt*letterSpace:     0
 
 ! URxvt fonts
-URxvt.font:            xft:DejaVu Sans Mono:size=8:antialias=true
-
-! URxvt colors
-! normal
-URxvt*color0:          #000000
-URxvt*color1:          #B40000
-URxvt*color2:          #00AA00
-URxvt*color3:          #AAAA00
-URxvt*color4:          #5555AA
-URxvt*color5:          #CC00CC
-URxvt*color6:          #00AAAA
-URxvt*color7:          #AAAAAA
-! bright (bold)
-URxvt*color8:          #555555
-URxvt*color9:          #FFF000
-URxvt*color10:         #00DD00
-URxvt*color11:         #FFFF00
-URxvt*color12:         #6464FF
-URxvt*color13:         #FF00FF
-URxvt*color14:         #00EEEE
-URxvt*color15:         #DDDDDD
-! misc
-URxvt*foreground:      #FFFFFF
-URxvt*background:      #000000
-URxvt*cursorColor:     #FFFFFF
+URxvt.font:            xft:monospace:size=8:antialias=true
 
 ! URxvt special keys
 URxvt.keysym.Mod3-j:   \033<RAlt-j>

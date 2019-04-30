@@ -1,4 +1,5 @@
 #!/bin/sh
+# i3 block for memory usage
 
 case $BLOCK_BUTTON in
     1) notify-send ""
