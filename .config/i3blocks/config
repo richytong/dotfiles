@@ -13,15 +13,15 @@ interval=once
 
 [memory]
 command=i3_mem
-interval=1
+interval=5
 
 [cpu]
 command=i3_cpu
-interval=1
+interval=5
 
 [cpu_temp]
 command=i3_cpu_temp
-interval=5
+interval=10
 
 [disk]
 command=i3_disk /
@@ -29,7 +29,7 @@ interval=60
 
 [battery]
 command=i3_battery BAT0
-interval=1
+interval=5
 
 [internet]
 command=i3_internet
