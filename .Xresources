@@ -18,13 +18,12 @@ xpdf.toolTipEnable:   false
 
 ! URxvt
 URxvt*autoWrap:        true
-URxvt*faceName:        xft:DejaVu Sans Mono:size=15:antialias=true
 URxvt*metaSendsEscape: true
 URxvt*scrollBar:       false
+URxvt*letterSpace:     0
 
 ! URxvt fonts
 URxvt.font:            xft:DejaVu Sans Mono:size=8:antialias=true
-URxvt.boldFont:        xft:DejaVu Sans Mono:bold:size=8:antialias=true
 
 ! URxvt colors
 ! normal

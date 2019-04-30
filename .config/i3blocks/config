@@ -3,6 +3,6 @@ separator_block_width=15
 markup=pango
 
 [memory]
-command=i3-mem
+command=i3_mem
 interval=1
 label=MEM
