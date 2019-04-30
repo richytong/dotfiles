@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# clear .scripts
+rm -rf "$HOME/.scripts"
+
 cd "$(dirname "${BASH_SOURCE}")";
 
 function doIt() {
