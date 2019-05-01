@@ -7,6 +7,9 @@ else # macOS `ls`
 	export LSCOLORS='ExFxCxDxBxegedabagacad'
 fi
 
+# What is vi
+alias vi="vim"
+
 # Always use color output for `ls`
 alias ls="command ls -a ${colorflag}"
 
