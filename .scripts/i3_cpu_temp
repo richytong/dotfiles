@@ -1,5 +1,5 @@
 #!/bin/sh
 # CPU temperature
 
-temp=$(sensors | awk '/^temp1/ {print $2}')
+temp=$(sensors -f | awk '/^temp1/ {print $2}')
 echo "🌡$temp"
