@@ -3,7 +3,7 @@
 # Various vars used by other programs
 export EDITOR="vim"
 export TERMINAL="urxvt"
-export BROWSER="firefox"
+export BROWSER="qutebrowser"
 export READER="zathura"
 
 # Adds `~/.scripts` and all subdirectories to $PATH
