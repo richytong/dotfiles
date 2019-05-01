@@ -11,4 +11,6 @@ chosen=$(
     | awk -F " - " '{print $1}'
 )
 
+test $chosen != "" || exit
+
 nmcli device wifi connect "$chosen" --ask
