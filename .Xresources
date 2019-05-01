@@ -21,7 +21,7 @@
 
 ! transparency
 *transparent:         true
-*shading:             10
+*shading:             20
 
 ! du | xdu
 xdu*foreground:       gray
