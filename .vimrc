@@ -284,7 +284,7 @@ nnoremap OO O<ESC>O
 
 " Copy n paste (requires gvim)
 vnoremap <C-c> "*y :let @+=@*<CR>
-map <C-p> "+P
+map <C-p> "+p
 
 " Delete trailing white space on save, useful for some filetypes ;)
 fun! CleanExtraSpaces()
