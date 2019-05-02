@@ -4,5 +4,8 @@
 dandymods=$(find $DANDY_PATH -maxdepth 1 -mindepth 1 -type d)
 
 for mod in $dandymods; do
-  cd $mod && echo $mod && git status -s
+  cd "$mod"
+  gs_out=$(git status -s | tr -d '[[:space:]]')
+  [ -z "$gs_out" ] && continue
+  echo "$mod" && git status -s
 done
