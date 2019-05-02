@@ -10,6 +10,7 @@ smart_borders on
 # #---Basic Definitions---# #
 set $mod Mod1
 set $term --no-startup-id $TERMINAL
+set $browser --no-startup-id $BROWSER
 set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
 
 # #---Status Bar---# #
@@ -25,6 +26,9 @@ bar {
 bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+grave exec --no-startup-id dmenu_emoji
 bindsym $mod+0xffc9 exec --no-startup-id dmenu_wifi
+
+# #---Applications---# #
+bindsym $mod+b exec --no-startup-id $BROWSER
 
 # #---Screen Recording---# #
 bindsym Print exec --no-startup-id maim pic-full-"$(date +%s%3N).png"
@@ -51,7 +55,6 @@ bindsym $mod+Shift+l move right
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-
 
 # window resizing
 bindsym $mod+o resize shrink width 5 px or 5 ppt
