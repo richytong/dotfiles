@@ -1,5 +1,14 @@
 #!/bin/sh
-# Check if any dandy modules need publish
+# Qualifying publish of dandy modules
+# --check outputs the modules that need publish without publishing
+
+check=""
+while [[ $# -gt 0 ]]; do
+  key="$1"
+  case $key in
+    -c|--check) check="1"; shift
+  esac
+done
 
 dandymods=$(find $DANDY_PATH -maxdepth 1 -mindepth 1 -type d)
 ignoremodsfile="$HOME/.data/ddy-ignore-publish-modules.txt"
@@ -18,4 +27,8 @@ for mod in $dandymods; do
   )
   [ "$head_commit_msg" == "$pkg_version" ] && continue
   echo $mod
+  [ -n "$check" ] && continue
+  npm version patch
+  npm publish &>/dev/null &
+  git push &>/dev/null &
 done
