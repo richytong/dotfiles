@@ -1,0 +1,21 @@
+#!/bin/sh
+# Check if any dandy modules need publish
+
+dandymods=$(find $DANDY_PATH -maxdepth 1 -mindepth 1 -type d)
+ignoremodsfile="$HOME/.data/ddy-ignore-publish-modules.txt"
+ignoremods=$(cat "$ignoremodsfile")
+
+for mod in $dandymods; do
+  grep -Fxq "$(basename $mod)" "$ignoremodsfile" && continue
+  cd "$mod"
+  head_commit_msg=$(git log -1 --pretty=%B | tr -d '[[:space:]]')
+  pkg_version=$(cat package.json \
+    | grep version \
+    | head -1 \
+    | awk -F: '{ print $2 }' \
+    | sed 's/[",]//g' \
+    | tr -d '[[:space:]]'
+  )
+  [ "$head_commit_msg" == "$pkg_version" ] && continue
+  echo $mod
+done
