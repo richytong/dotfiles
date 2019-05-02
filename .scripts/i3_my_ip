@@ -2,6 +2,11 @@
 # Location n ip
 
 addr="$(curl ifconfig.me 2>/dev/null)" || exit
-flagemoji=$(grep "flag: " ~/.data/emoji | grep "$(geoiplookup $addr | sed 's/.*, //')" | sed "s/flag: //;s/;.*//")
-myip=$(curl ifconfig.me )
+flagemoji=$(
+  grep "flag: " ~/.data/emoji \
+    | grep "$(geoiplookup $addr \
+    | sed 's/.*, //')" \
+    | sed "s/flag: //;s/;.*//"
+)
+myip=$(curl ifconfig.me)
 echo "$flagemoji $myip"
