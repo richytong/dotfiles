@@ -4,5 +4,6 @@ c.url.searchengines = {
     "ddg": "https://duckduckgo.com/?q={}",
     "aw": "https://wiki.archlinux.org/?search={}",
     "yt": "https://www.youtube.com/results?search_query={}",
-    "gh": "https://github.com/search?q={}"
+    "gh": "https://github.com/search?q={}",
+    "aws-sdk-js": "https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/{}.html"
 }
