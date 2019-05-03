@@ -40,7 +40,7 @@ bindsym $mod+n exec $term
 
 # Change container layout
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+e layout toggle split
 
 # Kill focused window
 bindsym $mod+q kill
