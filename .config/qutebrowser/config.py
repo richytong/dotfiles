@@ -10,5 +10,5 @@ c.url.searchengines = {
 }
 
 c.content.host_blocking.whitelist = [
-    "mixpanel.com"
+    "mixpanel.com", "mixpanel.com/*"
 ]
