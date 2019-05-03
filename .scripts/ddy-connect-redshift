@@ -1,0 +1,6 @@
+psql \
+  --host=dandy-analytics.cr0vagi3gosm.us-east-1.redshift.amazonaws.com \
+  --port=5439 \
+  --username=dandy\
+  --password \
+  --dbname=prod
