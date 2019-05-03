@@ -36,7 +36,11 @@ bindsym Shift+Print exec -no-startup-id maimpick
 
 # #---Windows---# #
 # New window
-bindsym $mod+n split horizontal exec $term
+bindsym $mod+n exec $term
+
+# Change container layout
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
 
 # Kill focused window
 bindsym $mod+q kill
