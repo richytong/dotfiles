@@ -37,11 +37,20 @@ let mapleader = ","
 " Fast saving
 nmap <leader>w :w!<cr>
 
+" Fast quitting
+nmap <leader>q :q!<cr>
+
+" Fast e
+nmap <leader>e :e<Space>
+
 " Tab completion for file related tasks
 set path+=**
 
 " Relative line numbers to cursor
 set relativenumber
+
+" My ctags
+set tags+=~/tags
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
