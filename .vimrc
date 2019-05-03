@@ -34,14 +34,15 @@ set autoread
 " like <leader>w saves the current file
 let mapleader = ","
 
-" Fast saving
+" Fast basic actions
 nmap <leader>w :w!<cr>
-
-" Fast quitting
 nmap <leader>q :q!<cr>
-
-" Fast e
 nmap <leader>e :e<Space>
+nmap <leader>f :f<Space>
+nmap <leader>h :h<Space>
+
+" Open terminal at directory containing current buffer
+nmap <leader>te :cd %:p:h<cr> :term<cr> <Esc>51;[":cd", "-"]<07>
 
 " Tab completion for file related tasks
 set path+=**
