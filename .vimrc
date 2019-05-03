@@ -42,7 +42,8 @@ nmap <leader>f :f<Space>
 nmap <leader>h :h<Space>
 
 " Open terminal at directory containing current buffer
-nmap <leader>te :cd %:p:h<cr> :term<cr> <Esc>51;[":cd", "-"]<07>
+" nmap <leader>te :cd %:p:h<cr> :terminal<cr>
+nmap <leader>te :terminal<cr>i
 
 " Tab completion for file related tasks
 set path+=**

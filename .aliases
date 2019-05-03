@@ -7,8 +7,10 @@ else # macOS `ls`
 	export LSCOLORS='ExFxCxDxBxegedabagacad'
 fi
 
-# What is vi
-alias vi="vim"
+# Everything is nvim
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
 
 # Always use color output for `ls`
 alias ls="command ls -a ${colorflag}"
