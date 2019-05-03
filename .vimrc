@@ -60,9 +60,8 @@ set tags+=~/tags
 " Set 1000 lines to the cursor - when moving vertically using j/k (fixes cursor)
 set so=1000
 
-" Avoid garbled characters in Chinese language windows OS
-let $LANG='en'
-set langmenu=en
+" Speak english
+set langmenu=$LANG
 
 " Turn on the Wild menu
 set wildmenu
