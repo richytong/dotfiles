@@ -24,7 +24,7 @@ done
 if [ -z "$running_elasticsearch" ]; then
   docker run -d \
     -p 9200:9200 \
-    -m "256m" \
+    -m "512m" \
     -e "discovery.type=single-node" \
     -e "ES_JAVA_OPTS=-Xms256m -Xmx256m" \
     "$elasticsearch_image"
