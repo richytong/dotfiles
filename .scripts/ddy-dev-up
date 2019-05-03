@@ -1,0 +1,64 @@
+#!/bin/sh
+# Stand up Dandy dev environmnet services
+
+mongo_image="mongo:4.0.6-xenial"
+redis_image="redis:5.0.3"
+elasticsearch_image="docker.elastic.co/elasticsearch/elasticsearch:6.5.4"
+
+running_mongo=""
+running_redis=""
+running_elasticsearch=""
+
+running_images=$(docker ps --format "{{.Image}}")
+
+for image_name in $running_images; do
+  [ $image_name == "$mongo_image" ] && running_mongo="1"
+  [ $image_name == "$redis_image" ] && running_redis="1"
+  [ $image_name == "$elasticsearch_image" ] && running_elasticsearch="1"
+done
+
+[ -z "$running_mongo" ] && docker run -p 27017:27017 -d "$mongo_image"
+
+[ -z "$running_redis" ] && docker run -p 6379:6379 -d "$redis_image"
+
+if [ -z "$running_elasticsearch" ]; then
+  docker run -p 9200:9200 -d -e "discovery.type=single-node" "$elasticsearch_image"
+  curl -X PUT "localhost:9200/party" \
+    -H 'Content-Type: application/json' \
+    -d @- <<HEREDOC
+{
+  "mappings": {
+    "party": {
+      "properties": {
+        "groups": {
+          "type": "nested",
+          "properties": {
+            "_id": {
+              "type": "keyword"
+            }
+          }
+        },
+        "age_range": {
+          "type": "integer_range"
+        },
+        "location": {
+          "type": "geo_point"
+        },
+        "start_time": {
+          "type": "date",
+          "format": "epoch_millis"
+        },
+        "end_time": {
+          "type": "date",
+          "format": "epoch_millis"
+        },
+        "time_frame": {
+          "type": "date_range",
+          "format": "epoch_millis"
+        }
+      }
+    }
+  }
+}
+HEREDOC
+fi
