@@ -12,6 +12,9 @@ alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
 
+# xserver clipboard
+alias xcb="xclip -selection c"
+
 # Always use color output for `ls`
 alias ls="command ls -a ${colorflag}"
 
