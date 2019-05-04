@@ -23,9 +23,15 @@ interval=5
 command=i3_cpu_temp
 interval=10
 
-[disk]
+[root_disk]
 command=i3_disk /
 interval=60
+label=/
+
+[home_disk]
+command=i3_disk ~
+interval=60
+label=~
 
 [battery]
 command=i3_battery BAT0

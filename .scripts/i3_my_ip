@@ -5,7 +5,8 @@ addr="$(curl ifconfig.me 2>/dev/null)" || exit
 flagemoji=$(grep "flag: " ~/.data/emoji \
   | grep "$(geoiplookup $addr \
   | sed 's/.*, //')" \
-  | sed "s/flag: //;s/;.*//"
+  | sed "s/flag: //;s/;.*//" \
+  | cut -d " " -f "1"
 )
 myip=$(curl ifconfig.me)
 echo "$flagemoji $myip"
