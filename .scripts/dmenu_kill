@@ -1,0 +1,4 @@
+#!/bin/sh
+
+ps axch -o pid,cmd:15,%mem --sort=%mem \
+  | dmenu -i -l 20 -fn Monospace-10

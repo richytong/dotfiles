@@ -19,5 +19,8 @@ xmodmap -e "remove Mod1 = Alt_R" -e "add Mod3 = Alt_R"
 # Uxrvt
 xrdb ~/.Xresources
 
+# notification daemon
+dunst &
+
 # wm
 exec i3
