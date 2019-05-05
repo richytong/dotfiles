@@ -13,4 +13,8 @@ chosen=$(nmcli -t device wifi list \
 
 [ -z "$chosen" ] && exit
 
-nmcli device wifi connect "$chosen" --ask
+password=$(zenity --password)
+
+nmcli device wifi connect "$chosen" password "$password"
+
+notify-send "Successfully connected to $chosen"
