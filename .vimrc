@@ -41,6 +41,7 @@ nmap <leader>e :e<Space>
 nmap <leader>f :f<Space>
 nmap <leader>h :h<Space>
 nmap <leader>b :b<Space>
+nmap <leader>bd :bdelete<Space>
 
 " Tab completion for file related tasks
 set path+=**
