@@ -16,11 +16,14 @@ feh --bg-scale ~/.media/orth.png
 xmodmap ~/.Xmodmap
 xmodmap -e "remove Mod1 = Alt_R" -e "add Mod3 = Alt_R"
 
-# Uxrvt
+# xserver xresources
 xrdb ~/.Xresources
 
 # notification daemon
 dunst &
+
+# compositor
+compton &
 
 # wm
 exec i3
