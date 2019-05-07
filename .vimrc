@@ -40,7 +40,7 @@ nmap <leader>q :q!<cr>
 nmap <leader>e :e<Space>
 nmap <leader>f :f<Space>
 nmap <leader>h :h<Space>
-nmap <leader>b :b<Space>
+nmap <leader>bb :b<Space>
 nmap <leader>bd :bdelete<Space>
 
 " Tab completion for file related tasks
@@ -242,30 +242,17 @@ set showtabline=0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Auto closing brackets
-inoremap " ""<left>
-inoremap ", "",<left><left>
-inoremap ' ''<left>
-inoremap ', '',<left><left>
-inoremap ` ``<left>
-inoremap `, ``,<left><left>
-inoremap ( ()<left>
-inoremap () ()
-inoremap (, (),<left><left>
+" Auto expanding brackets
+
+inoremap (; (<CR>);<ESC>O
+inoremap (, (<CR>),<ESC>O
 inoremap (<CR> (<CR>)<ESC>O
-inoremap (<CR>, (<CR>),<ESC>O
-inoremap [ []<left>
-inoremap [] []
-inoremap [, [],<left><left>
-inoremap [<CR> [<CR>]<ESC>O
-inoremap [<CR>, [<CR>],<ESC>O
-inoremap { {}<left>
-inoremap {} {}
-inoremap {<Space> {  }<left><left>
-inoremap {<Space>, {  },<left><left><left>
-inoremap {, {},<left><left>
+inoremap {; {<CR>};<ESC>O
+inoremap {, {<CR>},<ESC>O
 inoremap {<CR> {<CR>}<ESC>O
-inoremap {<CR>, {<CR>},<ESC>O
+inoremap [; [<CR>];<ESC>O
+inoremap [, [<CR>],<ESC>O
+inoremap [<CR> [<CR>]<ESC>O
 
 " Moving lines and selections (mac)
 nnoremap ∆ :m .+1<CR>==
@@ -277,10 +264,6 @@ vnoremap ˚ :m '<-2<CR>gv=gv
 
 " Jumping in insert mode
 inoremap <C-e> <C-o>$
-
-" new line mappings
-nnoremap oo o<ESC>O
-nnoremap OO O<ESC>O
 
 " Copy n paste (requires gvim)
 vnoremap <C-c> "*y :let @+=@*<CR>
