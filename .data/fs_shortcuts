@@ -1,6 +1,7 @@
 dev ~/dev
 dot ~/dev/dotfiles
 ddy ~/dev/dandy
+ddyanalytics ~/dev/dandy/dandy-analytics
 ddyapp ~/dev/dandy/dandy-app
 ddyauth ~/dev/dandy/dandy-auth
 ddycdn ~/dev/dandy/dandy-cdn
