@@ -30,21 +30,34 @@ filetype indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
+" Menus
+set wildmenu
+set wildmode=list:longest,full
+set wildcharm=<C-Z>
+
+" Ignore compiled files
+set wildignore=*.o,*~,*.pyc
+if has("win16") || has("win32")
+    set wildignore+=.git\*,.hg\*,.svn\*
+else
+    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+endif
+
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = ","
 
-" Fast basic actions
+" Muh glorious leader
 nmap <leader>w :w!<cr>
 nmap <leader>q :q!<cr>
-nmap <leader>ee :e<Space>
-nmap <leader>es :e<Space> $FS_SHORTCUT_
+nmap <leader>ee :e<Space><C-Z>
+nmap <leader>es :e<Space> $FS_SHORTCUT_<C-Z>
 nmap <leader>f :f<Space>
 nmap <leader>h :h<Space>
-nmap <leader>bb :b<Space>
-nmap <leader>bd :bdelete<Space>
-nmap <leader>vv :vnew
-nmap <leader>vs :vnew<Space> $FS_SHORTCUT_
+nmap <leader>bb :b<Space><C-Z>
+nmap <leader>bd :bdelete<Space><C-Z>
+nmap <leader>vv :vnew<Space><C-Z>
+nmap <leader>vs :vnew<Space> $FS_SHORTCUT_<C-Z>
 
 " Tab completion for file related tasks
 set path+=**
@@ -66,20 +79,6 @@ set so=1000
 
 " Speak english
 set langmenu=$LANG
-
-" Turn on the Wild menu
-set wildmenu
-
-" Wildmode list longest
-set wildmode=list:longest,full
-
-" Ignore compiled files
-set wildignore=*.o,*~,*.pyc
-if has("win16") || has("win32")
-    set wildignore+=.git\*,.hg\*,.svn\*
-else
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
-endif
 
 "Always show current position
 set ruler

@@ -1,5 +1,4 @@
 #!/bin/sh
 
 cat ~/.data/fs_shortcuts | awk '{print "export FS_SHORTCUT_"$1"="$2}' > ~/.fs_shortcuts_env
-
 cat ~/.data/fs_shortcuts | awk '{print "alias "$1"=\"cd "$2"\""}' > ~/.fs_shortcuts_alias

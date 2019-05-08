@@ -1,8 +1,6 @@
 #!/bin/sh
 # This script is only meant to be executed in the context of these dotfiles
 
-./fs_shortcuts_files
-
 cd "$(dirname "${BASH_SOURCE}")";
 
 rsync --exclude ".git/" \
@@ -14,3 +12,7 @@ rsync --exclude ".git/" \
   --exclude "fs_shortcuts_files" \
   -avh --no-perms . ~;
   source ~/.bash_profile;
+
+cd -
+
+./fs_shortcuts_files
