@@ -43,11 +43,10 @@ else
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 endif
 
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
+" Muh glorious leader
 let mapleader = ","
 
-" Muh glorious leader
+" Muh leader maps
 nmap <leader>w :w!<cr>
 nmap <leader>q :q!<cr>
 nmap <leader>ee :e<Space><C-Z>
@@ -67,9 +66,6 @@ set relativenumber
 
 " Automatically change directory when entering a buffer
 set autochdir
-
-" My ctags
-set tags+=~/tags
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
