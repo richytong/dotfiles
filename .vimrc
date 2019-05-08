@@ -37,7 +37,8 @@ let mapleader = ","
 " Fast basic actions
 nmap <leader>w :w!<cr>
 nmap <leader>q :q!<cr>
-nmap <leader>e :e<Space>
+nmap <leader>ee :e<Space>
+nmap <leader>es :e<Space> $FS_SHORTCUT_
 nmap <leader>f :f<Space>
 nmap <leader>h :h<Space>
 nmap <leader>bb :b<Space>

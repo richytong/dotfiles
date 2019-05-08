@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Various vars used by other programs
 export EDITOR="nvim"
@@ -14,6 +14,10 @@ for file in ~/.{aliases,gorc,nvmrc,pyenvrc,dandyrc,sshagentrc}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
+
+# Shortcuts sourcing
+source ~/.fs_shortcuts_env
+source ~/.fs_shortcuts_alias
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;

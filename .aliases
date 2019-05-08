@@ -16,11 +16,7 @@ alias vim="nvim"
 alias xcb="xclip -selection c"
 
 # Always use color output for `ls`
-alias ls="command ls -a ${colorflag}"
-
-# Quick cd
-alias cdev="cd $HOME/dev"
-alias cdot="cd $HOME/dev/dotfiles"
+alias ls="command ls ${colorflag}"
 
 # Print each PATH entry on a separate line
 alias ppath='echo -e ${PATH//:/\\n}'

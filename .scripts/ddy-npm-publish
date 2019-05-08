@@ -11,7 +11,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 dandymods=$(find $DANDY_PATH -maxdepth 1 -mindepth 1 -type d)
-ignoremodsfile="$HOME/.data/ddy-ignore-publish-modules.txt"
+ignoremodsfile="$HOME/.data/ddy-ignore-publish-modules"
 ignoremods=$(cat "$ignoremodsfile")
 
 for mod in $dandymods; do

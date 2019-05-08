@@ -1,4 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/sh
+# This script is only meant to be executed in the context of these dotfiles
+
+./fs_shortcuts_files
 
 cd "$(dirname "${BASH_SOURCE}")";
 
@@ -8,5 +11,6 @@ rsync --exclude ".git/" \
   --exclude "install" \
   --exclude "README.md" \
   --exclude "LICENSE-MIT.txt" \
+  --exclude "fs_shortcuts_files" \
   -avh --no-perms . ~;
   source ~/.bash_profile;
