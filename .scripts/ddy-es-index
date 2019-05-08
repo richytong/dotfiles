@@ -1,0 +1,40 @@
+#!/bin/sh
+
+curl -X PUT localhost:9200/party  \
+  -H 'Content-Type: application/json' \
+  -d @- <<HEREDOC
+{
+    "mappings": {
+        "party": {
+            "properties": {
+                "groups": {
+                    "type": "nested",
+                    "properties": {
+                        "_id": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "age_range": {
+                    "type": "integer_range"
+                },
+                "location": {
+                    "type": "geo_point"
+                },
+                "start_time": {
+                    "type": "date",
+                    "format": "epoch_millis"
+                },
+                "end_time": {
+                    "type": "date",
+                    "format": "epoch_millis"
+                },
+                "time_frame": {
+                    "type": "date_range",
+                    "format": "epoch_millis"
+                }
+            }
+        }
+    }
+}
+HEREDOC

@@ -43,6 +43,8 @@ nmap <leader>f :f<Space>
 nmap <leader>h :h<Space>
 nmap <leader>bb :b<Space>
 nmap <leader>bd :bdelete<Space>
+nmap <leader>vv :vnew
+nmap <leader>vs :vnew<Space> $FS_SHORTCUT_
 
 " Tab completion for file related tasks
 set path+=**
@@ -209,11 +211,6 @@ map <C-l> <C-W>l
 
 " Split vnew windows to right
 set splitright
-
-" Opens a new window with entry path
-map <leader>n :new 
-map <leader>v :vnew 
-
 
 " Specify the behavior when switching between buffers
 try
