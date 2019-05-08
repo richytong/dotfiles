@@ -71,7 +71,7 @@ set langmenu=$LANG
 set wildmenu
 
 " Wildmode list longest
-set wildmode=list:longest
+set wildmode=list:longest,full
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
