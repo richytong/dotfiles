@@ -6,6 +6,7 @@ c.url.searchengines = {
     "aw": "https://wiki.archlinux.org/?search={}",
     "yt": "https://www.youtube.com/results?search_query={}",
     "gh": "https://github.com/search?q={}",
+    "amzn": "https://amazon.com/s?k={}",
     "aws-sdk-js": "https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/{}.html"
 }
 
