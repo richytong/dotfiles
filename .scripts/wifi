@@ -13,8 +13,7 @@ chosen=$(nmcli -t device wifi list \
 
 [ -z "$chosen" ] && exit
 
-sleep .1 && wmctrl -a zenity -b add,above &
-password=$(zenity --password) &
+password=$(dialog --no-cancel --passwordbox --insecure "Password" 10 60 3>&1 1>&2 2>&3 3>&1)
 
 nmcli device wifi connect "$chosen" password "$password"
 
