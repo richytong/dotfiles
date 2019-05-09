@@ -19,10 +19,6 @@
 *background:          #000000
 *cursorColor:         #FFFFFF
 
-! transparency
-*transparent:         true
-*shading:             20
-
 ! du | xdu
 xdu*foreground:       gray
 xdu*background:       black
