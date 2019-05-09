@@ -2,7 +2,7 @@
 
 # Various vars used by other programs
 export EDITOR="nvim"
-export TERMINAL="urxvt"
+export TERMINAL="kitty"
 export BROWSER="qutebrowser"
 export READER="zathura"
 
