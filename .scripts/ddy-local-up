@@ -17,9 +17,9 @@ for image_name in $running_images; do
   [ $image_name == "$elasticsearch_image" ] && running_elasticsearch="1"
 done
 
-[ -z "$running_mongo" ] && docker run -p 27017:27017 -d -m "256m" "$mongo_image"
+[ -z "$running_mongo" ] && docker run -p 27017:27017 -d "$mongo_image"
 
-[ -z "$running_redis" ] && docker run -p 6379:6379 -d -m "256m" "$redis_image"
+[ -z "$running_redis" ] && docker run -p 6379:6379 -d "$redis_image"
 
 if [ -z "$running_elasticsearch" ]; then
   docker run -d \
