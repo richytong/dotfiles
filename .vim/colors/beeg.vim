@@ -8,140 +8,142 @@ if exists("syntax_on")
 endif
 
 set t_Co=256
-let g:colors_name = "holymoly"
+let g:colors_name = "beeg"
+
+" Main Text Color - 195
 
 " Normal Text
-hi Normal         ctermfg=231  ctermbg=NONE cterm=bold
+hi Normal         ctermfg=195  ctermbg=NONE cterm=NONE
 
 " Nonexistent Characters Filler
-hi NonText        ctermfg=231  ctermbg=NONE cterm=bold
+hi NonText        ctermfg=195  ctermbg=NONE cterm=NONE
 
 " Syntax - Comment Group
-hi Comment        ctermfg=66   ctermbg=NONE cterm=bold
+hi Comment        ctermfg=66   ctermbg=NONE cterm=NONE
 
 " Syntax - Constant Group
-hi Constant       ctermfg=163  ctermbg=NONE cterm=bold
-hi String         ctermfg=29   ctermbg=NONE cterm=bold
-hi Character      ctermfg=163  ctermbg=NONE cterm=bold
-hi Number         ctermfg=163  ctermbg=NONE cterm=bold
-hi Boolean        ctermfg=163  ctermbg=NONE cterm=bold
-hi Float          ctermfg=163  ctermbg=NONE cterm=bold
+hi Constant       ctermfg=27   ctermbg=NONE cterm=NONE
+hi String         ctermfg=227  ctermbg=NONE cterm=NONE
+hi Character      ctermfg=163  ctermbg=NONE cterm=NONE
+hi Number         ctermfg=163  ctermbg=NONE cterm=NONE
+hi Boolean        ctermfg=163  ctermbg=NONE cterm=NONE
+hi Float          ctermfg=163  ctermbg=NONE cterm=NONE
 
 " Syntax - Identifier Group
-hi Identifier     ctermfg=231  ctermbg=NONE cterm=bold
-hi Function       ctermfg=49   ctermbg=NONE cterm=bold
+hi Identifier     ctermfg=195  ctermbg=NONE cterm=NONE
+hi Function       ctermfg=49   ctermbg=NONE cterm=NONE
 
 " Syntax - Statement Group
-hi Statement      ctermfg=197  ctermbg=NONE cterm=bold
-hi Conditional    ctermfg=197  ctermbg=NONE cterm=bold
-hi Repeat         ctermfg=197  ctermbg=NONE cterm=bold
-hi Label          ctermfg=197  ctermbg=NONE cterm=bold
-hi Operator       ctermfg=197  ctermbg=NONE cterm=bold
-hi Keyword        ctermfg=197  ctermbg=NONE cterm=bold
-hi Exception      ctermfg=197  ctermbg=NONE cterm=bold
+hi Statement      ctermfg=75   ctermbg=NONE cterm=NONE
+hi Conditional    ctermfg=75   ctermbg=NONE cterm=NONE
+hi Repeat         ctermfg=75   ctermbg=NONE cterm=NONE
+hi Label          ctermfg=75   ctermbg=NONE cterm=NONE
+hi Operator       ctermfg=75   ctermbg=NONE cterm=NONE
+hi Keyword        ctermfg=75   ctermbg=NONE cterm=NONE
+hi Exception      ctermfg=75   ctermbg=NONE cterm=NONE
 
 " Syntax - Preprocessor Group
-hi PreProc        ctermfg=227  ctermbg=NONE cterm=bold
-hi Include        ctermfg=227  ctermbg=NONE cterm=bold
-hi Define         ctermfg=227  ctermbg=NONE cterm=bold
-hi Macro          ctermfg=227  ctermbg=NONE cterm=bold
-hi PreConduit     ctermfg=227  ctermbg=NONE cterm=bold
+hi PreProc        ctermfg=227  ctermbg=NONE cterm=NONE
+hi Include        ctermfg=227  ctermbg=NONE cterm=NONE
+hi Define         ctermfg=227  ctermbg=NONE cterm=NONE
+hi Macro          ctermfg=227  ctermbg=NONE cterm=NONE
+hi PreConduit     ctermfg=227  ctermbg=NONE cterm=NONE
 
 " Syntax - Type Group
-hi Type           ctermfg=51   ctermbg=NONE cterm=bold
-hi StorageClass   ctermfg=51   ctermbg=NONE cterm=bold
-hi Structure      ctermfg=51   ctermbg=NONE cterm=bold
-hi Typedef        ctermfg=51   ctermbg=NONE cterm=bold
+hi Type           ctermfg=51   ctermbg=NONE cterm=NONE
+hi StorageClass   ctermfg=51   ctermbg=NONE cterm=NONE
+hi Structure      ctermfg=51   ctermbg=NONE cterm=NONE
+hi Typedef        ctermfg=51   ctermbg=NONE cterm=NONE
 
 " Syntax - Special Group
-hi Special        ctermfg=224  ctermbg=NONE cterm=bold
-hi SpecialChar    ctermfg=224  ctermbg=NONE cterm=bold
-hi Tag            ctermfg=224  ctermbg=NONE cterm=bold
-hi Delimiter      ctermfg=224  ctermbg=NONE cterm=bold
-hi SpecialComment ctermfg=224  ctermbg=NONE cterm=bold
+hi Special        ctermfg=195  ctermbg=NONE cterm=NONE
+hi SpecialChar    ctermfg=195  ctermbg=NONE cterm=NONE
+hi Tag            ctermfg=195  ctermbg=NONE cterm=NONE
+hi Delimiter      ctermfg=195  ctermbg=NONE cterm=NONE
+hi SpecialComment ctermfg=195  ctermbg=NONE cterm=NONE
 
 " Syntax - Underlined
-hi Underlined     ctermfg=27   ctermbg=NONE cterm=bold,underline
+hi Underlined     ctermfg=27   ctermbg=NONE cterm=underline
 
 " Syntax - Ignore
-hi Ignore         ctermfg=None ctermbg=NONE cterm=bold
+hi Ignore         ctermfg=None ctermbg=NONE cterm=NONE
 
 " Syntax - Error
-hi Error          ctermfg=16   ctermbg=160  cterm=bold
+hi Error          ctermfg=16   ctermbg=160  cterm=NONE
 
 " Syntax - TODO
-hi Todo           ctermfg=16   ctermbg=220  cterm=bold
+hi Todo           ctermfg=16   ctermbg=220  cterm=NONE
 
 " Cursor
-hi Cursor         ctermfg=16   ctermbg=161  cterm=bold
-hi CursorColumn   ctermfg=NONE ctermbg=NONE cterm=bold
-hi CursorLine     ctermfg=NONE ctermbg=NONE cterm=bold
+hi Cursor         ctermfg=16   ctermbg=163  cterm=NONE
+hi CursorColumn   ctermfg=NONE ctermbg=NONE cterm=NONE
+hi CursorLine     ctermfg=NONE ctermbg=NONE cterm=NONE
 
 " Directory
-hi Directory      ctermfg=27   ctermbg=NONE cterm=bold
+hi Directory      ctermfg=27   ctermbg=NONE cterm=NONE
 
 " Search
-hi IncSearch      ctermfg=16   ctermbg=231  cterm=bold
+hi IncSearch      ctermfg=16   ctermbg=227  cterm=bold
 hi Search         ctermfg=16   ctermbg=51   cterm=bold
 
 " Diff
-hi DiffAdd        ctermfg=10   ctermbg=NONE cterm=bold
-hi DiffChange     ctermfg=190  ctermbg=NONE cterm=bold
-hi DiffDelete     ctermfg=160  ctermbg=NONE cterm=bold
-hi DiffText       ctermfg=16   ctermbg=190  cterm=bold
+hi DiffAdd        ctermfg=10   ctermbg=NONE cterm=NONE
+hi DiffChange     ctermfg=190  ctermbg=NONE cterm=NONE
+hi DiffDelete     ctermfg=160  ctermbg=NONE cterm=NONE
+hi DiffText       ctermfg=16   ctermbg=190  cterm=NONE
 
 " Visual Selection
-hi Visual         ctermfg=16   ctermbg=66   cterm=bold
+hi Visual         ctermfg=16   ctermbg=66   cterm=NONE
 
 " WildMenu Current Selection
-hi WildMenu       ctermfg=16   ctermbg=51   cterm=bold
+hi WildMenu       ctermfg=16   ctermbg=51   cterm=NONE
 
 " Line Numbers
-hi CursorLineNr   ctermfg=66   ctermbg=NONE cterm=bold 
-hi LineNr         ctermfg=66   ctermbg=NONE cterm=bold
+hi CursorLineNr   ctermfg=66   ctermbg=NONE cterm=NONE
+hi LineNr         ctermfg=66   ctermbg=NONE cterm=NONE
 
-" Status Line
-hi StatusLine     ctermfg=231  ctermbg=NONE cterm=bold
-hi StatusLineNC   ctermfg=250  ctermbg=NONE cterm=bold
+" Status Line is reversed
+hi StatusLine     ctermfg=66   ctermbg=16   cterm=bold
+hi StatusLineNC   ctermfg=66   ctermbg=16   cterm=bold
 
 " Tab Line
-hi TabLine        ctermfg=231  ctermbg=NONE cterm=bold
-hi TabLineFill    ctermfg=NONE ctermbg=NONE cterm=bold
-hi TabLineSel     ctermfg=16   ctermbg=231  cterm=bold
+hi TabLine        ctermfg=195  ctermbg=NONE cterm=NONE
+hi TabLineFill    ctermfg=NONE ctermbg=NONE cterm=NONE
+hi TabLineSel     ctermfg=16   ctermbg=195  cterm=NONE
 
 " Vertical Split Column
-hi VertSplit      ctermfg=NONE ctermbg=NONE cterm=bold
+hi VertSplit      ctermfg=NONE ctermbg=NONE cterm=NONE
 
 " Sign Column for Debugger
-hi SignColumn     ctermfg=16   ctermbg=190  cterm=bold
+hi SignColumn     ctermfg=16   ctermbg=190 cterm=NONE
 
 " Color Column :colorcolumn
-hi ColorColumn    ctermfg=NONE ctermbg=NONE cterm=bold
+hi ColorColumn    ctermfg=NONE ctermbg=NONE cterm=NONE
 
 " Folding (hide part of file)
-hi Folded         ctermfg=231  ctermbg=NONE cterm=bold
+hi Folded         ctermfg=195  ctermbg=NONE cterm=NONE
 
 " :map Output
-hi SpecialKey     ctermfg=224  ctermbg=NONE cterm=bold
+hi SpecialKey     ctermfg=195  ctermbg=NONE cterm=NONE
 
 " Matching Paren
-hi MatchParen     ctermfg=51   ctermbg=NONE cterm=bold
+hi MatchParen     ctermfg=51   ctermbg=NONE cterm=NONE
 
 " Popup Menu - Normal Item
-hi Pmenu          ctermfg=231  ctermbg=NONE cterm=bold
-hi PmenuSel       ctermfg=16   ctermbg=51   cterm=bold
-hi PmenuSbar      ctermfg=NONE ctermbg=NONE cterm=bold
-hi PmenuThumb     ctermfg=NONE ctermbg=NONE cterm=bold
+hi Pmenu          ctermfg=195  ctermbg=NONE cterm=NONE
+hi PmenuSel       ctermfg=16   ctermbg=51   cterm=NONE
+hi PmenuSbar      ctermfg=NONE ctermbg=NONE cterm=NONE
+hi PmenuThumb     ctermfg=NONE ctermbg=NONE cterm=NONE
 
 " Vim Messages
-hi ModeMsg        ctermfg=231  ctermbg=NONE cterm=bold
-hi MoreMsg        ctermfg=231  ctermbg=NONE cterm=bold
-hi Title          ctermfg=231  ctermbg=NONE cterm=bold
-hi WarningMsg     ctermfg=16   ctermbg=190  cterm=bold
-hi ErrorMsg       ctermfg=16   ctermbg=160  cterm=bold
+hi ModeMsg        ctermfg=195  ctermbg=NONE cterm=NONE
+hi MoreMsg        ctermfg=195  ctermbg=NONE cterm=NONE
+hi Title          ctermfg=195  ctermbg=NONE cterm=NONE
+hi WarningMsg     ctermfg=16   ctermbg=190  cterm=NONE
+hi ErrorMsg       ctermfg=16   ctermbg=160  cterm=NONE
 
 " Spelling
-hi SpellBad       ctermfg=16   ctermbg=190  cterm=bold
-hi SpellCap       ctermfg=16   ctermbg=190  cterm=bold
-hi SpellLocal     ctermfg=231  ctermbg=NONE cterm=bold
-hi SpellRare      ctermfg=231  ctermbg=NONE cterm=bold
+hi SpellBad       ctermfg=16   ctermbg=190  cterm=NONE
+hi SpellCap       ctermfg=16   ctermbg=190  cterm=NONE
+hi SpellLocal     ctermfg=195  ctermbg=NONE cterm=NONE
+hi SpellRare      ctermfg=195  ctermbg=NONE cterm=NONE
