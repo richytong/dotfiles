@@ -236,7 +236,6 @@ set showtabline=0
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Auto expanding brackets
-
 inoremap (; (<CR>);<ESC>O
 inoremap (, (<CR>),<ESC>O
 inoremap (<CR> (<CR>)<ESC>O

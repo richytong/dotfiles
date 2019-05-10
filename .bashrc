@@ -6,6 +6,9 @@ export TERMINAL="kitty"
 export BROWSER="qutebrowser"
 export READER="zathura"
 
+# FZF
+export FZF_DEFAULT_OPTS="--layout=reverse --bind=tab:toggle-down,btab:toggle-up"
+
 # Adds `~/.scripts` and all subdirectories to $PATH
 export PATH="$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//'):$PATH"
 
