@@ -147,3 +147,7 @@ hi SpellBad       ctermfg=16   ctermbg=190  cterm=NONE
 hi SpellCap       ctermfg=16   ctermbg=190  cterm=NONE
 hi SpellLocal     ctermfg=195  ctermbg=NONE cterm=NONE
 hi SpellRare      ctermfg=195  ctermbg=NONE cterm=NONE
+
+" Links
+hi! link TermCursor Cursor
+hi! link lCursor    Cursor
