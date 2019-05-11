@@ -1,25 +1,25 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maintainer:
-"       Richard Tong (richytong@gmail.com) - @richytong
-"
-" Sections:
-"    -> General
-"    -> VIM user interface
-"    -> Colors and Fonts
-"    -> Files and backups
-"    -> Text, tab and indent related
-"    -> Visual mode related
-"    -> Moving around, tabs and buffers
-"    -> Status line
-"    -> Editing mappings
-"    -> vimgrep searching and cope displaying
-"    -> Helper functions
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim run commands
+" Maintainer: Richard Tong (richytong@gmail.com) - @richytong
+" Note: This vimrc is really for NeoVim, else you'll get a subset of the features
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" No compatible
+set nocompatible
+
+" Install plugins
+call plug#begin('~/.config/nvim/plugged')
+Plug 'sheerun/vim-polyglot'
+Plug 'junegunn/fzf.vim'
+Plug 'vim-airline/vim-airline'
+call plug#end()
+
+" Airline Configs
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+
 " Sets how many lines of history VIM has to remember
 set history=500
 
@@ -43,21 +43,6 @@ else
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 endif
 
-" Muh glorious leader
-let mapleader = ","
-
-" Muh leader maps
-nmap <leader>w :w!<cr>
-nmap <leader>q :q!<cr>
-nmap <leader>ee :e<Space><C-Z>
-nmap <leader>es :e<Space> $FS_SHORTCUT_<C-Z>
-nmap <leader>f :f<Space>
-nmap <leader>h :h<Space>
-nmap <leader>bb :b<Space><C-Z>
-nmap <leader>bd :bdelete<Space><C-Z>
-nmap <leader>vv :vnew<Space><C-Z>
-nmap <leader>vs :vnew<Space> $FS_SHORTCUT_<C-Z>
-
 " Tab completion for file related tasks
 set path+=**
 
@@ -67,9 +52,6 @@ set relativenumber
 " Automatically change directory when entering a buffer
 set autochdir
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => VIM user interface
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set 1000 lines to the cursor - when moving vertically using j/k (fixes cursor)
 set so=1000
 
@@ -130,9 +112,6 @@ endif
 " Add a bit extra margin to the left
 set foldcolumn=0
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colors and Fonts
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
 syntax enable
 
@@ -141,13 +120,14 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
+" Set colorscheme
 try
     colorscheme beeg
 catch
 endtry
 
+" Set background
 set background=dark
-let g:solarized_termtrans = 1
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -163,17 +143,11 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Files, backups and undo
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
 set nowb
 set noswapfile
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Text, tab and indent related
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use spaces instead of tabs
 set expandtab
 
@@ -192,34 +166,9 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Moving around, tabs, windows and buffers
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Disable highlight when <leader><cr> is pressed
-map <silent> <leader><ESC> :noh<cr>
-
-" Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-
-" Split vnew windows to right
-set splitright
-
-" Specify the behavior when switching between buffers
-try
-  set switchbuf=useopen,usetab,newtab
-  set stal=2
-catch
-endtry
-
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-""""""""""""""""""""""""""""""
-" => Status line
-""""""""""""""""""""""""""""""
 " Show the status line
 set laststatus=2
 
@@ -232,9 +181,67 @@ set statusline+=\ Line\ %l,\ Col\ %c
 " Turn off tabline
 set showtabline=0
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Editing mappings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Fzf default command
+let $FZF_DEFAULT_COMMAND = 'find'
+
+" Fzf vsplit handler
+function! s:fzf_vsplit_handler(lines) abort
+  if empty(a:lines)
+    return
+  endif
+  let cmd = 'vsplit'
+  for item in a:lines
+    execute cmd escape(item, ' %#\')
+  endfor
+endfunction
+
+" Muh glorious leader
+let mapleader = ","
+
+" Muh leader maps
+nmap <leader>ww :w!<cr>
+nmap <leader>qq :q!<cr>
+nmap <leader>q. :bw<CR>
+nmap <leader>ee :e<Space><C-Z>
+nmap <leader>es :call fzf#run({ 'dir': '~/dev', 'sink': 'edit' })<CR>
+nmap <leader>bb :b<Space><C-Z>
+nmap <leader>bd :bw<Space><C-Z>
+nmap <leader>vv :vnew<Space><C-Z>
+nmap <leader>vh :vert help<Space>
+nmap <leader>vs :call fzf#run({ 'dir': '~/dev', 'sink': 'vsplit' })<CR>
+" nmap <leader>vs :call fzf#run({
+" \ 'dir': '~/dev',
+" \ 'sink*': function('<sid>fzf_vsplit_handler')
+" \ })<CR>
+
+" Disable highlight when <leader><cr> is pressed
+map <silent> <leader><ESC> :noh<cr>
+
+" Open terminal at directory containing current buffer
+" nmap <leader>te :cd %:p:h<cr> :terminal<cr>
+nmap <leader>te :terminal<cr>i
+
+" Terminal mode mappings
+tnoremap <Esc> <C-\><C-n>
+tnoremap <leader>qq <C-\><C-n><C-o> :bw! term://<C-a><CR>
+
+" Ctrl n and p for window movement
+map <C-p> <C-W>h
+map <C-n> <C-W>l
+
+" Split vnew windows to right
+set splitright
+
+" Specify the behavior when switching between buffers
+try
+  set switchbuf=useopen,usetab,newtab
+  set stal=2
+catch
+endtry
+
+" V magic mode
+nnoremap / /\v
+
 " Auto expanding brackets
 inoremap (; (<CR>);<ESC>O
 inoremap (, (<CR>),<ESC>O
@@ -254,12 +261,31 @@ inoremap ˚ <Esc>:m .-2<CR>==gi
 vnoremap ∆ :m '>+1<CR>gv=gv
 vnoremap ˚ :m '<-2<CR>gv=gv
 
+" Moving lines and selections (urxvt)
+nnoremap <M-lt>RAlt-j> :m .+1<CR>==
+nnoremap <M-lt>RAlt-k> :m .-2<CR>==
+inoremap <M-lt>RAlt-j> <Esc>:m .+1<CR>==gi
+inoremap <M-lt>RAlt-k> <Esc>:m .-2<CR>==gi
+vnoremap <M-lt>RAlt-j> :m '>+1<CR>gv=gv
+vnoremap <M-lt>RAlt-k> :m '<-2<CR>gv=gv
+
+" Moving lines and selections (kitty)
+nnoremap <M-j> :m .+1<CR>==
+nnoremap <M-k> :m .-2<CR>==
+inoremap <M-j> <Esc>:m .+1<CR>==gi
+inoremap <M-k> <Esc>:m .-2<CR>==gi
+vnoremap <M-j> :m '>+1<CR>gv=gv
+vnoremap <M-k> :m '<-2<CR>gv=gv
+
+" Quick buffer movement
+nnoremap <M-n> :bn<CR>
+nnoremap <M-p> :bp<CR>
+
 " Jumping in insert mode
 inoremap <C-e> <C-o>$
 
-" Copy n paste (requires gvim)
-vnoremap <C-c> "*y :let @+=@*<CR>
-map <C-p> "+p
+" Copy n paste to global registers
+vnoremap y "*y :let @+=@*<CR>
 
 " Delete trailing white space on save, useful for some filetypes ;)
 fun! CleanExtraSpaces()

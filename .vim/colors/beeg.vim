@@ -10,7 +10,11 @@ endif
 set t_Co=256
 let g:colors_name = "beeg"
 
-" Main Text Color - 195
+" Main Text Color    195
+" String Color       228
+" Number/Boolean     163
+" Args, Special      210
+" Globals            93
 
 " Normal Text
 hi Normal         ctermfg=195  ctermbg=NONE cterm=NONE
@@ -22,8 +26,8 @@ hi NonText        ctermfg=195  ctermbg=NONE cterm=NONE
 hi Comment        ctermfg=66   ctermbg=NONE cterm=NONE
 
 " Syntax - Constant Group
-hi Constant       ctermfg=27   ctermbg=NONE cterm=NONE
-hi String         ctermfg=227  ctermbg=NONE cterm=NONE
+hi Constant       ctermfg=93   ctermbg=NONE cterm=NONE
+hi String         ctermfg=228  ctermbg=NONE cterm=NONE
 hi Character      ctermfg=163  ctermbg=NONE cterm=NONE
 hi Number         ctermfg=163  ctermbg=NONE cterm=NONE
 hi Boolean        ctermfg=163  ctermbg=NONE cterm=NONE
@@ -43,11 +47,11 @@ hi Keyword        ctermfg=75   ctermbg=NONE cterm=NONE
 hi Exception      ctermfg=75   ctermbg=NONE cterm=NONE
 
 " Syntax - Preprocessor Group
-hi PreProc        ctermfg=227  ctermbg=NONE cterm=NONE
-hi Include        ctermfg=227  ctermbg=NONE cterm=NONE
-hi Define         ctermfg=227  ctermbg=NONE cterm=NONE
-hi Macro          ctermfg=227  ctermbg=NONE cterm=NONE
-hi PreConduit     ctermfg=227  ctermbg=NONE cterm=NONE
+hi PreProc        ctermfg=210  ctermbg=NONE cterm=NONE
+hi Include        ctermfg=210  ctermbg=NONE cterm=NONE
+hi Define         ctermfg=210  ctermbg=NONE cterm=NONE
+hi Macro          ctermfg=210  ctermbg=NONE cterm=NONE
+hi PreConduit     ctermfg=210  ctermbg=NONE cterm=NONE
 
 " Syntax - Type Group
 hi Type           ctermfg=51   ctermbg=NONE cterm=NONE
@@ -63,7 +67,7 @@ hi Delimiter      ctermfg=195  ctermbg=NONE cterm=NONE
 hi SpecialComment ctermfg=195  ctermbg=NONE cterm=NONE
 
 " Syntax - Underlined
-hi Underlined     ctermfg=27   ctermbg=NONE cterm=underline
+hi Underlined     ctermfg=93   ctermbg=NONE cterm=underline
 
 " Syntax - Ignore
 hi Ignore         ctermfg=None ctermbg=NONE cterm=NONE
@@ -75,22 +79,22 @@ hi Error          ctermfg=16   ctermbg=160  cterm=NONE
 hi Todo           ctermfg=16   ctermbg=220  cterm=NONE
 
 " Cursor
-hi Cursor         ctermfg=16   ctermbg=163  cterm=NONE
+hi Cursor         ctermfg=16   ctermbg=231  cterm=NONE
 hi CursorColumn   ctermfg=NONE ctermbg=NONE cterm=NONE
 hi CursorLine     ctermfg=NONE ctermbg=NONE cterm=NONE
 
 " Directory
-hi Directory      ctermfg=27   ctermbg=NONE cterm=NONE
+hi Directory      ctermfg=93   ctermbg=NONE cterm=NONE
 
 " Search
-hi IncSearch      ctermfg=16   ctermbg=227  cterm=bold
+hi IncSearch      ctermfg=16   ctermbg=228  cterm=bold
 hi Search         ctermfg=16   ctermbg=51   cterm=bold
 
 " Diff
 hi DiffAdd        ctermfg=10   ctermbg=NONE cterm=NONE
-hi DiffChange     ctermfg=190  ctermbg=NONE cterm=NONE
+hi DiffChange     ctermfg=220  ctermbg=NONE cterm=NONE
 hi DiffDelete     ctermfg=160  ctermbg=NONE cterm=NONE
-hi DiffText       ctermfg=16   ctermbg=190  cterm=NONE
+hi DiffText       ctermfg=16   ctermbg=220  cterm=NONE
 
 " Visual Selection
 hi Visual         ctermfg=16   ctermbg=66   cterm=NONE
@@ -115,7 +119,7 @@ hi TabLineSel     ctermfg=16   ctermbg=195  cterm=NONE
 hi VertSplit      ctermfg=NONE ctermbg=NONE cterm=NONE
 
 " Sign Column for Debugger
-hi SignColumn     ctermfg=16   ctermbg=190 cterm=NONE
+hi SignColumn     ctermfg=16   ctermbg=220 cterm=NONE
 
 " Color Column :colorcolumn
 hi ColorColumn    ctermfg=NONE ctermbg=NONE cterm=NONE
@@ -127,7 +131,7 @@ hi Folded         ctermfg=195  ctermbg=NONE cterm=NONE
 hi SpecialKey     ctermfg=195  ctermbg=NONE cterm=NONE
 
 " Matching Paren
-hi MatchParen     ctermfg=51   ctermbg=NONE cterm=NONE
+hi MatchParen     ctermfg=51   ctermbg=NONE cterm=underline
 
 " Popup Menu - Normal Item
 hi Pmenu          ctermfg=195  ctermbg=NONE cterm=NONE
@@ -139,12 +143,12 @@ hi PmenuThumb     ctermfg=NONE ctermbg=NONE cterm=NONE
 hi ModeMsg        ctermfg=195  ctermbg=NONE cterm=NONE
 hi MoreMsg        ctermfg=195  ctermbg=NONE cterm=NONE
 hi Title          ctermfg=195  ctermbg=NONE cterm=NONE
-hi WarningMsg     ctermfg=16   ctermbg=190  cterm=NONE
+hi WarningMsg     ctermfg=16   ctermbg=220  cterm=NONE
 hi ErrorMsg       ctermfg=16   ctermbg=160  cterm=NONE
 
 " Spelling
-hi SpellBad       ctermfg=16   ctermbg=190  cterm=NONE
-hi SpellCap       ctermfg=16   ctermbg=190  cterm=NONE
+hi SpellBad       ctermfg=16   ctermbg=220  cterm=NONE
+hi SpellCap       ctermfg=16   ctermbg=220  cterm=NONE
 hi SpellLocal     ctermfg=195  ctermbg=NONE cterm=NONE
 hi SpellRare      ctermfg=195  ctermbg=NONE cterm=NONE
 
