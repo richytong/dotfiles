@@ -182,18 +182,7 @@ set statusline+=\ Line\ %l,\ Col\ %c
 set showtabline=0
 
 " Fzf default command
-let $FZF_DEFAULT_COMMAND = 'find'
-
-" Fzf vsplit handler
-function! s:fzf_vsplit_handler(lines) abort
-  if empty(a:lines)
-    return
-  endif
-  let cmd = 'vsplit'
-  for item in a:lines
-    execute cmd escape(item, ' %#\')
-  endfor
-endfunction
+let $FZF_DEFAULT_COMMAND = 'es_find'
 
 " Muh glorious leader
 let mapleader = ","
@@ -209,10 +198,6 @@ nmap <leader>bd :bw<Space><C-Z>
 nmap <leader>vv :vnew<Space><C-Z>
 nmap <leader>vh :vert help<Space>
 nmap <leader>vs :call fzf#run({ 'dir': '~/dev', 'sink': 'vsplit' })<CR>
-" nmap <leader>vs :call fzf#run({
-" \ 'dir': '~/dev',
-" \ 'sink*': function('<sid>fzf_vsplit_handler')
-" \ })<CR>
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><ESC> :noh<cr>

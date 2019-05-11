@@ -3,8 +3,4 @@
 root_dir=$1
 [ -z "$root_dir" ] && root_dir=~
 
-du $root_dir -a -L --exclude=".git" --exclude="node_modules" 2>&1 \
-  | grep -v "Permission denied" \
-  | awk '{print $2}' \
-  | fzf -1 \
-  | xargs -r $EDITOR
+es_find "$root_dir" | fzf -1 | xargs -r $EDITOR
