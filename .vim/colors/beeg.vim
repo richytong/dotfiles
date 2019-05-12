@@ -12,9 +12,9 @@ let g:colors_name = "beeg"
 
 " Main Text Color    195
 " String Color       228
-" Number/Boolean     163
+" Number/Boolean     129
 " Args, Special      210
-" Globals            93
+" Globals            170
 
 " Normal Text
 hi Normal         ctermfg=195  ctermbg=NONE cterm=NONE
@@ -26,12 +26,12 @@ hi NonText        ctermfg=195  ctermbg=NONE cterm=NONE
 hi Comment        ctermfg=66   ctermbg=NONE cterm=NONE
 
 " Syntax - Constant Group
-hi Constant       ctermfg=93   ctermbg=NONE cterm=NONE
+hi Constant       ctermfg=170  ctermbg=NONE cterm=NONE
 hi String         ctermfg=228  ctermbg=NONE cterm=NONE
-hi Character      ctermfg=163  ctermbg=NONE cterm=NONE
-hi Number         ctermfg=163  ctermbg=NONE cterm=NONE
-hi Boolean        ctermfg=163  ctermbg=NONE cterm=NONE
-hi Float          ctermfg=163  ctermbg=NONE cterm=NONE
+hi Character      ctermfg=129  ctermbg=NONE cterm=NONE
+hi Number         ctermfg=129  ctermbg=NONE cterm=NONE
+hi Boolean        ctermfg=129  ctermbg=NONE cterm=NONE
+hi Float          ctermfg=129  ctermbg=NONE cterm=NONE
 
 " Syntax - Identifier Group
 hi Identifier     ctermfg=195  ctermbg=NONE cterm=NONE
@@ -67,7 +67,7 @@ hi Delimiter      ctermfg=195  ctermbg=NONE cterm=NONE
 hi SpecialComment ctermfg=195  ctermbg=NONE cterm=NONE
 
 " Syntax - Underlined
-hi Underlined     ctermfg=93   ctermbg=NONE cterm=underline
+hi Underlined     ctermfg=170  ctermbg=NONE cterm=underline
 
 " Syntax - Ignore
 hi Ignore         ctermfg=None ctermbg=NONE cterm=NONE
@@ -84,7 +84,7 @@ hi CursorColumn   ctermfg=NONE ctermbg=NONE cterm=NONE
 hi CursorLine     ctermfg=NONE ctermbg=NONE cterm=NONE
 
 " Directory
-hi Directory      ctermfg=93   ctermbg=NONE cterm=NONE
+hi Directory      ctermfg=170  ctermbg=NONE cterm=NONE
 
 " Search
 hi IncSearch      ctermfg=16   ctermbg=228  cterm=bold
