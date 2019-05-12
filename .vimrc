@@ -14,6 +14,7 @@ call plug#end()
 
 " Airline Configs
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'jsformatter'
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -265,6 +266,8 @@ vnoremap <M-k> :m '<-2<CR>gv=gv
 " Quick buffer movement
 nnoremap <M-n> :bn<CR>
 nnoremap <M-p> :bp<CR>
+tnoremap <M-n> <C-\><C-n>:bn<CR>
+tnoremap <M-p> <C-\><C-n>:bp<CR>
 
 " Jumping in insert mode
 inoremap <C-e> <C-o>$
