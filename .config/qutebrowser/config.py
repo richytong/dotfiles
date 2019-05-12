@@ -13,6 +13,3 @@ c.url.searchengines = {
 c.content.host_blocking.whitelist = [
     "mixpanel.com", "mixpanel.com/*"
 ]
-
-c.bind('Shift-n', 'tab-next')
-c.bind('Shift-p', 'tab-prev')
