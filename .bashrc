@@ -19,7 +19,6 @@ done;
 unset file;
 
 # Shortcuts sourcing
-source ~/.fs_shortcuts_env
 source ~/.fs_shortcuts_alias
 
 # Case-insensitive globbing (used in pathname expansion)
