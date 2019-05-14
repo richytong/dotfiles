@@ -209,7 +209,8 @@ nmap <leader>te :terminal<cr>i
 
 " Terminal mode mappings
 tnoremap <Esc> <C-\><C-n>
-tnoremap <leader>qq <C-\><C-n><C-o> :bw! term://<C-a><CR>
+tnoremap <leader>qq <C-\><C-n><C-o> :q!<CR>
+tnoremap <leader>q. <C-\><C-n><C-o> :bw! term://<C-a><CR>
 
 " Ctrl n and p for window movement
 map <C-p> <C-W>h
