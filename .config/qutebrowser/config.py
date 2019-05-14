@@ -7,7 +7,8 @@ c.url.searchengines = {
     "yt": "https://www.youtube.com/results?search_query={}",
     "gh": "https://github.com/search?q={}",
     "amzn": "https://amazon.com/s?k={}",
-    "aws-sdk-js": "https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/{}.html"
+    "aws-sdk-js": "https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/{}.html",
+    "emoji": "https://emojipedia.org/search/?q={}"
 }
 
 c.content.host_blocking.whitelist = [
