@@ -1,6 +1,6 @@
 #!/bin/sh
 
-root_dir="$1"
-[ -z "$root_dir" ] && root_dir=~
+dirs="$@"
+[ -z "$dirs" ] && dirs=~
 
-es_find "$root_dir" | fzf -1 | xargs -r $EDITOR
+es_find $dirs | fzf -1 | xargs -r $EDITOR
