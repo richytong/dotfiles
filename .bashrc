@@ -11,7 +11,7 @@ ps1_user="\[\e[36m\]\u\[\e[m\]"
 ps1_host="\[\e[35m\]\h\[\e[m\]"
 ps1_path="\[\e[34m\]⛏️\w\[\e[m\]"
 ps1_git_branch="\[\e[31m\]\$(fmt_git_branch)\[\e[m\]"
-ps1_sh="\[\e[37m\]🐚\s\V\[\e[m\]"
+ps1_sh="\[\e[37m\]🐚\s\v\[\e[m\]"
 export PS1="$ps1_user💕$ps1_host $ps1_path$ps1_git_branch $ps1_sh 👉🏻 "
 
 # FZF
