@@ -212,9 +212,11 @@ tnoremap <Esc> <C-\><C-n>
 tnoremap <leader>qq <C-\><C-n><C-o> :q!<CR>
 tnoremap <leader>q. <C-\><C-n><C-o> :bw! term://<C-a><CR>
 
-" Ctrl n and p for window movement
-map <C-p> <C-W>h
-map <C-n> <C-W>l
+" Window movement
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+map <C-j> <C-W>j
+map <C-k> <C-W>k
 
 " Split vnew windows to right
 set splitright
