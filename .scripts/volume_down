@@ -1,0 +1,7 @@
+#!/bin/sh
+
+amixer -q sset Master 3%-
+
+new_master=$(amixer sget Master | grep "dB" | cut -d "[" -f "2" | cut -d "]" -f "1")
+
+notify-send -t 500 "Master: $new_master"

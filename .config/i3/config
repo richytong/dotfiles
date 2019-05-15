@@ -29,6 +29,11 @@ bindsym $mod+grave exec --no-startup-id dmenu_emoji
 # #---Applications---# #
 bindsym $mod+b exec --no-startup-id $BROWSER
 
+# #---Volume---X X
+bindsym XF86AudioRaiseVolume exec volume_up
+bindsym XF86AudioLowerVolume exec volume_down
+bindsym XF86AudioMute exec volume_toggle
+
 # #---Screen Recording---# #
 bindsym Print exec --no-startup-id maim pic-full-"$(date +%s%3N).png"
 bindsym Shift+Print exec -no-startup-id maimpick
@@ -37,10 +42,6 @@ bindsym Shift+Print exec -no-startup-id maimpick
 # New window
 bindsym $mod+c split h exec $term
 bindsym $mod+v split v exec $term
-
-# Change container layout
-bindsym $mod+w layout tabbed
-# bindsym $mod+e layout toggle split
 
 # Kill focused window
 bindsym $mod+q kill
