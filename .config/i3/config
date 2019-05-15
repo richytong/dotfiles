@@ -35,7 +35,8 @@ bindsym Shift+Print exec -no-startup-id maimpick
 
 # #---Windows---# #
 # New window
-bindsym $mod+n exec $term
+bindsym $mod+c split h exec $term
+bindsym $mod+v split v exec $term
 
 # Change container layout
 bindsym $mod+w layout tabbed
@@ -60,8 +61,10 @@ bindsym $mod+Shift+l move right
 bindsym $mod+f fullscreen toggle
 
 # window resizing
-bindsym $mod+o resize shrink width 5 px or 5 ppt
-bindsym $mod+p resize grow width 5 px or 5 ppt
+bindsym $mod+minus resize shrink width 5 px or 5 ppt
+bindsym $mod+equal resize grow width 5 px or 5 ppt
+bindsym $mod+shift+minus resize shrink height 5 px or 5 ppt
+bindsym $mod+shift+equal resize grow height 5 px or 5 ppt
 
 # #---Workspaces---# #
 set $ws1 "1"
