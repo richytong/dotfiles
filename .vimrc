@@ -194,18 +194,17 @@ command! -bang -nargs=+ -complete=dir Rag call fzf#vim#ag_raw(<q-args>, {'option
 
 " Muh leader maps
 nmap <leader>ww :w!<cr>
-nmap <leader>qq :q!<cr>
-nmap <leader>q. :bw<CR>
+nmap <leader>qq :qa!<cr>
+nmap <leader>q. :bw!<CR>
+nmap <leader>qa :argdo<Space>bw!<CR>
 nmap <leader>ee :e<Space><C-Z>
 nmap <leader>es :call fzf#run({ 'sink': 'edit' })<CR>
 nmap <leader>bb :b<Space><C-Z>
 nmap <leader>bs :Buffers<CR>
-nmap <leader>bd :bw<Space><C-Z>
 nmap <leader>vv :vnew<Space><C-Z>
 nmap <leader>vh :vert help<Space>
 nmap <leader>vs :call fzf#run({ 'sink': 'vsplit' })<CR>
-nmap <leader>aa :args <C-Z>
-nmap <leader>as :bw! <C-a><CR> <bar> :args ~/dev/<C-a>
+nmap <leader>ad :argdo<Space>
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><ESC> :noh<cr>
@@ -216,7 +215,7 @@ nmap <leader>te :terminal<cr>i
 
 " Terminal mode mappings
 tnoremap <Esc> <C-\><C-n>
-tnoremap <leader>qq <C-\><C-n><C-o> :q!<CR>
+tnoremap <leader>qq <C-\><C-n><C-o> :qa!<CR>
 tnoremap <leader>q. <C-\><C-n><C-o> :bw! term://<C-a><CR>
 
 " Window movement
