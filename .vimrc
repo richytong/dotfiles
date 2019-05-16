@@ -197,8 +197,7 @@ nmap <leader>ww :w!<cr>
 nmap <leader>qq :q!<cr>
 nmap <leader>q. :bw<CR>
 nmap <leader>ee :e<Space><C-Z>
-nmap <leader>ff :f<Space><C-Z>
-nmap <leader>fs :call fzf#run({ 'sink': 'edit' })<CR>
+nmap <leader>es :call fzf#run({ 'sink': 'edit' })<CR>
 nmap <leader>bb :b<Space><C-Z>
 nmap <leader>bs :Buffers<CR>
 nmap <leader>bd :bw<Space><C-Z>
