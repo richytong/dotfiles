@@ -194,6 +194,7 @@ command! -bang -nargs=+ -complete=dir Rag call fzf#vim#ag_raw(<q-args>, {'option
 
 " Muh leader maps
 nmap <leader>ww :w!<cr>
+nmap <leader>wa :argdo<Space>w!<CR><CR>
 nmap <leader>qq :qa!<cr>
 nmap <leader>q. :bw!<CR>
 nmap <leader>qa :argdo<Space>bw!<CR>
