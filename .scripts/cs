@@ -1,0 +1,11 @@
+#!/bin/sh
+
+pattern="$1"
+[ -z "$pattern" ] && exit
+shift
+
+found_files=$(cs_find $pattern $@)
+
+[ -z "$found_files" ] && echo "Not found" && exit
+
+$EDITOR "+/$pattern" $found_files

@@ -5,9 +5,9 @@ dirs="$@"
 
 chosen=$(fs_find $dirs | fzf -1)
 
+[ -z "$chosen" ] && exit
+
 e_args="$chosen"
 [ -d "$chosen" ] && e_args=$(fs_find -t f $chosen)
-
-[ -z "$chosen" ] && exit
 
 $EDITOR $e_args

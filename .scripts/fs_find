@@ -12,6 +12,6 @@ dirs="$@"
 [ -z "$dirs" ] && dirs=~
 
 find_cmd="find $dirs"
-[ "$find_type" == "f" ] || [ "$find_type" == "d" ] && find_cmd="find $dirs -type $find_type"
+[ "$find_type" == "f" ] || [ "$find_type" == "d" ] && find_cmd+=" -type $find_type"
 
 $find_cmd ! -path "*.git*" ! -path "*node_modules*" 2>&1

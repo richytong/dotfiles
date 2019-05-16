@@ -7,8 +7,4 @@ shift
 dirs="$@"
 [ -z "$dirs" ] && dirs=~
 
-find_cmd="ag $pattern $dirs"
-
-$find_cmd 2>&1 \
-  | grep -v "Permission denied"
-
+ag -l --hidden --ignore "*.git*" --ignore "*node_modules*" $pattern $dirs 2>/dev/null
