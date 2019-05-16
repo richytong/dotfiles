@@ -1,10 +1,14 @@
 #!/bin/sh
 
-pattern="$1"
-[ -z "$pattern" ] && exit
+max_size="10000"
+
+exp="$1"
+[ -z "$exp" ] && exit
 shift
 
 dirs="$@"
 [ -z "$dirs" ] && dirs=~/dev
 
-ag -l --hidden --ignore "*.git*" --ignore "*node_modules*" $pattern $dirs 2>/dev/null
+ag -l --hidden --ignore "*.git*" --ignore "*node_modules*" $exp $dirs 2>/dev/null \
+  | xargs du \
+  | awk -v max_size="$max_size" '{ if ($1 < max_size) { print $2 } }'
