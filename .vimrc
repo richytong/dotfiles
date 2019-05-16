@@ -183,22 +183,28 @@ set statusline+=\ Line\ %l,\ Col\ %c
 set showtabline=0
 
 " Fzf default command
-let $FZF_DEFAULT_COMMAND = 'es_find'
+let $FZF_DEFAULT_COMMAND = 'es_find -t f'
 
 " Muh glorious leader
 let mapleader = ","
+
+" Rag
+command! -bang -nargs=+ -complete=dir Rag call fzf#vim#ag_raw(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
 " Muh leader maps
 nmap <leader>ww :w!<cr>
 nmap <leader>qq :q!<cr>
 nmap <leader>q. :bw<CR>
 nmap <leader>ee :e<Space><C-Z>
-nmap <leader>es :call fzf#run({ 'dir': '~/dev', 'sink': 'edit' })<CR>
+nmap <leader>es :call fzf#run({ 'sink': 'edit' })<CR>
 nmap <leader>bb :b<Space><C-Z>
+nmap <leader>bs :Buffers<CR>
 nmap <leader>bd :bw<Space><C-Z>
 nmap <leader>vv :vnew<Space><C-Z>
 nmap <leader>vh :vert help<Space>
-nmap <leader>vs :call fzf#run({ 'dir': '~/dev', 'sink': 'vsplit' })<CR>
+nmap <leader>vs :call fzf#run({ 'sink': 'vsplit' })<CR>
+nmap <leader>aa :args <C-Z>
+nmap <leader>as :bw! <C-a><CR> <bar> :args ~/dev/<C-a>
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><ESC> :noh<cr>

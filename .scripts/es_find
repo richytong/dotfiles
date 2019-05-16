@@ -1,8 +1,17 @@
 #!/bin/sh
 
+declare find_type
+while getopts "t:" o; do case "${o}" in
+  t) find_type=${OPTARG} ;;
+  *) printf "Invalid option -%s\\n" "$o" && exit ;;
+esac done
+
+shift $((OPTIND - 1))
+
 dirs="$@"
 [ -z "$dirs" ] && dirs=~
 
-du $dirs -a -L --exclude=".git" --exclude="node_modules" 2>&1 \
-  | grep -v "Permission denied" \
-  | awk '{print $2}'
+find_cmd="find $dirs"
+[ "$find_type" == "f" ] || [ "$find_type" == "d" ] && find_cmd="find $dirs -type $find_type"
+
+$find_cmd ! -path "*.git*" ! -path "*node_modules*" 2>&1

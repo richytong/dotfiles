@@ -3,4 +3,9 @@
 dirs="$@"
 [ -z "$dirs" ] && dirs=~
 
-es_find $dirs | fzf -1 | xargs -r $EDITOR
+chosen=$(es_find $dirs | fzf -1)
+
+e_args="$chosen"
+[ -d "$chosen" ] && e_args=$(es_find -t f $chosen)
+
+$EDITOR $e_args

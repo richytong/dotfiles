@@ -15,7 +15,12 @@ ps1_sh="\[\e[37m\]🐚\s\v\[\e[m\]"
 export PS1="$ps1_user💕$ps1_host $ps1_path$ps1_git_branch $ps1_sh 👉🏻 "
 
 # FZF
-export FZF_DEFAULT_OPTS="--layout=reverse --bind=tab:toggle-down,btab:toggle-up"
+export FZF_DEFAULT_OPTS="--layout=reverse --bind=tab:toggle-down,btab:toggle-up,change:top+select-all"
+read -d '' FZF_DEFAULT_OPTS << EOF
+--multi
+--layout=reverse
+--bind=tab:toggle-down,btab:toggle-up,change:top+deselect-all,ctrl-a:select-all
+EOF
 
 # Adds `~/.scripts` and all subdirectories to $PATH
 export PATH="$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//'):$PATH"
