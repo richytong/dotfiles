@@ -5,6 +5,6 @@ pattern="$1"
 shift
 
 dirs="$@"
-[ -z "$dirs" ] && dirs=~
+[ -z "$dirs" ] && dirs=~/dev
 
 ag -l --hidden --ignore "*.git*" --ignore "*node_modules*" $pattern $dirs 2>/dev/null
