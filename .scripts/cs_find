@@ -1,6 +1,6 @@
 #!/bin/sh
 
-max_size="10000"
+max_size="5000"
 
 exp="$1"
 [ -z "$exp" ] && exit
