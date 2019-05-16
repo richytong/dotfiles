@@ -201,6 +201,7 @@ nmap <leader>ee :e<Space><C-Z>
 nmap <leader>es :call fzf#run({ 'sink': 'edit' })<CR>
 nmap <leader>bb :b<Space><C-Z>
 nmap <leader>bs :Buffers<CR>
+nmap <leader>bw :bw!<Space>
 nmap <leader>vv :vnew<Space><C-Z>
 nmap <leader>vh :vert help<Space>
 nmap <leader>vs :call fzf#run({ 'sink': 'vsplit' })<CR>
