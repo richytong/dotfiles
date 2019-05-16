@@ -1,0 +1,12 @@
+#!/bin/sh
+
+pattern="$1"
+[ -z "$pattern" ] && exit
+shift
+
+dirs="$@"
+[ -z "$dirs" ] && dirs=~
+
+find_cmd="ag $pattern $dirs"
+
+$find_cmd 2>&1
