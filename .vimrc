@@ -16,6 +16,7 @@ call plug#end()
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'jsformatter'
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#show_tabs = 0
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
