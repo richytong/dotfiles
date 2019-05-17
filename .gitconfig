@@ -9,4 +9,4 @@
     s = status -sb --
     d = diff
     a = add .
-    c = commit
+    c = commit -v
