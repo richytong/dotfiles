@@ -9,6 +9,6 @@ shift
 dirs="$@"
 [ -z "$dirs" ] && dirs=~/dev
 
-ag -l --hidden --ignore "*.git*" --ignore "*node_modules*" $exp $dirs 2>/dev/null \
+ag -l --follow --hidden --ignore "*.git*" --ignore "*node_modules*" $exp $dirs 2>/dev/null \
   | xargs -r du \
   | awk -v max_size="$max_size" '{ if ($1 < max_size) { print $2 } }'
