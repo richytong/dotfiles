@@ -32,9 +32,9 @@ ddysettings      ~/dev/dandy/dandy-settings
 ddytest          ~/dev/dandy/dandytest
 ddyuser          ~/dev/dandy/dandy-uesr
 ddyusergroup     ~/dev/dandy/dandy-user-group
-ams              ~/dev/arimuscorp
-amsapp           ~/dev/arimuscorp/app
-amsapplib        ~/dev/arimuscorp/app/lib
-amsidynamo       ~/dev/arimuscorp/dynamo-interface
-amsiredis        ~/dev/arimuscorp/redis-interface
-amspushnotif     ~/dev/arimuscorp/push_notifications
+ams              ~/dev/arimus
+amsapp           ~/dev/arimus/app
+amsapplib        ~/dev/arimus/app/lib
+amsidynamo       ~/dev/arimus/dynamo-interface
+amsiredis        ~/dev/arimus/redis-interface
+amspushnotif     ~/dev/arimus/push_notifications
