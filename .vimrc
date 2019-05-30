@@ -250,6 +250,7 @@ inoremap {, {<CR>},<ESC>O
 inoremap [<CR> [<CR>]<ESC>O
 inoremap [; [<CR>];<ESC>O
 inoremap [, [<CR>],<ESC>O
+inoremap [{<CR> [{<CR>}]<ESC>O
 
 " Moving lines and selections (mac)
 nnoremap ∆ :m .+1<CR>==
