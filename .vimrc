@@ -243,6 +243,7 @@ nnoremap / /\v
 inoremap (; (<CR>);<ESC>O
 inoremap (, (<CR>),<ESC>O
 inoremap (<CR> (<CR>)<ESC>O
+inoremap ({<CR> ({<CR>})<ESC>O
 inoremap {; {<CR>};<ESC>O
 inoremap {, {<CR>},<ESC>O
 inoremap {<CR> {<CR>}<ESC>O
