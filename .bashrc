@@ -12,7 +12,7 @@ ps1_host="\[\e[35m\]\h\[\e[m\]"
 ps1_path="\[\e[34m\]⛏️\w\[\e[m\]"
 ps1_git_branch="\[\e[31m\]\$(fmt_git_branch)\[\e[m\]"
 ps1_sh="\[\e[37m\]🐚\s\v\[\e[m\]"
-ps1_gun="╦╤━╾"
+ps1_gun="/̵͇̿̿/'̿'̿̿̿"
 export PS1="┌─ $ps1_user💕$ps1_host $ps1_path$ps1_git_branch \n└─ $ps1_sh $ps1_gun "
 
 # FZF
