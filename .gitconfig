@@ -10,3 +10,4 @@
     d = diff
     a = add .
     c = commit -v
+    ch = checkout
