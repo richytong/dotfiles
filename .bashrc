@@ -18,7 +18,6 @@ export PS1="┌ » $ps1_user💕$ps1_host $ps1_path$ps1_git_branch \n└ » $ps1
 # FZF
 export FZF_DEFAULT_OPTS="--layout=reverse --bind=tab:toggle-down,btab:toggle-up,change:top+select-all"
 read -d '' FZF_DEFAULT_OPTS << EOF
---multi
 --layout=reverse
 --bind=tab:toggle-down,btab:toggle-up,change:top+deselect-all,ctrl-a:select-all
 EOF

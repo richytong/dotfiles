@@ -184,7 +184,7 @@ set statusline+=\ Line\ %l,\ Col\ %c
 set showtabline=0
 
 " Fzf default command
-let $FZF_DEFAULT_COMMAND = 'es_find -t f'
+let $FZF_DEFAULT_COMMAND = 'dev_find -t f'
 
 " Muh glorious leader
 let mapleader = ","
