@@ -4,4 +4,4 @@ git_out=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
 
 [ -z "$git_out" ] && exit 0
 
-echo " 🌿$git_out"
+echo -e " 🌿$git_out"
