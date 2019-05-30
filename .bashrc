@@ -27,7 +27,7 @@ EOF
 export PATH="$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//'):$PATH"
 
 # Manual sourcing
-for file in ~/.{aliases,gorc,nvmrc,pyenvrc,dandyrc,sshagentrc}; do
+for file in ~/.{aliases,functions,gorc,nvmrc,pyenvrc,dandyrc,sshagentrc}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
