@@ -10,7 +10,7 @@ xset r rate 200 60
 unclutter --fork
 
 # Wallpaper
-feh --bg-scale ~/.media/orth.png
+feh --bg-scale ~/.media/BT21-starry-sleepover.jpg
 
 # Remappings
 xmodmap ~/.Xmodmap

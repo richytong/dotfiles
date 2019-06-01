@@ -16,7 +16,7 @@ ps1_gun="/̵͇̿̿/'̿'̿̿̿"
 ps1=""
 ps1+="┌ » $ps1_user💕$ps1_host $ps1_path$ps1_git_branch $ps1_sh  \n"
 #ps1+="            🐇🐇🍎\n"
-ps1+="\n"
+#ps1+="\n"
 ps1+="└ » $ps1_gun "
 export PS1="$ps1"
 
