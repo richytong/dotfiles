@@ -24,7 +24,7 @@ bar {
 
 # #---Menus---# #
 bindsym $mod+d exec --no-startup-id rofi -show run
-bindsym $mod+grave exec --no-startup-id dmenu_emoji
+bindsym $mod+grave exec --no-startup-id rofi_emoji
 bindsym $mod+w exec --no-startup-id rofi -show window
 bindsym $mod+s exec --no-startup-id rofi -show ssh
 
