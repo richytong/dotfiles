@@ -23,8 +23,10 @@ bar {
 }
 
 # #---Menus---# #
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+grave exec --no-startup-id dmenu_emoji
+bindsym $mod+w exec --no-startup-id rofi -show window
+bindsym $mod+s exec --no-startup-id rofi -show ssh
 
 # #---Applications---# #
 bindsym $mod+b exec --no-startup-id $BROWSER
