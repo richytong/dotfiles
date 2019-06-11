@@ -15,11 +15,21 @@ set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
 
 # #---Status Bar---# #
 bar {
+    i3bar_command i3bar -t
 	font pango:mono 10
     status_command i3blocks
 	position bottom
 	mode dock
 	modifier None
+    separator_symbol "┃"
+    colors {
+        background         #00000040
+        focused_workspace  #ffffff50 #00000040 #ffffff
+		active_workspace   #00000001 #00000040 #000000
+		inactive_workspace #00000001 #00000040 #ffffff
+		urgent_workspace   #2f343a #900000 #ffffff
+        separator          #ffffff50
+    }
 }
 
 # #---Menus---# #
