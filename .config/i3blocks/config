@@ -2,9 +2,9 @@ command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=pango
 
-#[my_ip]
-#command=i3_my_ip
-#interval=once
+[my_ip]
+command=i3_my_ip
+interval=once
 
 # [pacpackages]
 # command=i3_pacpackages
