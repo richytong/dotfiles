@@ -5,6 +5,9 @@ TAB: menu-complete
 set colored-stats on
 set colored-completion-prefix on
 
+# Show file type with a character
+set visible-stats on
+
 # Make Tab autocomplete regardless of filename case
 set completion-ignore-case on
 
