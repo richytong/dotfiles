@@ -1,6 +1,9 @@
 # Use menu-complete
 TAB: menu-complete
 
+# Shift-tab completes backward
+"\e[Z": menu-complete-backward
+
 # Color
 set colored-stats on
 set colored-completion-prefix on
