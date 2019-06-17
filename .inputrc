@@ -1,3 +1,7 @@
+# Color
+set colored-stats on
+set colored-completion-prefix on
+
 # Make Tab autocomplete regardless of filename case
 set completion-ignore-case on
 
@@ -12,7 +16,7 @@ set mark-symlinked-directories on
 "\e[B": history-search-forward
 "\e[A": history-search-backward
 
-# Do not autocomplete hidden files unless the pattern explicitly begins with a dot
+# Do not autocomplete hidden files unless starting with .
 set match-hidden-files off
 
 # Show all autocomplete results at once
