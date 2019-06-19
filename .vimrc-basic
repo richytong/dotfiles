@@ -1,26 +1,9 @@
 " Vim run commands
 " Maintainer: Richard Tong (richytong@gmail.com) - @richytong
-" Note: This vimrc is really for NeoVim, else you'll get a subset of the features
+" Note: This vimrc should be compatible with all vims
 
 " Do not try to be backwards compatible with vi, let's get all the features of vim
 set nocompatible
-
-" Install plugins
-call plug#begin('~/.config/nvim/plugged')
-Plug 'sheerun/vim-polyglot' " syntax highlighting
-Plug 'junegunn/fzf.vim' " fuzzy finda fuzzy finda fuzzy finda
-Plug 'vim-airline/vim-airline' " better statusline
-call plug#end()
-
-" Airline Configs
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'jsformatter'
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#show_tabs = 0
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-let g:airline_symbols.space = "\ua0"
 
 " How many lines of history vim has to remember
 set history=500
@@ -147,12 +130,12 @@ endif
 
 " Specify the default color scheme
 try
-    colorscheme beeg
+    colorscheme default
 catch
 endtry
 
 " Background - this should match your terminal background
-set background=dark
+set background=white
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -215,15 +198,9 @@ set statusline+=\ %f
 set statusline+=\ %m
 set statusline+=\ Line\ %l,\ Col\ %c
 
-" Fzf default command
-let $FZF_DEFAULT_COMMAND = 'es_find -t f'
-
 " Set the leader key here
 " A leader key gives you really fast shortcuts like ,wq to write and quit real quick 
 let mapleader = ","
-
-" Rag
-command! -bang -nargs=+ -complete=dir Rag call fzf#vim#ag_raw(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
 " My mappings - you can change them but consider these
 nmap <leader>ww :w!<cr>
@@ -233,21 +210,14 @@ nmap <leader>qq :qa!<cr>
 nmap <leader>q. :bw!<CR>
 nmap <leader>qa :argdo<Space>bw!<CR>
 nmap <leader>ee :find<Space>.**/<C-Z>
-nmap <leader>es :call fzf#run({ 'sink': 'edit' })<CR>
 nmap <leader>bb :b<Space><C-Z>
-nmap <leader>bs :Buffers<CR>
 nmap <leader>bw :bw!<Space>
 nmap <leader>vv :vnew<Space><C-Z>
 nmap <leader>vh :vert help<Space>
-nmap <leader>vs :call fzf#run({ 'sink': 'vsplit' })<CR>
 nmap <leader>ad :argdo<Space>
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><ESC> :noh<cr>
-
-" Open terminal at directory containing current buffer
-" nmap <leader>te :cd %:p:h<cr> :terminal<cr>
-nmap <leader>te :terminal<cr>i
 
 " Terminal mode mappings
 tnoremap <Esc> <C-\><C-n>
