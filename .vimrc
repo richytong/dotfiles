@@ -232,7 +232,8 @@ nmap <leader>wa :argdo<Space>w!<CR><CR>
 nmap <leader>qq :qa!<cr>
 nmap <leader>q. :bw!<CR>
 nmap <leader>qa :argdo<Space>bw!<CR>
-nmap <leader>ee :find<Space>.**/<C-Z>
+nmap <leader>ee :e<Space><C-Z>
+nmap <leader>f. :find<Space>.**/<C-Z>
 nmap <leader>es :call fzf#run({ 'sink': 'edit' })<CR>
 nmap <leader>bb :b<Space><C-Z>
 nmap <leader>bs :Buffers<CR>
