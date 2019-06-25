@@ -26,7 +26,15 @@ out+=")"
 
 git_s_porcelain="$(git --git-dir="$dir/.git" --work-tree="$dir" status -s)"
 
-if [ ! -z "$cur_branch_comp" ] || [ ! -z "$git_s_porcelain" ]; then
+should_print=0
+if [ "$cur_branch" != "master" ]; then
+  should_print=1
+else
+  [ -z "$cur_branch_comp" ] || should_print=1
+  [ -z "$git_s_porcelain" ] || should_print=1
+fi
+
+if ((should_print)); then
   echo -e $out
   git --git-dir="$dir/.git" --work-tree="$dir" status -s
 fi
