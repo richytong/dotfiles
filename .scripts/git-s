@@ -19,10 +19,9 @@ NC='\033[0m'
 out=""
 out+="$BLUE$pretty_dir$NC"
 out+=" "
-out+="("
 out+="$GREEN$cur_branch$NC"
 [ -z "$cur_branch_tracking" ] || out+="...$RED$cur_branch_tracking$NC"
-out+=")"
+[ -z "$cur_branch_comp" ] || out+=" [$cur_branch_comp]"
 
 git_s_porcelain="$(git --git-dir="$dir/.git" --work-tree="$dir" status -s)"
 
