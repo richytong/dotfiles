@@ -1,0 +1,22 @@
+#!/bin/sh
+# Compare number of commits ahead/behind between two branches
+
+dir="$1"
+[ -z "$dir" ] && dir="$(pwd)"
+
+left_branch="$2"
+[ -z "$left_branch" ] && left_branch="master"
+
+right_branch="$3"
+[ -z "$right_branch" ] && right_branch="origin/master"
+
+read -r left_ct right_ct <<< $(
+  git --git-dir="$dir/.git" --work-tree="$dir" rev-list --left-right --count \
+    "$left_branch...$right_branch" 2>/dev/null || echo "BAD COMPARISON"
+)
+
+out=""
+[ "$left_ct" != "0" ] && out+="$left_branch $left_ct"
+[ "$right_ct" != "0" ] && out+=" $right_branch $right_ct"
+
+[ -z "$out" ] || echo "$out"
