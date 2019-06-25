@@ -1,0 +1,20 @@
+#!/bin/sh
+# The real git s
+
+dir="$1"
+[ -z "$dir" ] && dir="$(pwd)"
+
+pretty_dir="$(echo "$dir" | sed s:^$HOME:~:g)"
+
+cur_branch="$(git branch | grep \* | cut -d ' ' -f2)"
+
+cur_branch_comp="$(git-branch-compare "$dir" "$cur_branch" "origin/$cur_branch")"
+
+master_branch_comp=""
+[ $cur_branch != "master" ] && master_branch_comp="$(git-branch-compare "$dir" "master" "origin/master")"
+
+out="$pretty_dir ($cur_branch...origin/$cur_branch)[$cur_branch_comp]"
+[ -z "$master_branch_comp" ] || out+="(master...origin/master)[$master_branch_comp]"
+
+echo $out
+git --git-dir="$dir/.git" --work-tree="$dir" status --porcelain

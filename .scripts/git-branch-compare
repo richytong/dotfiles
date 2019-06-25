@@ -16,7 +16,7 @@ read -r left_ct right_ct <<< $(
 )
 
 out=""
-[ "$left_ct" != "0" ] && out+="$left_branch $left_ct"
-[ "$right_ct" != "0" ] && out+=" $right_branch $right_ct"
+[ "$left_ct" != "0" ] && out+="+$left_ct"
+[ "$right_ct" != "0" ] && out+=" -$right_ct"
 
 [ -z "$out" ] || echo "$out"
