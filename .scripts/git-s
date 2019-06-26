@@ -9,7 +9,7 @@ pretty_dir="$(echo "$dir" | sed s:^$HOME:~:g)"
 cur_branch="$(git branch | grep \* | cut -d ' ' -f2)"
 cur_branch_tracking="$(git rev-parse --abbrev-ref "$cur_branch@{upstream}" 2>/dev/null)"
 
-[ -z "$cur_branch_tracking" ] || cur_branch_comp="$(git-compare "$dir" "$cur_branch" "$cur_branch_tracking")"
+[ -z "$cur_branch_tracking" ] || cur_branch_comp="$(git-compare-count "$dir" "$cur_branch" "$cur_branch_tracking")"
 
 RED='\033[0;31m'
 BLUE='\033[0;34m'
