@@ -1,0 +1,22 @@
+#!/bin/sh
+# Compare number of commits ahead/behind between two git objects
+
+dir="$1"
+[ -z "$dir" ] && dir="$(pwd)"
+
+left_obj="$2"
+[ -z "$left_obj" ] && left_branch="master"
+
+right_obj="$3"
+[ -z "$right_obj" ] && right_obj="origin/master"
+
+read -r left_ct right_ct <<< $(
+  git --git-dir="$dir/.git" --work-tree="$dir" rev-list --left-right --count \
+    "$left_obj...$right_obj" 2>/dev/null || echo "BAD COMPARISON"
+)
+
+out=""
+[ "$left_ct" != "0" ] && out+="+$left_ct"
+[ "$right_ct" != "0" ] && out+=",-$right_ct"
+
+[ -z "$out" ] || echo "$out"

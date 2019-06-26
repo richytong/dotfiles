@@ -9,7 +9,7 @@ pretty_dir="$(echo "$dir" | sed s:^$HOME:~:g)"
 cur_branch="$(git branch | grep \* | cut -d ' ' -f2)"
 cur_branch_tracking="$(git rev-parse --abbrev-ref "$cur_branch@{upstream}" 2>/dev/null)"
 
-[ -z "$cur_branch_tracking" ] || cur_branch_comp="$(git-branch-compare "$dir" "$cur_branch" "$cur_branch_tracking")"
+[ -z "$cur_branch_tracking" ] || cur_branch_comp="$(git-compare "$dir" "$cur_branch" "$cur_branch_tracking")"
 
 RED='\033[0;31m'
 BLUE='\033[0;34m'
@@ -18,22 +18,10 @@ NC='\033[0m'
 
 out=""
 out+="$BLUE$pretty_dir$NC"
-out+=" "
+out+=":"
 out+="$GREEN$cur_branch$NC"
 [ -z "$cur_branch_tracking" ] || out+="...$RED$cur_branch_tracking$NC"
 [ -z "$cur_branch_comp" ] || out+=" [$cur_branch_comp]"
 
-git_s_porcelain="$(git --git-dir="$dir/.git" --work-tree="$dir" status -s)"
-
-should_print=0
-if [ "$cur_branch" != "master" ]; then
-  should_print=1
-else
-  [ -z "$cur_branch_comp" ] || should_print=1
-  [ -z "$git_s_porcelain" ] || should_print=1
-fi
-
-if ((should_print)); then
-  echo -e $out
-  git --git-dir="$dir/.git" --work-tree="$dir" status -s
-fi
+echo -e "$out"
+git --git-dir="$dir/.git" --work-tree="$dir" status -s --column=row
