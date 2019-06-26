@@ -7,9 +7,11 @@ dir="$1"
 pretty_dir="$(echo "$dir" | sed s:^$HOME:~:g)"
 
 cur_branch="$(git branch | grep \* | cut -d ' ' -f2)"
-cur_branch_tracking="$(git rev-parse --abbrev-ref "$cur_branch@{upstream}" 2>/dev/null)"
+tracking_branch="$(git rev-parse --abbrev-ref "$cur_branch@{upstream}" 2>/dev/null)"
 
-[ -z "$cur_branch_tracking" ] || cur_branch_comp="$(git-compare-count "$dir" "$cur_branch" "$cur_branch_tracking")"
+[ -z "$tracking_branch" ] || read -r cur_branch_ct tracking_branch_ct <<< $(
+  git-compare-count "$dir" "$cur_branch" "$tracking_branch"
+)
 
 RED='\033[0;31m'
 BLUE='\033[0;34m'
@@ -20,8 +22,12 @@ out=""
 out+="$BLUE$pretty_dir$NC"
 out+=":"
 out+="$GREEN$cur_branch$NC"
-[ -z "$cur_branch_tracking" ] || out+="...$RED$cur_branch_tracking$NC"
-[ -z "$cur_branch_comp" ] || out+=" [$cur_branch_comp]"
+out+=":"
+[ -z "$tracking_branch" ] || out+="$RED$tracking_branch$NC"
+out+=":"
+[ "$cur_branch_ct" != "0" ] && out+="$GREEN+$cur_branch_ct$NC"
+out+=":"
+[ "$tracking_branch_ct" != "0" ] && out+="$RED-$tracking_branch_ct$NC"
 
 echo -e "$out"
 git --git-dir="$dir/.git" --work-tree="$dir" status -s --column=row
