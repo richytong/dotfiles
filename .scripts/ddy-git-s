@@ -1,11 +1,4 @@
 #!/bin/sh
-# git status for every directory in $DANDY_PATH
+# git s for every directory in $DANDY_PATH
 
-dandymods=$(find $DANDY_PATH -maxdepth 1 -mindepth 1 -type d)
-
-for mod in $dandymods; do
-  cd "$mod"
-  gs_out=$(git status -s | tr -d '[[:space:]]')
-  [ -z "$gs_out" ] && continue
-  echo "$mod" && git status -s
-done
+find $DANDY_PATH -maxdepth 1 -mindepth 1 -type d | xargs -I {} git-s {} | tr ":" " "

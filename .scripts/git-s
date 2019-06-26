@@ -18,16 +18,18 @@ BLUE='\033[0;34m'
 GREEN='\033[0;32m'
 NC='\033[0m'
 
+DELIM=" "
+
 out=""
 out+="$BLUE$pretty_dir$NC"
-out+=":"
+out+="$DELIM"
 out+="$GREEN$cur_branch$NC"
-out+=":"
+out+="$DELIM"
 [ -z "$tracking_branch" ] || out+="$RED$tracking_branch$NC"
-out+=":"
-[ "$cur_branch_ct" != "0" ] && out+="$GREEN+$cur_branch_ct$NC"
-out+=":"
-[ "$tracking_branch_ct" != "0" ] && out+="$RED-$tracking_branch_ct$NC"
+out+="$DELIM"
+[ "$cur_branch_ct" != "0" ] && out+="+$cur_branch_ct"
+out+="$DELIM"
+[ "$tracking_branch_ct" != "0" ] && out+="-$tracking_branch_ct"
 
 echo -e "$out"
 git --git-dir="$dir/.git" --work-tree="$dir" status -s --column=row
