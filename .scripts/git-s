@@ -27,9 +27,9 @@ out+="$GREEN$cur_branch$NC"
 out+="$DELIM"
 [ -z "$tracking_branch" ] || out+="$RED$tracking_branch$NC"
 out+="$DELIM"
-[ "$cur_branch_ct" != "0" ] && out+="+$cur_branch_ct"
+[ ! -z "$cur_branch_ct" ] && [ "$cur_branch_ct" != "0" ] && out+="+$cur_branch_ct"
 out+="$DELIM"
-[ "$tracking_branch_ct" != "0" ] && out+="-$tracking_branch_ct"
+[ ! -z "$tracking_branch_ct" ] && [ "$tracking_branch_ct" != "0" ] && out+="-$tracking_branch_ct"
 
 echo -e "$out"
 git --git-dir="$dir/.git" --work-tree="$dir" status -s --column=row
