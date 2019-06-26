@@ -32,4 +32,4 @@ out+="$DELIM"
 [ ! -z "$tracking_branch_ct" ] && [ "$tracking_branch_ct" != "0" ] && out+="-$tracking_branch_ct"
 
 echo -e "$out"
-git --git-dir="$dir/.git" --work-tree="$dir" status -s --column=row
+git --git-dir="$dir/.git" --work-tree="$dir" status -s
