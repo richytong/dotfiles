@@ -30,8 +30,22 @@ EOF
 # Adds `~/.scripts` and all subdirectories to $PATH
 export PATH="$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//'):$PATH"
 
+# Go env
+export GOPATH="$HOME/code/go"
+export GOBIN="/usr/local/bin"
+export PATH="$PATH:$GOBIN"
+
+# Dandy env
+export DANDY_ENV="richard_local"
+export DANDY_DEBUG="1"
+export DANDY_PATH="$HOME/code/dandy"
+export DANDY_CONFIG_PATH="$DANDY_PATH/dandy-config-files/lib"
+
+# Arimus env
+export ARIMUS_PATH="$HOME/code/arimus"
+
 # Manual sourcing
-for file in ~/.{aliases,functions,gorc,nvmrc,pyenvrc,dandyrc,sshagentrc}; do
+for file in ~/.{aliases,functions,nvmrc,pyenvrc}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;

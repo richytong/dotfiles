@@ -7,6 +7,9 @@ else # macOS `ls`
 	export LSCOLORS='ExFxCxDxBxegedabagacad'
 fi
 
+# Always use color output for `ls`
+alias ls="command ls ${colorflag}"
+
 # Everything is nvim
 alias v="nvim"
 alias vi="nvim"
@@ -15,8 +18,8 @@ alias vim="nvim"
 # xserver clipboard
 alias xcb="xclip -selection c"
 
-# Always use color output for `ls`
-alias ls="command ls ${colorflag}"
+# reset xrdb
+alias xup="xrdb ~/.Xresources"
 
 # Print each PATH entry on a separate line
 alias ppath='echo -e ${PATH//:/\\n}'
@@ -24,28 +27,5 @@ alias ppath='echo -e ${PATH//:/\\n}'
 # Pretty print json
 alias ppjson='python -m json.tool'
 
-# Empty the Trash on all mounted volumes and the main HDD.
-# Also, clear Apple’s System Logs to improve shell startup speed.
-# Finally, clear download history from quarantine. https://mths.be/bum
-alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
-
 # Recursively delete `.DS_Store` files
 alias rmdsstore="find . -type f -name '*.DS_Store' -ls -delete"
-
-# Delete all node_modules
-alias rmrfnodemodules="find ~/dev -name "node_modules" -type d | xargs rm -rf"
-
-# Show active network interfaces
-alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
-
-# Local IP Address
-alias localip="ipconfig getifaddr en0"
-
-# List globally installed npm packages
-alias npmlsg="npm list -g --depth=0"
-
-# Open file or url in chrome
-alias chrome="open -a 'Google Chrome'"
-
-# reset xrdb
-alias xup="xrdb ~/.Xresources"

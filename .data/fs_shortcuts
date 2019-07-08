@@ -1,6 +1,6 @@
-doc              ~/doc
-dev              ~/dev
-arbs             ~/dev/arbs
-dot              ~/dev/dotfiles
-ddy              ~/dev/dandy
-ams              ~/dev/arimus
+doc              ~/Documents
+code             ~/code
+arbs             ~/code/arbs
+dot              ~/code/dotfiles
+ddy              ~/code/dandy
+ams              ~/code/arimus

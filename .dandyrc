@@ -1,8 +1,0 @@
-#!/bin/sh
-
-export DANDY_ENV="richard_local"
-export DANDY_DEBUG="1"
-export DANDY_PATH="$HOME/dev/dandy"
-export DANDY_CONFIG_PATH="$DANDY_PATH/dandy-config-files/lib"
-
-export ARIMUS_PATH="$HOME/dev/arimus"
