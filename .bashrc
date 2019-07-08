@@ -45,7 +45,6 @@ export PATH="$NODE_DIR/bin:$PATH"
 # pyenv env
 export PATH="$HOME/.pyenv/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
-# eval "$(pyenv init -)"
 
 # dandy env
 export DANDY_ENV="richard_local"

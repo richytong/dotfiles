@@ -31,4 +31,7 @@ alias ppjson='python -m json.tool'
 alias rmdsstore="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Start nvm if you need it
-alias nvminit='\. "$NVM_DIR/nvm.sh"'
+alias nvm-init=". $NVM_DIR/nvm.sh"
+
+# Start pyenv if you need it
+alias pyenv-init='eval "$(pyenv init -)"'
