@@ -32,7 +32,7 @@ export PATH="$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//'):$PA
 
 # Go env
 export GOPATH="$HOME/code/go"
-export GOBIN="/usr/local/bin"
+export GOBIN="$GOPATH/bin"
 export PATH="$PATH:$GOBIN"
 
 # Dandy env
