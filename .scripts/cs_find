@@ -7,7 +7,7 @@ exp="$1"
 shift
 
 dirs="$@"
-[ -z "$dirs" ] && dirs=~/dev
+[ -z "$dirs" ] && dirs=~/code
 
 ag -l --follow --hidden --ignore "*.git*" --ignore "*node_modules*" $exp $dirs 2>/dev/null \
   | xargs -r du \

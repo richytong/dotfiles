@@ -9,7 +9,7 @@ esac done
 shift $((OPTIND - 1))
 
 dirs="$@"
-[ -z "$dirs" ] && dirs=~/dev
+[ -z "$dirs" ] && dirs=~/code
 
 find_cmd="find -L $dirs"
 [ "$find_type" == "f" ] || [ "$find_type" == "d" ] && find_cmd+=" -type $find_type"
