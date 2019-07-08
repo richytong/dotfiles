@@ -30,28 +30,46 @@ EOF
 # Adds `~/.scripts` and all subdirectories to $PATH
 export PATH="$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//'):$PATH"
 
-# Go env
+# go env
 export GOPATH="$HOME/code/go"
 export GOBIN="$GOPATH/bin"
 export PATH="$PATH:$GOBIN"
 
-# Dandy env
+# nvm env
+export NVM_DIR="$HOME/.nvm"
+export NODE_VERSION="v10.14.1"
+export NODE_DIR="$NVM_DIR/versions/node/$NODE_VERSION"
+export NODE_PATH="$NODE_DIR/lib/node_modules"
+export PATH="$NODE_DIR/bin:$PATH"
+
+# pyenv env
+export PATH="$HOME/.pyenv/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+# eval "$(pyenv init -)"
+
+# dandy env
 export DANDY_ENV="richard_local"
 export DANDY_DEBUG="1"
 export DANDY_PATH="$HOME/code/dandy"
 export DANDY_CONFIG_PATH="$DANDY_PATH/dandy-config-files/lib"
 
-# Arimus env
+# arimus env
 export ARIMUS_PATH="$HOME/code/arimus"
 
-# Manual sourcing
-for file in ~/.{aliases,functions,nvmrc,pyenvrc}; do
+# Aliases, Functions
+for file in ~/.{aliases,functions}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
 
 # Shortcuts sourcing
 source ~/.fs_shortcuts_alias
+
+# Bash completion sourcing
+for file in ~/.completion/*; do
+  [ -f "$file" ] && . "$file"
+done;
+unset file;
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;

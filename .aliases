@@ -29,3 +29,6 @@ alias ppjson='python -m json.tool'
 
 # Recursively delete `.DS_Store` files
 alias rmdsstore="find . -type f -name '*.DS_Store' -ls -delete"
+
+# Start nvm if you need it
+alias nvminit='\. "$NVM_DIR/nvm.sh"'
