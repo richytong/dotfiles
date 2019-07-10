@@ -34,4 +34,4 @@ alias rmdsstore="find . -type f -name '*.DS_Store' -ls -delete"
 alias nvm-init=". $NVM_DIR/nvm.sh"
 
 # Start pyenv if you need it
-alias pyenv-init='eval "$(pyenv init -)"'
+alias pyenv-init='eval "$(pyenv init -) && pyenv shell 3.7.3"'

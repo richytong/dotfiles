@@ -226,10 +226,10 @@ let mapleader = ","
 command! -bang -nargs=+ -complete=dir Rag call fzf#vim#ag_raw(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
 " My mappings - you can change them but consider these
-nmap <leader>ww :w!<cr>
-nmap <leader>wq :wqa!<cr>
+nmap <leader>ww :w!<CR>
+nmap <leader>wq :wqa!<CR>
 nmap <leader>wa :argdo<Space>w!<CR><CR>
-nmap <leader>qq :qa!<cr>
+nmap <leader>qq :qa!<CR>
 nmap <leader>q. :bw!<CR>
 nmap <leader>qa :argdo<Space>bw!<CR>
 nmap <leader>ee :e<Space><C-Z>
@@ -243,12 +243,12 @@ nmap <leader>vh :vert help<Space>
 nmap <leader>vs :call fzf#run({ 'sink': 'vsplit' })<CR>
 nmap <leader>ad :argdo<Space>
 
-" Disable highlight when <leader><cr> is pressed
-map <silent> <leader><ESC> :noh<cr>
+" Disable highlight when <leader><CR> is pressed
+map <silent> <leader><ESC> :noh<CR>
 
 " Open terminal at directory containing current buffer
-" nmap <leader>te :cd %:p:h<cr> :terminal<cr>
-nmap <leader>te :terminal<cr>i
+" nmap <leader>te :cd %:p:h<CR> :terminal<CR>
+nmap <leader>te :terminal<CR>i
 
 " Terminal mode mappings
 tnoremap <Esc> <C-\><C-n>
