@@ -10,6 +10,8 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'sheerun/vim-polyglot' " syntax highlighting
 Plug 'junegunn/fzf.vim' " fuzzy finda fuzzy finda fuzzy finda
 Plug 'vim-airline/vim-airline' " better statusline
+Plug 'tpope/vim-surround' " surround - this should really be built into vim
+Plug 'tpope/vim-repeat' " allow repeat with surround
 call plug#end()
 
 " Airline Configs
