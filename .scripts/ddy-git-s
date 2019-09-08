@@ -1,3 +1,14 @@
 #!/bin/sh
 
-ddy-git-s-single-space | column -t
+changes_only=""
+while [[ $# -gt 0 ]]; do
+  key="$1"
+  case $key in
+    -c|--changes-only) changes_only="1"; shift
+  esac
+done
+
+flag_changes_only=""
+[ -n changes_only ] && flag_changes_only="--changes-only"
+
+ddy-git-s-single-space $flag_changes_only | column -t

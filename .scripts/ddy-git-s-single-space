@@ -3,10 +3,20 @@
 
 # find $DANDY_PATH -maxdepth 1 -mindepth 1 -type d | xargs -I {} git-s {} | tr ":" " "
 
+changes_only=""
+while [[ $# -gt 0 ]]; do
+  key="$1"
+  case $key in
+    -c|--changes-only) changes_only="1"; shift
+  esac
+done
+
 ddy_dirs=$(find $DANDY_PATH -maxdepth 1 -mindepth 1 -type d)
 
 for dir in $ddy_dirs; do
   cd $dir
-  gs="$(git s | cut -d ' ' -f 2-)"
+  gs="$(git s | sed 's/^\s//' | cut -d ' ' -f 2-)"
+  files="$(echo $gs | cut -d' ' -f2-)"
+  [ -n "$changes_only" ] && [ "$gs" == "$files" ] && continue
   echo $dir $gs
 done
