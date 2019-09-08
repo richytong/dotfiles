@@ -1,0 +1,12 @@
+#!/bin/sh
+# git s for every directory in $DANDY_PATH
+
+# find $DANDY_PATH -maxdepth 1 -mindepth 1 -type d | xargs -I {} git-s {} | tr ":" " "
+
+ddy_dirs=$(find $DANDY_PATH -maxdepth 1 -mindepth 1 -type d)
+
+for dir in $ddy_dirs; do
+  cd $dir
+  gs="$(git s | cut -d ' ' -f 2-)"
+  echo $dir $gs
+done
