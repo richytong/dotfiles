@@ -38,3 +38,29 @@ curl -X PUT localhost:9200/party  \
     }
 }
 HEREDOC
+
+curl -X PUT localhost:9200/feedback  \
+  -H 'Content-Type: application/json' \
+  -d @- <<HEREDOC
+{
+    "mappings": {
+        "feedback": {
+            "properties": {
+                "rating": {
+                    "type": "integer"
+                },
+                "type": {
+                    "type": "keyword"
+                },
+                "tags": {
+                    "type": "keyword"
+                },
+                "create_time": {
+                    "type": "date",
+                    "format": "epoch_millis"
+                }
+            }
+        }
+    }
+}
+HEREDOC

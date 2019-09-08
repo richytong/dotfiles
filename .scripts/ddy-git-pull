@@ -2,8 +2,16 @@
 # git pull for every directory in $DANDY_PATH
 
 dandymods=$(find $DANDY_PATH -maxdepth 1 -mindepth 1 -type d)
+arimusmods=$(find $ARIMUS_PATH -maxdepth 1 -mindepth 1 -type d)
 
 for mod in $dandymods; do
+  cd $mod && echo $mod
+  pull_out=$(git pull)
+  [ "$pull_out" == "Already up to date." ] && continue
+  echo "$pull_out"
+done
+
+for mod in $arimusmods; do
   cd $mod && echo $mod
   pull_out=$(git pull)
   [ "$pull_out" == "Already up to date." ] && continue
