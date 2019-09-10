@@ -10,4 +10,7 @@ chosen=$(es_find $dirs | fzf -1)
 e_args="$chosen"
 [ -d "$chosen" ] && e_args=$(es_find -t f $chosen)
 
+cmd_in_hist=$(grep "$EDITOR $e_args" ~/.bash_history)
+[ -z $cmd_in_hist ] && echo "$EDITOR $e_args" >> ~/.bash_history
+
 $EDITOR $e_args

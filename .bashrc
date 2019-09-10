@@ -7,20 +7,27 @@ export BROWSER="qutebrowser"
 export READER="zathura"
 
 # Bash Prompt
-ps1_user="\[\e[36m\]\u\[\e[m\]"
-ps1_host="\[\e[35m\]\h\[\e[m\]"
-ps1_path="\[\e[34m\]⛏️\w\[\e[m\]"
-ps1_path_basic="\[\e[34m\]\w\[\e[m\]"
-ps1_git_branch="\[\e[32m\]\$(fmt_git_branch)\[\e[m\]"
-ps1_sh="\[\e[37m\]🐚\s\v\[\e[m\]"
-ps1_gun="/̵͇̿̿/'̿'̿̿̿"
-ps1=""
-ps1+="┌ » $ps1_user💕$ps1_host $ps1_path$ps1_git_branch $ps1_sh  \n"
+# ps1_path="\[\e[34m\]⛏️\w\[\e[m\]"
+# ps1_git_branch="\[\e[32m\]\$(fmt_git_branch)\[\e[m\]"
+# ps1_sh="\[\e[37m\]🐚\s\v\[\e[m\]"
+# ps1_gun="/̵͇̿̿/'̿'̿̿̿"
+# ps1=""
+# ps1+="┌ » $ps1_user💕$ps1_host $ps1_path$ps1_git_branch $ps1_sh  \n"
 #ps1+="            🐇🐇🍎\n"
 #ps1+="\n"
-ps1+="└ » $ps1_gun "
-ps1="$ps1_user@$ps1_host:$ps1_path_basic# "
+# ps1+="└ » $ps1_gun "
+ps1_user="\[\e[36m\]\u\[\e[m\]"
+ps1_host="\[\e[35m\]\h\[\e[m\]"
+ps1_path="\[\e[34m\]\w\[\e[m\]"
+ps1="$ps1_user@$ps1_host:$ps1_path# "
 export PS1="$ps1"
+
+# History
+export PROMPT_COMMAND="$PROMPT_COMMAND; history -a"
+export HISTCONTROL=ignoreboth
+export HISTIGNORE="ls:cd:rm *:es:hs:history:dot:ddy"
+shopt -s histappend # append to the Bash history file, rather than overwriting it
+shopt -s cmdhist # store multiline commands in one history entry
 
 # FZF
 export FZF_DEFAULT_OPTS="--layout=reverse --bind=tab:toggle-down,btab:toggle-up,change:top+select-all"
@@ -74,9 +81,6 @@ unset file;
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
-
-# Append to the Bash history file, rather than overwriting it
-shopt -s histappend;
 
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
