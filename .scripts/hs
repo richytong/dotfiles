@@ -4,4 +4,7 @@ cmd=$(uniq ~/.bash_history | tac | fzf)
 
 [ -z "$cmd" ] && exit
 
+cmd_in_hist=$(grep "$cmd" ~/.bash_history)
+[ -z "$cmd_in_hist" ] && echo "$cmd" >> ~/.bash_history
+
 $cmd

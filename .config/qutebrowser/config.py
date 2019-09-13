@@ -8,6 +8,7 @@ c.url.searchengines = {
     "gh": "https://github.com/search?q={}",
     "amzn": "https://amazon.com/s?k={}",
     "aws-sdk-js": "https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/{}.html",
+    "yelp": "https://www.yelp.com/search?find_desc={}&find_loc=Los+Angeles%2C+CA",
     "emoji": "https://emojipedia.org/search/?q={}"
 }
 
