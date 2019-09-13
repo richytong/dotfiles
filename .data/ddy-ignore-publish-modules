@@ -1,6 +1,8 @@
 arimustmp
 dandy-app
 dandy-serverless-app-analytics
+dandy-serverless-image-resizer
+dandy-serverless-image-preprocessor
 dandy-admin
 dandy-config-files
 developer-setup-guide
