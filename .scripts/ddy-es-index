@@ -81,7 +81,7 @@ curl -X PUT localhost:9200/user  \
                 "gender": {
                     "type": "keyword"
                 },
-                "phone_number": {
+                "clean_phone_number": {
                     "type": "text"
                 },
                 "instagram_handle": {
