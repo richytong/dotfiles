@@ -228,9 +228,7 @@ let mapleader = ","
 command! -bang -nargs=+ -complete=dir Rag call fzf#vim#ag_raw(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
 " My mappings - you can change them but consider these
-nmap <leader>ww :w!<CR>
-nmap <leader>wq :wqa!<CR>
-nmap <leader>wa :argdo<Space>w!<CR><CR>
+nmap <leader>w :w!<CR>
 nmap <leader>qq :qa!<CR>
 nmap <leader>q. :bw!<CR>
 nmap <leader>qa :argdo<Space>bw!<CR>
