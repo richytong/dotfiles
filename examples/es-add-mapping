@@ -1,15 +1,12 @@
+#!/bin/sh
+
 curl -X PUT localhost:9200/user/user/_mapping  \
   -H "Content-Type: application/json" \
   -d @- <<HEREDOC
 {
     "properties": {
-        "groups": {
-            "type": "nested",
-            "properties": {
-                "_id": {
-                    "type": "keyword"
-                }
-            }
+        "photos_length": {
+            "type": "integer"
         }
     }
 }

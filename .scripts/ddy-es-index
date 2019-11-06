@@ -107,6 +107,9 @@ curl -X PUT localhost:9200/user  \
                 "rating": {
                     "type": "integer"
                 },
+                "photos_length": {
+                    "type": "integer"
+                },
                 "height": {
                     "type": "integer"
                 },
