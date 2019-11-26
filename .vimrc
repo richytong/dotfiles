@@ -10,6 +10,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'sheerun/vim-polyglot' " syntax highlighting
 Plug 'junegunn/fzf.vim' " fuzzy finda fuzzy finda fuzzy finda
 Plug 'vim-airline/vim-airline' " better statusline
+Plug 'vim-airline/vim-airline-themes' " better statusline
 Plug 'tpope/vim-surround' " surround - extension to vim language, counterpart to i
 Plug 'tpope/vim-repeat' " allow repeat with surround
 call plug#end()
@@ -23,6 +24,7 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 let g:airline_symbols.space = "\ua0"
+let g:airline_theme = 'solarized'
 
 " How many lines of history vim has to remember
 set history=500
