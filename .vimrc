@@ -24,6 +24,23 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 let g:airline_symbols.space = "\ua0"
+let g:airline_mode_map = {
+    \ '__' : '--',
+    \ 'n'  : 'N',
+    \ 'i'  : 'I',
+    \ 'R'  : 'R',
+    \ 'c'  : 'C',
+    \ 'v'  : 'V',
+    \ 'V'  : 'V-L',
+    \ '' : 'V-B',
+    \ 's'  : 'S',
+    \ 'S'  : 'S-L',
+    \ '' : 'S-B',
+    \ 't'  : 'T',
+    \ }
+let g:airline_symbols.paste = 'Ξ'
+let g:airline_symbols.spell = 'S'
+let g:airline_section_z = airline#section#create(['--%1p%%-- ', '%#__accent_bold#%l%#__restore__#', ':%c'])
 let g:airline_theme = 'dark'
 
 " How many lines of history vim has to remember
