@@ -23,7 +23,7 @@ xrdb ~/.Xresources
 dunst &
 
 # compositor
-compton &
+picom &
 
 # wm
 exec i3
