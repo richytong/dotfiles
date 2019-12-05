@@ -107,8 +107,8 @@ hi CursorLineNr   ctermfg=66   ctermbg=NONE cterm=NONE
 hi LineNr         ctermfg=66   ctermbg=NONE cterm=NONE
 
 " Status Line is reversed
-hi StatusLine     ctermfg=66   ctermbg=16   cterm=bold
-hi StatusLineNC   ctermfg=66   ctermbg=16   cterm=bold
+hi StatusLine     ctermfg=10   ctermbg=16   cterm=bold
+hi StatusLineNC   ctermfg=10   ctermbg=16   cterm=bold
 
 " Tab Line
 hi TabLine        ctermfg=195  ctermbg=NONE cterm=NONE

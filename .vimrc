@@ -9,39 +9,39 @@ set nocompatible
 call plug#begin('~/.config/nvim/plugged')
 Plug 'sheerun/vim-polyglot' " syntax highlighting
 Plug 'junegunn/fzf.vim' " fuzzy finda fuzzy finda fuzzy finda
-Plug 'vim-airline/vim-airline' " better statusline
-Plug 'vim-airline/vim-airline-themes' " better statusline
+" Plug 'vim-airline/vim-airline' " better statusline
+" Plug 'vim-airline/vim-airline-themes' " better statusline
 Plug 'tpope/vim-surround' " surround - extension to vim language, counterpart to i
 Plug 'tpope/vim-repeat' " allow repeat with surround
 call plug#end()
 
 " Airline Configs
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'jsformatter'
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#show_tabs = 0
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-let g:airline_symbols.space = "\ua0"
-let g:airline_mode_map = {
-    \ '__' : '--',
-    \ 'n'  : 'N',
-    \ 'i'  : 'I',
-    \ 'R'  : 'R',
-    \ 'c'  : 'C',
-    \ 'v'  : 'V',
-    \ 'V'  : 'V-L',
-    \ '' : 'V-B',
-    \ 's'  : 'S',
-    \ 'S'  : 'S-L',
-    \ '' : 'S-B',
-    \ 't'  : 'T',
-    \ }
-let g:airline_symbols.paste = 'Ξ'
-let g:airline_symbols.spell = 'S'
-let g:airline_section_z = airline#section#create(['--%1p%%-- ', '%#__accent_bold#%l%#__restore__#', ':%c'])
-let g:airline_theme = 'dark'
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#formatter = 'jsformatter'
+" let g:airline_powerline_fonts = 1
+" let g:airline#extensions#tabline#show_tabs = 0
+" if !exists('g:airline_symbols')
+"     let g:airline_symbols = {}
+" endif
+" let g:airline_symbols.space = "\ua0"
+" let g:airline_mode_map = {
+"     \ '__' : '--',
+"     \ 'n'  : 'N',
+"     \ 'i'  : 'I',
+"     \ 'R'  : 'R',
+"     \ 'c'  : 'C',
+"     \ 'v'  : 'V',
+"     \ 'V'  : 'V-L',
+"     \ '' : 'V-B',
+"     \ 's'  : 'S',
+"     \ 'S'  : 'S-L',
+"     \ '' : 'S-B',
+"     \ 't'  : 'T',
+"     \ }
+" let g:airline_symbols.paste = 'Ξ'
+" let g:airline_symbols.spell = 'S'
+" let g:airline_section_z = airline#section#create(['--%1p%%-- ', '%#__accent_bold#%l%#__restore__#', ':%c'])
+" let g:airline_theme = 'solarized'
 
 " How many lines of history vim has to remember
 set history=500
@@ -232,9 +232,10 @@ set laststatus=2
 
 " Format the status line
 set statusline=
-set statusline+=\ %f
-set statusline+=\ %m
-set statusline+=\ Line\ %l,\ Col\ %c
+set statusline+=%m
+set statusline+=\ %F
+set statusline+=\ <<\ %l:%c\ >>\ --%p%%--
+" set statusline+=\ ----
 
 " Fzf default command
 let $FZF_DEFAULT_COMMAND = 'es_find -t f'
@@ -254,9 +255,10 @@ nmap <leader>qa :argdo<Space>bw!<CR>
 nmap <leader>ee :e<Space><C-Z>
 nmap <leader>f. :find<Space>.**/<C-Z>
 nmap <leader>es :call fzf#run({ 'sink': 'edit' })<CR>
-nmap <leader>bb :b<Space><C-Z>
-nmap <leader>bs :Buffers<CR>
-nmap <leader>bw :bw!<Space>
+nmap <leader>b  :Buffers<CR>
+" nmap <leader>bb :b<Space><C-Z>
+" nmap <leader>bs :Buffers<CR>
+" nmap <leader>bw :bw!<Space>
 nmap <leader>vv :vnew<Space><C-Z>
 nmap <leader>vh :vert help<Space>
 nmap <leader>vs :call fzf#run({ 'sink': 'vsplit' })<CR>
@@ -290,7 +292,7 @@ set splitright
 set switchbuf=useopen,usetab,split
 
 " Always show the tabline
-set showtabline=2
+" set showtabline=2
 
 " Always use very magic mode when searching
 nnoremap / /\v
