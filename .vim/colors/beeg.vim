@@ -109,9 +109,9 @@ hi LineNr         ctermfg=66   ctermbg=NONE cterm=NONE
 " Status Line is reverse
 hi StatusLine     ctermfg=15   ctermbg=NONE cterm=bold
 hi StatusLineNC   ctermfg=15   ctermbg=NONE cterm=bold
-hi User1          ctermfg=51   ctermbg=NONE cterm=bold
+hi User1          ctermfg=197  ctermbg=NONE cterm=bold
 hi User2          ctermfg=33   ctermbg=NONE cterm=bold
-hi User3          ctermfg=66   ctermbg=NONE cterm=bold
+hi User3          ctermfg=195  ctermbg=NONE cterm=bold
 
 " Tab Line
 hi TabLine        ctermfg=195  ctermbg=NONE cterm=NONE
