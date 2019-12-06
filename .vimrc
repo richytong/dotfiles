@@ -102,11 +102,11 @@ set langmenu=$LANG
 set ruler
 
 " Show the line numbers
-set number
+" set number
 
 " Show the relative line numbers to cursor instead of the default absolute line numbers.
 " This is useful for doing any numbered movements, for example 5dj
-set relativenumber
+" set relativenumber
 
 " Height of the command bar
 set cmdheight=1
@@ -232,10 +232,10 @@ set laststatus=2
 
 " Format the status line
 set statusline=
+set statusline+=%2*%m%*
+" set statusline+=\ %3*%y%*
+set statusline+=\ %1*<<\ %l,%c\ >>%*
 set statusline+=\ %F
-set statusline+=\ %3*%y%*
-set statusline+=\ %1*<<\ %l/%L\ >>%*
-set statusline+=\ %2*%m%*
 " set statusline+=\ ----
 
 " Fzf default command

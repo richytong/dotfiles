@@ -110,7 +110,7 @@ hi LineNr         ctermfg=66   ctermbg=NONE cterm=NONE
 hi StatusLine     ctermfg=10   ctermbg=NONE cterm=bold
 hi StatusLineNC   ctermfg=10   ctermbg=NONE cterm=bold
 hi User1          ctermfg=51   ctermbg=NONE cterm=bold
-hi User2          ctermfg=15   ctermbg=196  cterm=bold
+hi User2          ctermfg=15   ctermbg=NONE cterm=bold
 hi User3          ctermfg=66   ctermbg=NONE cterm=bold
 
 " Tab Line
