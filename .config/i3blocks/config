@@ -26,12 +26,12 @@ interval=10
 [root_disk]
 command=i3_disk /
 interval=60
-label=/
+label=💾 /
 
 [home_disk]
 command=i3_disk ~
 interval=60
-label=~
+label=💾 ~
 
 [battery]
 command=i3_battery BAT0
