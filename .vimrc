@@ -232,10 +232,10 @@ set laststatus=2
 
 " Format the status line
 set statusline=
-set statusline+=%m
 " set statusline+=\ %3*%y%*
-set statusline+=\ %3*<<%*\ %1*%l%*%3*,%*%1*%c%*\ %3*>>%*
+set statusline+=%3*<<%*\ %1*%l%*%3*,%*%1*%c%*\ %3*>>%*
 set statusline+=\ 📂%2*%F%*
+set statusline+=\ %m
 " set statusline+=\ ----
 
 " Fzf default command
