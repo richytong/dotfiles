@@ -234,7 +234,7 @@ set laststatus=2
 set statusline=
 " set statusline+=\ %3*%y%*
 set statusline+=%3*<<%*\ %1*%l%*%3*,%*%1*%c%*\ %3*>>%*
-set statusline+=\ 📂%2*%F%*
+set statusline+=\ %2*%F%*
 set statusline+=\ %m
 " set statusline+=\ ----
 
