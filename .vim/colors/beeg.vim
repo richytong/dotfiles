@@ -20,7 +20,7 @@ let g:colors_name = "beeg"
 hi Normal         ctermfg=195  ctermbg=NONE cterm=NONE
 
 " Nonexistent Characters Filler
-hi NonText        ctermfg=195  ctermbg=NONE cterm=NONE
+hi NonText        ctermfg=66   ctermbg=NONE cterm=NONE
 
 " Syntax - Comment Group
 hi Comment        ctermfg=66   ctermbg=NONE cterm=NONE

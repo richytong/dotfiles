@@ -104,6 +104,9 @@ set ruler
 " Show the line numbers
 " set number
 
+" Show list chars
+" set list listchars=tab:>\ ,trail:-,eol:¬
+
 " Show the relative line numbers to cursor instead of the default absolute line numbers.
 " This is useful for doing any numbered movements, for example 5dj
 " set relativenumber
