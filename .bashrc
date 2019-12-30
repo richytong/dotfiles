@@ -59,7 +59,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export CODE_PATH="$HOME/code"
 
 # dandy env
-export DANDY_ENV="richard_local"
+export DANDY_ENV="richard_offline"
 export DANDY_DEBUG="1"
 export DANDY_PATH="$HOME/code/dandy"
 export DANDY_CONFIG_PATH="$DANDY_PATH/dandy-config-files/lib"
