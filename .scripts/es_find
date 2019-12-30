@@ -14,4 +14,12 @@ dirs="$@"
 find_cmd="find -L $dirs"
 [ "$find_type" == "f" ] || [ "$find_type" == "d" ] && find_cmd+=" -type $find_type"
 
-$find_cmd ! -path "*.git*" ! -path "*node_modules*" 2>&1
+$find_cmd \
+  ! -path "*.git*" \
+  ! -path "*node_modules*" \
+  ! -path "*.cache*" \
+  ! -path "*go/pkg*" \
+  ! -path "*vendor*" \
+  ! -path "*pkg*" \
+  ! -path "/home/richard/lib*" \
+  2>&1
