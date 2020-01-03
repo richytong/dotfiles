@@ -1,12 +1,12 @@
 #!/bin/sh
 
-curl -X PUT localhost:9200/user/user/_mapping  \
+curl -X PUT https://search-dandy-prod-qr73bh4ntynakv6mo6prrlbxty.us-east-1.es.amazonaws.com/user/user/_mapping  \
   -H "Content-Type: application/json" \
   -d @- <<HEREDOC
 {
     "properties": {
-        "photos_length": {
-            "type": "integer"
+        "liked_rate": {
+            "type": "float"
         }
     }
 }
