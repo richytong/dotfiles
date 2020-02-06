@@ -122,6 +122,9 @@ curl -X PUT localhost:9200/user  \
                 "liked_rate": {
                     "type": "float"
                 },
+                "active_party_id": {
+                    "type": "keyword"
+                },
                 "update_time": {
                     "type": "date",
                     "format": "epoch_millis"
