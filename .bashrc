@@ -59,7 +59,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export CODE_PATH="$HOME/code"
 
 # solum env
-export SLM_PATH=$HOME/code/dandy:$HOME/code/solum:$HOME/code/rubico:$HOME/code/arimus
+export SLM_PATH=$HOME/code/solum:$HOME/code/rubico:$HOME/code/a-sert:$HOME/code/arimus
 
 # dandy env
 export DANDY_ENV="richard_offline"
