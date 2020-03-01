@@ -13,6 +13,7 @@ Plug 'junegunn/fzf.vim' " fuzzy finda fuzzy finda fuzzy finda
 " Plug 'vim-airline/vim-airline-themes' " better statusline
 Plug 'tpope/vim-surround' " surround - extension to vim language, counterpart to i
 Plug 'tpope/vim-repeat' " allow repeat with surround
+Plug 'mattn/emmet-vim' " expressions => html
 call plug#end()
 
 " Airline Configs
