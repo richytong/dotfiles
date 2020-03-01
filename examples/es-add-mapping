@@ -1,7 +1,6 @@
 #!/bin/sh
 
-curl -X PUT https://search-dandy-prod-qr73bh4ntynakv6mo6prrlbxty.us-east-1.es.amazonaws.com/user/user/_mapping  \
-# curl -X PUT https://search-dandy-dev-eotq3m6synyykemgivds35uszy.us-east-1.es.amazonaws.com/user/user/_mapping  \
+curl -X PUT prod.hostname.com/user/user/_mapping  \
   -H "Content-Type: application/json" \
   -d @- <<HEREDOC
 {
