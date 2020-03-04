@@ -3,7 +3,7 @@
 dynamo_image="amazon/dynamodb-local:1.12.0"
 mongo_image="mongo:4.0.6-xenial"
 redis_image="redis:5.0.3"
-elasticsearch_image="docker.elastic.co/elasticsearch/elasticsearch:6.5.4"
+elasticsearch_image="docker.elastic.co/elasticsearch/elasticsearch:7.1.0"
 gremlin_image="tinkerpop/gremlin-server:3.4.4"
 
 running_dynamo=""
