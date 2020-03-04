@@ -16,6 +16,9 @@ Plug 'tpope/vim-repeat' " allow repeat with surround
 Plug 'mattn/emmet-vim' " expressions => html
 call plug#end()
 
+" redefine emmet leader key
+let g:user_emmet_leader_key=','
+
 " Airline Configs
 " let g:airline#extensions#tabline#enabled = 1
 " let g:airline#extensions#tabline#formatter = 'jsformatter'
