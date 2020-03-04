@@ -16,6 +16,7 @@ find_cmd="find -L $dirs"
 
 $find_cmd \
   ! -path "*.git*" \
+  ! -path "*.npm*" \
   ! -path "*node_modules*" \
   ! -path "*.cache*" \
   ! -path "*go/pkg*" \
