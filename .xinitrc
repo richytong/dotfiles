@@ -10,7 +10,8 @@ xset r rate 200 60
 unclutter --fork
 
 # Wallpaper
-feh --bg-scale ~/.media/castle-in-the-sky.png
+# feh --bg-scale ~/.media/castle-in-the-sky.png
+feh --bg-scale ~/.media/mountains-3.png
 
 # Remappings
 xmodmap ~/.Xmodmap
