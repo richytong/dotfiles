@@ -39,6 +39,10 @@ EOF
 # Adds `~/.scripts` and all subdirectories to $PATH
 export PATH="$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//'):$PATH"
 
+# deno env
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
 # go env
 export GOPATH="$HOME/code/go"
 export GOBIN="$GOPATH/bin"
