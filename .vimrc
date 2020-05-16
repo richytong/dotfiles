@@ -3,9 +3,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'mattn/emmet-vim'
-Plug 'othree/html5.vim'
-Plug 'othree/yajs.vim'
-Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
 call plug#end()
 
 let mapleader = ","
