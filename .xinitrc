@@ -24,8 +24,7 @@ xrdb ~/.Xresources
 dunst &
 
 # compositor
-# picom --experimental-backends --backend glx &
-picom &
+picom --experimental-backends --backend glx &
 
 # wm
 exec i3
