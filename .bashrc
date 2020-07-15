@@ -67,7 +67,7 @@ export CODE_PATH="$HOME/code"
 export CHIMAERA_PATH=$HOME/code/chimaera:$HOME/code/rubico:$HOME/code/a-sert:$HOME/code/arimus
 
 # cratos env
-export CRATOS_PATH=$HOME/code/rubico:$HOME/code/cratos
+export CRATOS_PATH=$HOME/code/rubico:$HOME/code/cratos:$HOME/code/doc.rubico.land:$HOME/code/tour.rubico.land
 
 # dandy env
 export DANDY_ENV="richard_offline"
