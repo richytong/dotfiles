@@ -66,8 +66,8 @@ export CODE_PATH="$HOME/code"
 # solum env
 export CHIMAERA_PATH=$HOME/code/chimaera:$HOME/code/rubico:$HOME/code/a-sert:$HOME/code/arimus
 
-# cratos env
-export CRATOS_PATH=$HOME/code
+# ryt env
+export RYT_PATH=$HOME/code
 
 # dandy env
 export DANDY_ENV="richard_offline"
