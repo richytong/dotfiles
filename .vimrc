@@ -30,6 +30,9 @@ tnoremap <Esc> <C-\><C-n>
 tnoremap <leader>qq <C-\><C-n><C-o> :qa!<CR>
 tnoremap <leader>q. <C-\><C-n><C-o> :bw! term://<C-a><CR>
 
+" TODO
+" Quick multiline comments
+
 " move between windows
 map <C-h> <C-W>h
 map <C-l> <C-W>l
