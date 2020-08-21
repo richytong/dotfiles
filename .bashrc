@@ -69,6 +69,9 @@ export CHIMAERA_PATH=$HOME/code/chimaera:$HOME/code/rubico:$HOME/code/a-sert:$HO
 # ryt env
 export RYT_PATH=$HOME/code
 
+# jsvu env
+export PATH="$HOME/.jsvu:$PATH"
+
 # dandy env
 export DANDY_ENV="richard_offline"
 export DANDY_DEBUG="1"
