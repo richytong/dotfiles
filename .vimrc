@@ -1,11 +1,30 @@
+" TODO
+" create shortcut to edit dotfiles/.vimrc
+" consider jj -> <esc>
+" consider ; -> :
+" abbreviations with :iabbrev
+" invetigate sneak
+" vii v-inner-indent;everything at inner indentation level object
+" :norm ; inserts something at beginning of lines
+" g/pattern/norm
+" quickfixlist buffer
+" oeu <c-x><c-l>
+"
+" Resources
+" Vimcasts / Practical Vim
+" VimTricks
+" Learn Vimscript the Hard Way
+
 call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/fzf.vim'
+Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
+Plug 'terryma/vim-expand-region'
 call plug#end()
 
 let mapleader = ","
