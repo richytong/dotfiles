@@ -14,4 +14,7 @@ c.url.searchengines = {
 
 c.content.host_blocking.whitelist = [
     "mixpanel.com", "mixpanel.com/*"
+    "googletagmanager.com", "googletagmanager.com/*",
+    "analytics.google.com", "analytics.google.com/*",
+    "marketingplatform.google.com", "marketingplatform.google.com/*",
 ]
