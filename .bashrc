@@ -25,7 +25,7 @@ export PS1="$ps1"
 # History
 export PROMPT_COMMAND='history -a; printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
 export HISTCONTROL=ignoreboth
-export HISTIGNORE="ls:cd:es:hs:cs:cs *:history:dot:ddy"
+export HISTIGNORE="ls:cd:es:hs:history:dot:ddy"
 shopt -s histappend # append to the Bash history file, rather than overwriting it
 shopt -s cmdhist # store multiline commands in one history entry
 
