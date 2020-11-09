@@ -1,6 +1,6 @@
 #!/bin/sh
 
-dynamo_image="amazon/dynamodb-local:1.12.0"
+dynamo_image="amazon/dynamodb-local:1.13.5"
 mongo_image="mongo:4.0.6-xenial"
 redis_image="redis:5.0.3"
 elasticsearch_image="docker.elastic.co/elasticsearch/elasticsearch:7.1.0"
