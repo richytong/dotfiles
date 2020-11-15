@@ -17,7 +17,6 @@
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'junegunn/fzf.vim'
-Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'mattn/emmet-vim'
@@ -25,6 +24,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 Plug 'terryma/vim-expand-region'
+Plug 'rhysd/clever-f.vim'
 call plug#end()
 
 let mapleader = ","
