@@ -6,6 +6,7 @@ redis_image="redis:6.0.9"
 elasticsearch_image="docker.elastic.co/elasticsearch/elasticsearch:7.1.0"
 gremlin_image="tinkerpop/gremlin-server:3.4.4"
 s3_image="minio/minio:edge"
+registry_image="registry:latest"
 
 running_dynamo=""
 running_mongo=""
@@ -13,6 +14,7 @@ running_redis=""
 running_elasticsearch=""
 running_gremlin=""
 running_s3=""
+running_registry=""
 
 running_images=$(docker ps --format "{{.Image}}")
 
@@ -23,6 +25,7 @@ for image_name in $running_images; do
   [ $image_name == "$elasticsearch_image" ] && running_elasticsearch="1"
   [ $image_name == "$gremlin_image" ] && running_gremlin="1"
   [ $image_name == "$s3_image" ] && running_s3="1"
+  [ $image_name == "$registry_image" ] && running_registry="1"
 done
 
 [ -z "$running_dynamo" ] && docker run -p 8000:8000 -d "$dynamo_image"
@@ -49,3 +52,5 @@ if [ -z "$running_s3" ]; then
     -e "MINIO_SECRET_KEY=secretKey" \
     "$s3_image" server /data
 fi
+
+[ -z "$running_registry" ] && docker run -p 5000:5000 -d --restart always --name registry "$registry_image"
