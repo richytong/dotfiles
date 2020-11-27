@@ -1,3 +1,4 @@
 #!/bin/sh
 
 docker ps --format "{{.ID}}" | xargs docker kill
+docker container stop registry && docker container rm -v registry
