@@ -1,0 +1,56 @@
+#!/bin/sh
+
+dynamo_image="amazon/dynamodb-local:1.13.5"
+mongo_image="mongo:4.0.6-xenial"
+redis_image="redis:6.0.9"
+elasticsearch_image="docker.elastic.co/elasticsearch/elasticsearch:7.1.0"
+gremlin_image="tinkerpop/gremlin-server:3.4.4"
+s3_image="minio/minio:edge"
+registry_image="registry:2.7"
+
+running_dynamo=""
+running_mongo=""
+running_redis=""
+running_elasticsearch=""
+running_gremlin=""
+running_s3=""
+running_registry=""
+
+running_images=$(docker ps --format "{{.Image}}")
+
+for image_name in $running_images; do
+  [ $image_name == "$dynamo_image" ] && running_dynamo="1"
+  [ $image_name == "$mongo_image" ] && running_mongo="1"
+  [ $image_name == "$redis_image" ] && running_redis="1"
+  [ $image_name == "$elasticsearch_image" ] && running_elasticsearch="1"
+  [ $image_name == "$gremlin_image" ] && running_gremlin="1"
+  [ $image_name == "$s3_image" ] && running_s3="1"
+  [ $image_name == "$registry_image" ] && running_registry="1"
+done
+
+[ -z "$running_dynamo" ] && docker run -p 8000:8000 -d "$dynamo_image"
+
+[ -z "$running_mongo" ] && docker run -p 27017:27017 -d "$mongo_image"
+
+[ -z "$running_redis" ] && docker run -p 6379:6379 -d "$redis_image"
+
+if [ -z "$running_elasticsearch" ]; then
+  docker run -d \
+    -p 9200:9200 \
+    -m "512m" \
+    -e "discovery.type=single-node" \
+    -e "ES_JAVA_OPTS=-Xms256m -Xmx256m" \
+    "$elasticsearch_image"
+fi
+
+[ -z "$running_gremlin" ] && docker run -p 8182:8182 -d "$gremlin_image"
+
+if [ -z "$running_s3" ]; then
+  docker run -d \
+    -p 9000:9000 \
+    -e "MINIO_ACCESS_KEY=accessKey" \
+    -e "MINIO_SECRET_KEY=secretKey" \
+    "$s3_image" server /data
+fi
+
+[ -z "$running_registry" ] && docker run -p 5000:5000 -d --restart always --name registry "$registry_image"
