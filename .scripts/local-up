@@ -1,27 +1,29 @@
 #!/usr/bin/env node
 
-const pipe = require('rubico/pipe')
-const map = require('rubico/map')
-const tryCatch = require('rubico/tryCatch')
+const forEach = require('rubico/x/forEach')
 const DockerContainer = require('presidium/DockerContainer')
 
-const containers = [
-  DockerContainer('dynamo', {
+forEach(async options => {
+  const status = await DockerContainer(options).start()
+  console.log(options.name, '-', status.message)
+})([
+  {
+    name: 'dynamo',
     image: 'amazon/dynamodb-local:1.13.5',
     publish: { 8000: 8000 },
-  }),
-
-  DockerContainer('mongo', {
+  },
+  {
+    name: 'mongo',
     image: 'mongo:4.0.6-xenial',
     publish: { 27017: 27017 },
-  }),
-
-  DockerContainer('redis', {
+  },
+  {
+    name: 'redis',
     image: 'redis:6.0.9',
     publish: { 6379: 6379 },
-  }),
-
-  DockerContainer('elasticsearch', {
+  },
+  {
+    name: 'elasticsearch',
     image: 'docker.elastic.co/elasticsearch/elasticsearch:7.1.0',
     publish: { 9200: 9200 },
     memory: 512e9,
@@ -29,14 +31,14 @@ const containers = [
       'discovery.type': 'single-node',
       'ES_JAVA_OPTS': '-Xms256m -Xmx256m',
     },
-  }),
-
-  DockerContainer('gremlin', {
+  },
+  {
+    name: 'gremlin',
     image: 'tinkerpop/gremlin-server:3.4.4',
     publish: { 8182: 8182 },
-  }),
-
-  DockerContainer('s3', {
+  },
+  {
+    name: 's3',
     image: 'minio/minio:edge',
     publish: { 9000: 9000 },
     env: {
@@ -44,24 +46,11 @@ const containers = [
       MINIO_SECRET_KEY: 'secretKey',
     },
     cmd: ['server', '/data'],
-  }),
-
-  DockerContainer('registry', {
+  },
+  {
+    name: 'registry',
     image: 'registry:2.7',
     publish: { 5000: 5000 },
     restart: 'always',
-  }),
-]
-
-map(pipe([
-  tryCatch(
-    async container => {
-      const status = await container.start()
-      console.log(container.name, '-', status.message)
-    },
-    error => {
-      // if (error.message.includes)
-      console.log('error', error)
-    },
-  )
-]))(containers)
+  },
+])
