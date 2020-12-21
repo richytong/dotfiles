@@ -24,7 +24,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 Plug 'terryma/vim-expand-region'
-Plug 'rhysd/clever-f.vim'
 call plug#end()
 
 let mapleader = ","
