@@ -53,4 +53,9 @@ forEach(async options => {
     publish: { 5000: 5000 },
     restart: 'always',
   },
+  {
+    name: 'kinesis',
+    image: 'saidsef/aws-kinesis-local:latest',
+    publish: { 4567: 4567 },
+  },
 ])
