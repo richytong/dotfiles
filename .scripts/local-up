@@ -39,11 +39,11 @@ forEach(async options => {
   },
   {
     name: 's3',
-    image: 'minio/minio:edge',
+    image: 'minio/minio:edge-cicd',
     publish: { 9000: 9000 },
     env: {
-      MINIO_ACCESS_KEY: 'accessKey',
-      MINIO_SECRET_KEY: 'secretKey',
+      MINIO_ACCESS_KEY: 'AKIAIOSFODNN7EXAMPLE',
+      MINIO_SECRET_KEY: 'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY',
     },
     cmd: ['server', '/data'],
   },
