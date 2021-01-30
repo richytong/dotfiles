@@ -125,7 +125,7 @@ filetype indent on
 set autoread
 
 set wildmenu
-set wildmode=list:longest,full
+set wildmode=list:longest
 set wildignore=*.o,*~,*.pyc,*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 set wildcharm=<C-Z>
 
