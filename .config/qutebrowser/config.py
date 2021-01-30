@@ -1,3 +1,5 @@
+config.load_autoconfig()
+
 c.tabs.position = "top"
 
 c.url.searchengines = {
@@ -12,7 +14,7 @@ c.url.searchengines = {
     "emoji": "https://emojipedia.org/search/?q={}"
 }
 
-c.content.host_blocking.whitelist = [
+c.content.blocking.whitelist = [
     "mixpanel.com", "mixpanel.com/*"
     "googletagmanager.com", "googletagmanager.com/*",
     "analytics.google.com", "analytics.google.com/*",
