@@ -42,9 +42,9 @@ bindsym $mod+s exec --no-startup-id rofi -show ssh
 bindsym $mod+b exec --no-startup-id $BROWSER
 
 # #---Volume---X X
-bindsym XF86AudioRaiseVolume exec volume_up
-bindsym XF86AudioLowerVolume exec volume_down
-bindsym XF86AudioMute exec volume_toggle
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # #---Screen Recording---# #
 bindsym Print exec --no-startup-id maim pic-full-"$(date +%s%3N).png"
