@@ -24,7 +24,7 @@ forEach(async options => {
   },
   {
     name: 'elasticsearch',
-    image: 'docker.elastic.co/elasticsearch/elasticsearch:7.1.0',
+    image: 'docker.elastic.co/elasticsearch/elasticsearch:7.9.3',
     publish: { 9200: 9200 },
     memory: 512e9,
     env: {
