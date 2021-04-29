@@ -42,8 +42,8 @@ forEach(async options => {
     image: 'minio/minio:edge-cicd',
     publish: { 9000: 9000 },
     env: {
-      MINIO_ACCESS_KEY: 'AKIAIOSFODNN7EXAMPLE',
-      MINIO_SECRET_KEY: 'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY',
+      MINIO_ACCESS_KEY: 'AKIARMTQKGLFIIYQIS44',
+      MINIO_SECRET_KEY: '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',
     },
     cmd: ['server', '/data'],
   },
