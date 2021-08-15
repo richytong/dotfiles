@@ -100,6 +100,9 @@ inoremap <C-a> <C-o>^
 " Copy n paste to global registers from visual mode
 vnoremap y "*y :let @+=@*<CR>
 
+" Make <CR> start commands
+nnoremap <CR> :
+
 " Copy n paste to and from clipboard register
 " noremap <leader>y "+y
 " noremap <leader>p "+p
