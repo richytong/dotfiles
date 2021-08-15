@@ -97,8 +97,12 @@ tnoremap <M-p> <C-\><C-n>:bp<CR>
 inoremap <C-e> <C-o>$
 inoremap <C-a> <C-o>^
 
-" Copy n paste to global registers
-vnoremap y "*y :let @+=@*<CR>
+" Copy n paste to global registers from visual mode
+" vnoremap y "*y :let @+=@*<CR>
+
+" Copy n paste to and from clipboard register
+noremap <leader>y "+y
+noremap <leader>p "+p
 
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
