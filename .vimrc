@@ -104,8 +104,8 @@ vnoremap y "*y :let @+=@*<CR>
 nnoremap <CR> :
 
 " Copy n paste to and from clipboard register
-" noremap <leader>y "+y
-" noremap <leader>p "+p
+noremap <leader>y "+y
+noremap <leader>p "+p
 
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
