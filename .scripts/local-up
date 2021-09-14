@@ -9,7 +9,7 @@ forEach(async options => {
 })([
   {
     name: 'dynamo',
-    image: 'amazon/dynamodb-local:1.15.0',
+    image: 'amazon/dynamodb-local:1.16.0',
     publish: { 8000: 8000 },
   },
   {
