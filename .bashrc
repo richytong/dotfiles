@@ -51,7 +51,7 @@ export PATH="$PATH:$GOBIN"
 
 # nvm env
 export NVM_DIR="$HOME/.nvm"
-export NODE_VERSION="v19.1.0"
+export NODE_VERSION="v18.12.1"
 export NODE_DIR="$NVM_DIR/versions/node/$NODE_VERSION"
 export NODE_PATH="$NODE_DIR/lib/node_modules"
 export PATH="$NODE_DIR/bin:$PATH"
