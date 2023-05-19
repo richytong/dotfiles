@@ -1,12 +1,8 @@
 #!/usr/bin/env node
 
-const forEach = require('rubico/x/forEach')
 const DockerContainer = require('presidium/DockerContainer')
 
-forEach(async options => {
-  const status = await DockerContainer(options).start()
-  console.log(options.name, '-', status.message)
-})([
+const containers = [
   {
     name: 'dynamo',
     image: 'amazon/dynamodb-local:1.16.0',
@@ -58,4 +54,11 @@ forEach(async options => {
     image: 'saidsef/aws-kinesis-local:latest',
     publish: { 4567: 4567 },
   },
-])
+]
+
+setImmediate(async function () {
+  for (const options of containers) {
+    const status = await DockerContainer(options).start()
+    console.log(options.name, '-', status.message)
+  }
+})
