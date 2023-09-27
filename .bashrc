@@ -62,6 +62,7 @@ export PATH="$NODE_DIR/bin:$PATH"
 # pyenv env
 export PATH="$HOME/.pyenv/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
+export PYENV_VERSION="3.9.12"
 
 # my env
 export CODE_PATH="$HOME/code"
