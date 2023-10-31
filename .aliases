@@ -41,7 +41,7 @@ alias ch='chimaera'
 
 alias ga="git a"
 alias gs="git s"
-alias gc="git c"
+alias gcm="git c"
 alias gl="git lg"
 alias gd="git d"
 alias gp="git push"
