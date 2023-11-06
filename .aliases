@@ -39,10 +39,9 @@ alias pyenv-init='eval "$(pyenv init -) && pyenv shell 3.7.3"'
 # Chimaera
 alias ch='chimaera'
 
+alias g="git"
 alias ga="git a"
 alias gs="git s"
-alias gcm="git c"
 alias gl="git lg"
 alias gd="git d"
 alias gp="git push"
-alias gfm="git pull"
