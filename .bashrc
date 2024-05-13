@@ -85,6 +85,9 @@ export DANDY_CONFIG_PATH="$DANDY_PATH/dandy-config-files/lib"
 # arimus env
 export ARIMUS_PATH="$HOME/code/arimus"
 
+# claimyr clout env
+export DEPLOY_ENV="production"
+
 # Aliases, Functions
 for file in ~/.{aliases,functions}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
