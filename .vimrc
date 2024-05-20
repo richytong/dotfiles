@@ -114,7 +114,7 @@ set nocompatible
 
 syntax enable
 
-colorscheme beeg
+colorscheme vim
 
 set scrolloff=1000
 
