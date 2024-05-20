@@ -11,9 +11,9 @@ fi
 alias ls="command ls ${colorflag}"
 
 # Everything is vim
-alias v="vim"
-alias vi="vim"
-alias vim="vim"
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
 
 # xserver clipboard
 alias xcb="xclip -selection c"
