@@ -87,6 +87,7 @@ export ARIMUS_PATH="$HOME/code/arimus"
 
 # claimyr clout env
 export DEPLOY_ENV="production"
+export SCRIPT_ENV="production"
 
 # Aliases, Functions
 for file in ~/.{aliases,functions}; do
