@@ -1,0 +1,51 @@
+#!/usr/bin/env node
+
+const LocaleStringET = date =>
+  date.toLocaleString('en-US', { timeZone: 'America/New_York' })
+
+const months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+]
+
+const parseLocaleString = localeString => {
+  const [date, time, meridiem] = localeString.split(/,?\s/)
+  const [month, day, year] = date.split('/')
+  const [hh, mm, ss] = time.split(':')
+  return { month, day, year, hh, mm, ss, meridiem }
+}
+
+const timestampTimer = function () {
+  const startDate = new Date()
+
+  process.on('SIGINT', function() {
+    const endDate = new Date()
+    const localeStringStart = LocaleStringET(startDate)
+    const localeStringEnd = LocaleStringET(endDate)
+    const start = parseLocaleString(localeStringStart)
+    const end = parseLocaleString(localeStringEnd)
+    console.log(`
+${start.month}/${start.day} ${start.hh}:${start.mm} ${start.meridiem} - ${end.month}/${end.day} ${end.hh}:${end.mm} ${end.meridiem}
+    `.trimEnd())
+    process.exit()
+  });
+}
+
+setImmediate(async () => {
+  timestampTimer()
+  while (true) {
+    await new Promise(resolve => {
+      setTimeout(resolve, 60000)
+    })
+  }
+})
