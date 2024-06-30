@@ -35,7 +35,7 @@ const timestampTimer = function () {
     const start = parseLocaleString(localeStringStart)
     const end = parseLocaleString(localeStringEnd)
     console.log(`
-${start.month}/${start.day} ${start.hh}:${start.mm} ${start.meridiem} - ${end.month}/${end.day} ${end.hh}:${end.mm} ${end.meridiem}
+${start.month}/${start.day} ${start.hh}:${start.mm} ${start.meridiem} - ${end.month}/${end.day} ${end.hh}:${end.mm} ${end.meridiem} ET
     `.trimEnd())
     process.exit()
   });
