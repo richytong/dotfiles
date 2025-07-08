@@ -8,16 +8,20 @@ const containers = [
     image: 'amazon/dynamodb-local:1.16.0',
     publish: { 8000: 8000 },
   },
+
+  /*
   {
     name: 'mongo',
     image: 'mongo:4.0.6-xenial',
     publish: { 27017: 27017 },
   },
+
   {
     name: 'redis',
     image: 'redis:6.0.9',
     publish: { 6379: 6379 },
   },
+
   {
     name: 'elasticsearch',
     image: 'docker.elastic.co/elasticsearch/elasticsearch:7.9.3',
@@ -28,11 +32,14 @@ const containers = [
       'ES_JAVA_OPTS': '-Xms256m -Xmx256m',
     },
   },
+
   {
     name: 'gremlin',
     image: 'tinkerpop/gremlin-server:3.4.4',
     publish: { 8182: 8182 },
   },
+  */
+
   {
     name: 's3',
     image: 'minio/minio:edge-cicd',
@@ -49,6 +56,7 @@ const containers = [
     publish: { 5000: 5000 },
     restart: 'always',
   },
+
   {
     name: 'kinesis',
     image: 'saidsef/aws-kinesis-local:latest',
