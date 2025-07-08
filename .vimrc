@@ -60,8 +60,28 @@ map <C-k> <C-W>k
 " clears search highlight
 map <silent> <leader><ESC> :noh<CR>
 
-" very magic
+" very magic mode
 nnoremap / /\v
+
+" jump to previous opening bracket
+nnoremap [{ ?{<CR>
+nnoremap [( ?(<CR>
+nnoremap [[ ?[<CR>
+
+" jump to previous closing bracket
+nnoremap [} ?}<CR>
+nnoremap [) ?)<CR>
+nnoremap [] ?]<CR>
+
+" jump to next closing bracket
+nnoremap ]} /}<CR>
+nnoremap ]) /)<CR>
+nnoremap ]] /]<CR>
+
+" jump to next opening bracket
+nnoremap ]{ /{<CR>
+nnoremap ]( /(<CR>
+nnoremap ][ /[<CR>
 
 " Moving lines and selections (mac alt)
 nnoremap ∆ :m .+1<CR>==
