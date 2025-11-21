@@ -23,4 +23,7 @@ $find_cmd \
   ! -path "*vendor*" \
   ! -path "*pkg*" \
   ! -path "/home/richard/lib*" \
+  ! -path "/home/richard/code/node/*" \
+  ! -path "/home/richard/code/dolphin-emu/*" \
+  ! -path "/home/richard/code/git/*" \
   2>&1
