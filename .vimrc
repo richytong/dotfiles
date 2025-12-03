@@ -63,6 +63,9 @@ map <silent> <leader><ESC> :noh<CR>
 " very magic mode
 nnoremap / /\v
 
+" search for methods
+nnoremap m/ /\v\w+\((\w+,\s?(\s=\s.+)?)*(\w+(\s?(\s=\s.+)))?\) \{<CR>
+
 " jump to previous opening bracket
 nnoremap [{ ?{<CR>
 nnoremap [( ?(<CR>
