@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
-const DockerContainer = require('presidium/DockerContainer')
+const Docker = require('presidium/Docker')
+
+const docker = new Docker()
 
 const containers = [
   {
@@ -66,7 +68,7 @@ const containers = [
 
 setImmediate(async function () {
   for (const options of containers) {
-    const status = await DockerContainer(options).start()
-    console.log(options.name, '-', status.message)
+    await docker.runContainer(options)
+    console.log(options.name)
   }
 })
