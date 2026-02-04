@@ -216,4 +216,4 @@ set autoindent smartindent
 
 set splitright
 
-set colorscheme=shine
+colorscheme shine
