@@ -25,6 +25,7 @@ read -d '' FZF_DEFAULT_OPTS << EOF
 --layout=reverse
 --bind=tab:toggle-down,btab:toggle-up,change:top+deselect-all,ctrl-a:select-all
 EOF
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # Adds `~/.scripts` and all subdirectories to $PATH
 export PATH="$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//'):$PATH"
