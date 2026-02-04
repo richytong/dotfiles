@@ -215,3 +215,5 @@ set textwidth=500
 set autoindent smartindent
 
 set splitright
+
+set colorscheme=shine
