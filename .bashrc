@@ -79,8 +79,11 @@ export ARIMUS_PATH="$HOME/code/arimus"
 export DEPLOY_ENV="production"
 export SCRIPT_ENV="production"
 
-# nvim
+# nvm
 export PATH=$PATH:$HOME/.nvm/bin
+
+# neovim
+export PATH=$PATH:$HOME/nvim-macos-arm64/bin
 
 # Aliases, Functions
 for file in ~/.{aliases,functions}; do
