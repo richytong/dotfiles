@@ -5,13 +5,13 @@ const Docker = require('presidium/Docker')
 const docker = new Docker()
 
 const containers = [
+  /*
   {
     name: 'dynamo',
     image: 'amazon/dynamodb-local:1.16.0',
     publish: { 8000: 8000 },
   },
 
-  /*
   {
     name: 'mongo',
     image: 'mongo:4.0.6-xenial',
@@ -42,6 +42,9 @@ const containers = [
   },
   */
 
+  /*
+
+  /*
   {
     name: 's3',
     image: 'minio/minio:edge-cicd',
@@ -52,6 +55,8 @@ const containers = [
     },
     cmd: ['server', '/data'],
   },
+  */
+
   {
     name: 'registry',
     image: 'registry:2.7',
@@ -59,11 +64,14 @@ const containers = [
     restart: 'always',
   },
 
+  /*
   {
     name: 'kinesis',
     image: 'saidsef/aws-kinesis-local:latest',
     publish: { 4567: 4567 },
   },
+  */
+
 ]
 
 setImmediate(async function () {
