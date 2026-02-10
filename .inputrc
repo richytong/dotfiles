@@ -1,5 +1,5 @@
 # Use menu-complete
-TAB: menu-complete
+TAB: complete
 
 # Shift-tab completes backward
 "\e[Z": menu-complete-backward
