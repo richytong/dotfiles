@@ -40,8 +40,3 @@ alias pyenv-init='eval "$(pyenv init -) && pyenv shell $PYENV_VERSION"'
 alias ch='chimaera'
 
 alias g="git"
-alias ga="git a"
-alias gs="git s"
-alias gl="git lg"
-alias gd="git d"
-alias gp="git push"
