@@ -1,0 +1,3 @@
+#!/bin/sh
+
+goto_find -t d | fzf

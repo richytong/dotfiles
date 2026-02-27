@@ -8,4 +8,4 @@ find ~/code \( \
   -name "go" -o \
   -name "vendor" -o \
   -name "pkg" \
-\) -prune -o -print
+\) -prune -o -type d -print
