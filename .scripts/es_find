@@ -1,26 +1,11 @@
 #!/bin/sh
 
-declare find_type
-while getopts "t:" o; do case "${o}" in
-  t) find_type=${OPTARG} ;;
-  *) printf "Invalid option -%s\\n" "$o" && exit ;;
-esac done
-
-shift $((OPTIND - 1))
-
-dirs="$@"
-[ -z "$dirs" ] && dirs=~/code
-
-find_cmd="find -L $dirs"
-[ "$find_type" == "f" ] || [ "$find_type" == "d" ] && find_cmd+=" -type $find_type"
-
-$find_cmd \
-  -path "*.git*" -prune -o \
-  -path "*.npm*" -prune -o \
-  -path "*node_modules*" -prune -o \
-  -path "*.cache*" -prune -o \
-  -path "*go/pkg*" -prune -o \
-  -path "*vendor*" -prune -o \
-  -path "*pkg*" -prune -o \
-  -print \
-  2>&1
+find ~/code \( \
+  -name ".git" -o \
+  -name ".npm" -o \
+  -name "node_modules" -o \
+  -name ".cache" -o \
+  -name "go" -o \
+  -name "vendor" -o \
+  -name "pkg" \
+\) -prune -o -type d -print

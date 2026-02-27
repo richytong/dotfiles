@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# $(es_find -t d) | fzf
+./es_find -t d | fzf
