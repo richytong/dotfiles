@@ -1,0 +1,8 @@
+#!/bin/sh
+
+function cd() {
+  [ "$#" != 0 ] && builtin cd "$@" && return
+  local dir="$(goto_find -t d | fzf)"
+  [ ${#dir} != 0 ] || return 0
+  builtin cd "$dir" &> /dev/null
+}

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+dir=$(goto_find -t d | fzf)
+echo "$dir"
+cd "$dir"
