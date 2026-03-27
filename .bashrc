@@ -76,9 +76,12 @@ export DANDY_CONFIG_PATH="$DANDY_PATH/dandy-config-files/lib"
 # arimus env
 export ARIMUS_PATH="$HOME/code/arimus"
 
-# claimyr clout env
+# claimyr env
 export DEPLOY_ENV="production"
 export SCRIPT_ENV="production"
+
+# env
+export TEST_ENV="richard_local_test"
 
 # nvm
 export PATH=$PATH:$HOME/.nvm/bin
