@@ -2,8 +2,6 @@ config.load_autoconfig()
 
 c.tabs.position = "top"
 
-config.set('prompt_download_directory', True)
-
 c.url.searchengines = {
     "DEFAULT": "https://www.google.com/search?hl=en&q={}",
     "ddg": "https://duckduckgo.com/?q={}",
