@@ -4,6 +4,7 @@ find ~/code \( \
   -name ".git" -o \
   -name ".npm" -o \
   -name "node_modules" -o \
+  -name "storage" -o \
   -name ".cache" -o \
   -name "go" -o \
   -name "vendor" -o \
