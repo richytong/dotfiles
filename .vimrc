@@ -21,10 +21,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'mattn/emmet-vim'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'leafgarland/typescript-vim'
-Plug 'terryma/vim-expand-region'
 call plug#end()
 
 let mapleader = ","
@@ -140,6 +136,8 @@ syntax enable
 
 colorscheme vim
 
+set background=dark
+
 set scrolloff=1000
 
 set laststatus=2
@@ -156,7 +154,7 @@ filetype indent on
 set autoread
 
 set wildmenu
-set wildmode=list:longest
+set wildmode=list:longest,full
 set wildignore=*.o,*~,*.pyc,*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 set wildcharm=<C-Z>
 
@@ -191,8 +189,6 @@ set t_vb=
 set t_Co=256
 
 set foldcolumn=0
-
-set background=dark
 
 set encoding=utf-8
 

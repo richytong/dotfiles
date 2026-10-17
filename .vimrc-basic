@@ -1,11 +1,11 @@
-" Vim run commands
+" Basic Vim run commands
 " Maintainer: Richard Tong (richytong@gmail.com) - @richytong
 " Note: This vimrc should be compatible with all vims
 
-" Do not try to be backwards compatible with vi, let's get all the features of vim
+" Do not try to be backwards compatible with vi, gets all the features of vim
 set nocompatible
 
-" How many lines of history vim has to remember
+" How many lines of history vim can remember
 set history=500
 
 " Enable loading of plugin files for detecting filetypes
@@ -29,13 +29,13 @@ set wildmenu
 " next press completes the next full match, subsequent tab presses cycle through
 set wildmode=list:longest,full
 
-" wildchar-macro - I use this so I can simulate a tab press inside my vim key mappings
+" wildchar-macro - I use this so I can simulate a tab press for my vim key mappings and for triggering completion menus
 set wildcharm=<C-Z>
 
 " Ignore compiled files when autocompleting or expanding wildcards (*)
 set wildignore=*.o,*~,*.pyc
 
-" Ignore more stuff if we're on windows vs mac
+" Ignore more stuff if on windows vs mac
 if has("win16") || has("win32")
     set wildignore+=.git\*,.hg\*,.svn\*
 else
@@ -44,12 +44,9 @@ endif
 
 " path is a list of directories that will be searched when using commands like
 " gf, [f, ]f, ^Wf, :find, :sfind, :tabfind, etc
-
-" I use this setting for path mostly for the find command
-" when I want to edit a file relative to my active buffer
 set path=.,,**
 
-" Automatically change directory to the buffer's directory when entering that buffer
+" Automatically change to the buffer's directory when entering that buffer
 set autochdir
 
 " Set 1000 lines to the cursor - when moving vertically using j/k
@@ -57,30 +54,24 @@ set autochdir
 " moving the screen up and down
 set scrolloff=1000
 
-" Speak english
+" Language setting
 set langmenu=$LANG
 
-" Show the current line and column number
+" Show the cursor position line and column number in the status line
 set ruler
 
-" Show the line numbers
-set number
+" Hide line numbers in favor of the status bar cursor position
+set nonumber
 
 " Show the relative line numbers to cursor instead of the default absolute line numbers.
-" This is useful for doing any numbered movements, for example 5dj
-set relativenumber
+" This is useful for doing numbered movements, for example 5dj
+" set relativenumber
 
 " Height of the command bar
 set cmdheight=1
 
 " Do not warn when leaving a buffer with unsaved changes
 set hidden
-
-" Sane backspace
-set backspace=eol,start,indent
-
-" Sane movement - pressing l past the end of the line will move to the next line
-set whichwrap+=<,>,h,l
 
 " Ignore case when searching
 set ignorecase
@@ -97,53 +88,34 @@ set incsearch
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
 
-" If you don't search with \v, this is the next most sane option 
-set magic
-
 " When a bracket is inserted, briefly jump to the matching one.
 " The jump is only done if the match can be seen on the screen
 set showmatch
 
-" How many tenths of a second to blink when matching brackets
-set mat=2
-
-" No annoying sound on errors
+" Turn off annoying sound on errors
 set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
 
-" Properly disable sound on errors on MacVim
+" Disable sound on errors on MacVim
 if has("gui_macvim")
-    autocmd GUIEnter * set vb t_vb=
+  autocmd GUIEnter * set vb t_vb=
 endif
-
-" No margins - this is for folds, like folding a block of code
-set foldcolumn=0
 
 " Enable syntax highlighting
 syntax enable
-" Enable 256 colors palette in Gnome Terminal
-if $COLORTERM == 'gnome-terminal'
-    set t_Co=256
-endif
 
-" Specify the default color scheme
+" Specify the color scheme
 try
-    colorscheme default
+  colorscheme vim
 catch
+  colorscheme default
 endtry
 
 " Background - this should match your terminal background
-set background=white
-
-" Set extra options when running in GUI mode
-if has("gui_running")
-    set guioptions-=T
-    set guioptions-=e
-    set t_Co=256
-    set guitablabel=%M\ %t
-endif
+" set background=light
+set background=dark
 
 " The character encoding displayed
 set encoding=utf-8
@@ -151,31 +123,34 @@ set encoding=utf-8
 " The character encoding written
 set fileencoding=utf-8
 
-" Give the <EOL> formats that will be tried when starting to edit a new buffer
-" or reading a file into an existing buffer
+" EOL formats that will be tried by Vim to detect the <EOL> character
 set fileformats=unix,dos,mac
 
-" Turn backup off, since most stuff is in SVN, git etc anyway...
+" Turn backup off in favor of version control like git
 set nobackup
 set nowritebackup
 set noswapfile
 
-" In Insert mode, use the appropriate number of spaces to insert a <Tab>
+" In insert mode, inserts spaces instead of tabs when you press the Tab key
 set expandtab
 
-" <Tab> inserts blanks according to 'shiftwidth', 'tabstop', or 'softtabstop'
+" <Tab> inserts blanks according to shiftwidth, tabstop, or softtabstop
+" shiftwidth is how many spaces that text is indented with operations like << and >>
+" tabstop is the width of a tab character in columns
+" softtabstop is how many spaces are inserted with tab or removed with backspace
 " <BS> (backspace) will delete a 'shiftwidth' worth of space at the start of the line
 set smarttab
 
-" default 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
+" default 1 tab == 2 spaces
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
 
 " wrap long lines at a character in 'breakat' rather than at the last character that fits on the screen
 set linebreak
 
-" Linebreak on 500 characters
-set textwidth=500
+" No automatic linebreak on a number of characters
+set textwidth=0
 
 " Copy indent from current line when starting a new line
 set autoindent
@@ -185,6 +160,9 @@ set smartindent
 
 " Wrap lines longer than width of the window. Display only
 set wrap
+
+" No automatic formatting
+set formatoptions=
 
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -197,6 +175,11 @@ set statusline=
 set statusline+=\ %f
 set statusline+=\ %m
 set statusline+=\ Line\ %l,\ Col\ %c
+
+hi StatusLine     ctermfg=NONE   ctermbg=NONE cterm=bold
+hi StatusLineTerm     ctermfg=NONE   ctermbg=NONE cterm=bold
+hi StatusLineNC     ctermfg=NONE   ctermbg=NONE cterm=bold
+hi StatusLineTermNC ctermfg=NONE   ctermbg=NONE cterm=bold
 
 " Set the leader key here
 " A leader key gives you really fast shortcuts like ,wq to write and quit real quick 
@@ -298,14 +281,14 @@ vnoremap y "*y :let @+=@*<CR>
 
 " Delete trailing white space on save, useful for some filetypes ;)
 fun! CleanExtraSpaces()
-    let save_cursor = getpos(".")
-    let old_query = getreg('/')
-    silent! %s/\s\+$//e
-    call setpos('.', save_cursor)
-    call setreg('/', old_query)
+  let save_cursor = getpos(".")
+  let old_query = getreg('/')
+  silent! %s/\s\+$//e
+  call setpos('.', save_cursor)
+  call setreg('/', old_query)
 endfun
 
 " Clean extra whitespaces at the ends of these extensions
 if has("autocmd")
-    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+  autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 endif

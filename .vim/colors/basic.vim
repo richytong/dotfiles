@@ -1,4 +1,4 @@
-" Holy Moly Colors
+" Basic Colors
 
 set background=dark
 highlight clear
@@ -8,43 +8,43 @@ if exists("syntax_on")
 endif
 
 set t_Co=256
-let g:colors_name = "beeg"
+let g:colors_name = "basic"
 
-" Main Text Color    195
-" String Color       228
-" Number/Boolean     129
+" Main Text Color    White
+" String Color       Yellow
+" Number/Boolean     DarkMagenta
 " Args, Special      210
 " Globals            170
 
 " Normal Text
-hi Normal         ctermfg=195  ctermbg=NONE cterm=NONE
+hi Normal         ctermfg=White  ctermbg=NONE cterm=NONE
 
 " Nonexistent Characters Filler
-hi NonText        ctermfg=66   ctermbg=NONE cterm=NONE
+hi NonText        ctermfg=Black   ctermbg=NONE cterm=NONE
 
 " Syntax - Comment Group
 hi Comment        ctermfg=66   ctermbg=NONE cterm=NONE
 
 " Syntax - Constant Group
 hi Constant       ctermfg=170  ctermbg=NONE cterm=NONE
-hi String         ctermfg=228  ctermbg=NONE cterm=NONE
-hi Character      ctermfg=129  ctermbg=NONE cterm=NONE
-hi Number         ctermfg=129  ctermbg=NONE cterm=NONE
-hi Boolean        ctermfg=129  ctermbg=NONE cterm=NONE
-hi Float          ctermfg=129  ctermbg=NONE cterm=NONE
+hi String         ctermfg=Yellow  ctermbg=NONE cterm=NONE
+hi Character      ctermfg=DarkMagenta  ctermbg=NONE cterm=NONE
+hi Number         ctermfg=DarkMagenta  ctermbg=NONE cterm=NONE
+hi Boolean        ctermfg=DarkMagenta  ctermbg=NONE cterm=NONE
+hi Float          ctermfg=DarkMagenta  ctermbg=NONE cterm=NONE
 
 " Syntax - Identifier Group
-hi Identifier     ctermfg=195  ctermbg=NONE cterm=NONE
-hi Function       ctermfg=49   ctermbg=NONE cterm=NONE
+hi Identifier     ctermfg=White  ctermbg=NONE cterm=NONE
+hi Function       ctermfg=Green  ctermbg=NONE cterm=NONE
 
 " Syntax - Statement Group
-hi Statement      ctermfg=75   ctermbg=NONE cterm=NONE
-hi Conditional    ctermfg=75   ctermbg=NONE cterm=NONE
-hi Repeat         ctermfg=75   ctermbg=NONE cterm=NONE
-hi Label          ctermfg=75   ctermbg=NONE cterm=NONE
-hi Operator       ctermfg=75   ctermbg=NONE cterm=NONE
-hi Keyword        ctermfg=75   ctermbg=NONE cterm=NONE
-hi Exception      ctermfg=75   ctermbg=NONE cterm=NONE
+hi Statement      ctermfg=Red   ctermbg=NONE cterm=NONE
+hi Conditional    ctermfg=Red   ctermbg=NONE cterm=NONE
+hi Repeat         ctermfg=Red   ctermbg=NONE cterm=NONE
+hi Label          ctermfg=Red   ctermbg=NONE cterm=NONE
+hi Operator       ctermfg=Red   ctermbg=NONE cterm=NONE
+hi Keyword        ctermfg=Red   ctermbg=NONE cterm=NONE
+hi Exception      ctermfg=Red   ctermbg=NONE cterm=NONE
 
 " Syntax - Preprocessor Group
 hi PreProc        ctermfg=210  ctermbg=NONE cterm=NONE
@@ -87,7 +87,7 @@ hi CursorLine     ctermfg=NONE ctermbg=NONE cterm=NONE
 hi Directory      ctermfg=170  ctermbg=NONE cterm=NONE
 
 " Search
-hi IncSearch      ctermfg=16   ctermbg=228  cterm=bold
+hi IncSearch      ctermfg=16   ctermbg=Yellow  cterm=bold
 hi Search         ctermfg=16   ctermbg=51   cterm=bold
 
 " Diff
@@ -107,11 +107,11 @@ hi CursorLineNr   ctermfg=66   ctermbg=NONE cterm=NONE
 hi LineNr         ctermfg=66   ctermbg=NONE cterm=NONE
 
 " Status Line is reverse
-hi StatusLine     ctermfg=15   ctermbg=NONE cterm=bold
-hi StatusLineNC   ctermfg=15   ctermbg=NONE cterm=bold
-hi User1          ctermfg=197  ctermbg=NONE cterm=bold
-hi User2          ctermfg=33   ctermbg=NONE cterm=bold
-hi User3          ctermfg=195  ctermbg=NONE cterm=bold
+hi StatusLine     ctermfg=NONE   ctermbg=NONE cterm=bold
+hi StatusLineNC   ctermfg=NONE   ctermbg=NONE cterm=bold
+hi User1          ctermfg=NONE  ctermbg=NONE cterm=bold
+hi User2          ctermfg=NONE   ctermbg=NONE cterm=bold
+hi User3          ctermfg=NONE  ctermbg=NONE cterm=bold
 
 " Tab Line
 hi TabLine        ctermfg=195  ctermbg=NONE cterm=NONE
