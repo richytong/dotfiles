@@ -1,8 +1,6 @@
 " Basic Vim run commands
-" Maintainer: Richard Tong (richytong@gmail.com) - @richytong
-" Note: This vimrc should be compatible with all vims
 
-" Do not try to be backwards compatible with vi, gets all the features of vim
+" No backwards compatibility with vi
 set nocompatible
 
 " How many lines of history vim can remember
@@ -33,14 +31,7 @@ set wildmode=list:longest,full
 set wildcharm=<C-Z>
 
 " Ignore compiled files when autocompleting or expanding wildcards (*)
-set wildignore=*.o,*~,*.pyc
-
-" Ignore more stuff if on windows vs mac
-if has("win16") || has("win32")
-    set wildignore+=.git\*,.hg\*,.svn\*
-else
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
-endif
+set wildignore=*.o,*~,*.pyc,*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 
 " path is a list of directories that will be searched when using commands like
 " gf, [f, ]f, ^Wf, :find, :sfind, :tabfind, etc
@@ -97,6 +88,9 @@ set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
+
+" Set number of colors supported by your terminal. Can be 8, 16, or 256.
+set t_Co=256
 
 " Disable sound on errors on MacVim
 if has("gui_macvim")
@@ -181,23 +175,26 @@ hi StatusLineTerm     ctermfg=NONE   ctermbg=NONE cterm=bold
 hi StatusLineNC     ctermfg=NONE   ctermbg=NONE cterm=bold
 hi StatusLineTermNC ctermfg=NONE   ctermbg=NONE cterm=bold
 
+" Split vnew windows to right
+set splitright
+
+" Specify the behavior when switching between buffers
+" Jump to the first open window that contains the specified buffer if exists
+" Also consider windows in other tab pages
+" Split the current window before loading a buffer for a quickfix command
+set switchbuf=useopen,usetab,split
+
+" Always show the tabline
+set showtabline=2
+
 " Set the leader key here
-" A leader key gives you really fast shortcuts like ,wq to write and quit real quick 
+" A leader key gives you really fast shortcuts like ,w to write ,qq quit
 let mapleader = ","
 
-" My mappings - you can change them but consider these
-nmap <leader>ww :w!<cr>
-nmap <leader>wq :wqa!<cr>
-nmap <leader>wa :argdo<Space>w!<CR><CR>
-nmap <leader>qq :qa!<cr>
+" My mappings
+nmap <leader>w  :w!<CR>
+nmap <leader>qq :qa!<CR>
 nmap <leader>q. :bw!<CR>
-nmap <leader>qa :argdo<Space>bw!<CR>
-nmap <leader>ee :find<Space>.**/<C-Z>
-nmap <leader>bb :b<Space><C-Z>
-nmap <leader>bw :bw!<Space>
-nmap <leader>vv :vnew<Space><C-Z>
-nmap <leader>vh :vert help<Space>
-nmap <leader>ad :argdo<Space>
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><ESC> :noh<cr>
@@ -213,20 +210,14 @@ map <C-l> <C-W>l
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 
-" Split vnew windows to right
-set splitright
-
-" Specify the behavior when switching between buffers
-" Jump to the first open window that contains the specified buffer if exists
-" Also consider windows in other tab pages
-" Split the current window before loading a buffer for a quickfix command
-set switchbuf=useopen,usetab,split
-
-" Always show the tabline
-set showtabline=2
-
 " Always use very magic mode when searching
 nnoremap / /\v
+
+" Make <CR> start commands
+nnoremap <CR> :
+
+" Copy n paste to global registers
+vnoremap y "*y :let @+=@*<CR>
 
 " Auto expanding brackets
 inoremap (<CR> (<CR>)<ESC>O
@@ -265,30 +256,3 @@ inoremap <M-j> <Esc>:m .+1<CR>==gi
 inoremap <M-k> <Esc>:m .-2<CR>==gi
 vnoremap <M-j> :m '>+1<CR>gv=gv
 vnoremap <M-k> :m '<-2<CR>gv=gv
-
-" Quick buffer movement
-nnoremap <M-n> :bn<CR>
-nnoremap <M-p> :bp<CR>
-tnoremap <M-n> <C-\><C-n>:bn<CR>
-tnoremap <M-p> <C-\><C-n>:bp<CR>
-
-" Some readline bindings
-inoremap <C-e> <C-o>$
-inoremap <C-a> <C-o>^
-
-" Copy n paste to global registers
-vnoremap y "*y :let @+=@*<CR>
-
-" Delete trailing white space on save, useful for some filetypes ;)
-fun! CleanExtraSpaces()
-  let save_cursor = getpos(".")
-  let old_query = getreg('/')
-  silent! %s/\s\+$//e
-  call setpos('.', save_cursor)
-  call setreg('/', old_query)
-endfun
-
-" Clean extra whitespaces at the ends of these extensions
-if has("autocmd")
-  autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
-endif
