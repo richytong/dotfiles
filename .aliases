@@ -10,7 +10,7 @@ fi
 # Always use color output for `ls`
 alias ls="command ls ${colorflag}"
 
-# Everything is vim
+# Everything is nvim
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
