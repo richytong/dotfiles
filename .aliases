@@ -45,3 +45,6 @@ alias gs="git s"
 alias gl="git lg"
 alias gd="git d"
 alias gp="git push"
+
+alias ds="docker service"
+alias dn="docker node"
