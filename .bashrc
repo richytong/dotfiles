@@ -115,3 +115,9 @@ if [ -f '/home/richard/google-cloud-sdk/path.bash.inc' ]; then . '/home/richard/
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/richard/google-cloud-sdk/completion.bash.inc' ]; then . '/home/richard/google-cloud-sdk/completion.bash.inc'; fi
+
+# emscripten
+export PATH += /home/richard/code/emsdk
+export PATH += /home/richard/code/emsdk/upstream/emscripten
+export EMSDK = /home/richard/code/emsdk
+export EMSDK_NODE = /home/richard/code/emsdk/node/24.19.0_64bit/bin/node
