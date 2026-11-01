@@ -64,7 +64,7 @@ set wildignore=*.o,*~,*.pyc,*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 
 " path is a list of directories that will be searched when using commands like
 " gf, [f, ]f, ^Wf, :find, :sfind, :tabfind, etc
-set path=.,,**
+set path=.,,**,../**
 
 " Automatically change to the buffer's directory when entering that buffer
 set autochdir
